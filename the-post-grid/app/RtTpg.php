@@ -31,12 +31,12 @@ use RT\ThePostGrid\Controllers\WidgetController;
 use RT\ThePostGrid\Helpers\Install;
 use RT\ThePostGrid\Controllers\Admin\UpgradeController;
 
-
 if ( ! class_exists( RtTpg::class ) ) {
 	/**
 	 * Main initialization class.
 	 */
 	final class RtTpg {
+
 		/**
 		 * Post Type
 		 *
@@ -80,6 +80,7 @@ if ( ! class_exists( RtTpg::class ) ) {
 			],
 		];
 
+		public $settings;
 		/**
 		 * Store the singleton object.
 		 *
@@ -111,7 +112,8 @@ if ( ! class_exists( RtTpg::class ) ) {
 		 * @return void
 		 */
 		protected function __init() {
-			$settings = get_option( $this->options['settings'] );
+			$settings       = get_option( $this->options['settings'] );
+			$this->settings = $settings;
 
 			new UpgradeController();
 			new PostTypeController();
@@ -157,7 +159,6 @@ if ( ! class_exists( RtTpg::class ) ) {
 
 			add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ], - 1 );
 			add_action( 'init', [ $this, 'init_hooks' ], 0 );
-			add_filter( 'wp_calculate_image_srcset', [ $this, 'calculate_image_srcset' ] );
 		}
 
 		/**
@@ -168,16 +169,11 @@ if ( ! class_exists( RtTpg::class ) ) {
 		public function init_hooks() {
 			do_action( 'rttpg_before_init', $this );
 
-			$this->load_language();
-		}
+			if ( empty( $this->settings['tpg_enable_image_srcset'] ) ) {
+				add_filter( 'wp_calculate_image_srcset', '__return_false' );
+			}
 
-		/**
-		 * Remove calculate image srcset
-		 *
-		 * @return array
-		 */
-		public function calculate_image_srcset() {
-			return [];
+			$this->load_language();
 		}
 
 		/**
@@ -207,7 +203,7 @@ if ( ! class_exists( RtTpg::class ) ) {
 
 					$plugins_to_deactivate = [
 						'the-post-grid/the-post-grid.php',
-						'the-post-grid-pro/the-post-grid-pro.php'
+						'the-post-grid-pro/the-post-grid-pro.php',
 					];
 
 					foreach ( $plugins_to_deactivate as $plugin ) {
@@ -364,6 +360,7 @@ if ( ! class_exists( RtTpg::class ) ) {
 		public function demoLink() {
 			return '//www.radiustheme.com/demo/plugins/the-post-grid/';
 		}
+
 	}
 
 	/**

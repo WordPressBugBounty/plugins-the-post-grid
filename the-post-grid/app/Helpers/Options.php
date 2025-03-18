@@ -488,6 +488,14 @@ class Options {
 				'value'       => isset( $settings['tpg_enable_external_link'] ) ? $settings['tpg_enable_external_link'] : false,
 			],
 
+			'tpg_enable_image_srcset' => [
+				'type'        => 'switch',
+				'name'        => 'tpg_enable_image_srcset',
+				'description' => esc_html__( 'Enables or disables the srcset attribute for responsive image sizes in WordPress.', 'the-post-grid' ),
+				'label'       => esc_html__( 'Enable Image Srcset', 'the-post-grid' ),
+				'value'       => isset( $settings['tpg_enable_image_srcset'] ) ? $settings['tpg_enable_image_srcset'] : false,
+			],
+
 			'tpg_br1' => [
 				'type' => 'hr',
 			],

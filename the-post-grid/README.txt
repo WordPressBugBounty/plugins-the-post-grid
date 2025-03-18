@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 6.7
-Stable tag: 7.7.18
+Stable tag: 7.7.19
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -257,11 +257,16 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 == Changelog ==
 
-= 7.7.18 (March 5, 2024) =
+= 7.7.19 (Mar 18, 2025) =
+Fixed: Gutenberg block CSS not saving when using third-party containers.
+Fixed: Post title CSS being overridden by certain themes.
+Added: Option to enable/disable srcset for images.
+
+= 7.7.18 (Mar 5, 2025) =
 Fixed: File name sanitization in tpg_template() and tpg_template_path() functions.
 Fixed: Pro message not displaying in Gutenberg Quick Query.
 
-= 7.7.17 (20 Feb, 2024) =
+= 7.7.17 (20 Feb, 2025) =
 Fixed: Color Settings not working
 Fixed: Some Layout not importing
 Fixed: CORS issue fixed for layout import
