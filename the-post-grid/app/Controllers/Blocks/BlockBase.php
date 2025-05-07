@@ -106,7 +106,12 @@ abstract class BlockBase {
 				$orderby = 'date';
 			}
 			$args['orderby'] = esc_html( $orderby );
+
+			if ( 'include_only' == $orderby ) {
+				$args['orderby'] = 'post__in';
+			}
 		}
+
 
 		if ( $data['order'] ) {
 			$args['order'] = esc_html( $data['order'] );

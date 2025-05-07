@@ -3901,7 +3901,7 @@ class Fns {
 				if ( did_action( 'elementor/loaded' ) && isset( $data['light_box_icon']['value'] ) && $data['light_box_icon']['value'] ) {
 					\Elementor\Icons_Manager::render_icon( $data['light_box_icon'], [ 'aria-hidden' => 'true' ] );
 				} else {
-					echo "<i class='fa fa-plus'></i>";
+					echo "<i class='" . self::change_icon( 'fa fa-plus', 'plus' ) . "'></i>";
 				}
 				?>
             </a>

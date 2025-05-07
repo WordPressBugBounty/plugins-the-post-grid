@@ -169,8 +169,10 @@ if ( ! class_exists( RtTpg::class ) ) {
 		public function init_hooks() {
 			do_action( 'rttpg_before_init', $this );
 
-			if ( empty( $this->settings['tpg_enable_image_srcset'] ) ) {
-				add_filter( 'wp_calculate_image_srcset', '__return_false' );
+			if ( empty( $this->settings['tpg_enable_image_srcset'] ) && ! function_exists( 'et_setup_theme' ) ) {
+				add_filter( 'wp_calculate_image_srcset', function( $sources ) {
+					return is_array( $sources ) ? $sources : [];
+				} );
 			}
 
 			$this->load_language();

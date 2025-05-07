@@ -3,8 +3,8 @@ Contributors: techlabpro1
 Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
-Tested up to: 6.7
-Stable tag: 7.7.19
+Tested up to: 6.8
+Stable tag: 7.7.20
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -256,6 +256,11 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.7.20 (May 7, 2025) =
+Fixed: Resolved image srcset conflict with Avada theme
+Fixed: Addressed script loading conflict issue
+Added: New settings options for enhanced customization
 
 = 7.7.19 (Mar 18, 2025) =
 Fixed: Gutenberg block CSS not saving when using third-party containers.

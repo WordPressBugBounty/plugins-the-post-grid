@@ -20,6 +20,7 @@ require_once RT_THE_POST_GRID_PLUGIN_PATH . '/app/Widgets/elementor/rtTPGElement
  * Elementor Helper Class
  */
 class rtTPGElementorHelper {
+
 	/**
 	 *  Post Query Builderx
 	 *
@@ -214,7 +215,6 @@ class rtTPGElementorHelper {
 		$_url = site_url( 'wp-admin/edit.php?post_type=rttpg&page=tgp_taxonomy_order' );
 
 		foreach ( $taxonomies as $taxonomy => $object ) {
-
 			if ( ! isset( $object->object_type[0] )
 			     || ! in_array( $object->object_type[0], array_keys( $post_types ) )
 			     || in_array( $taxonomy, Fns::get_excluded_taxonomy() )
@@ -317,6 +317,7 @@ class rtTPGElementorHelper {
 
 		if ( rtTPG()->hasPro() ) {
 			$prderby_pro_opt = [
+				'include_only'        => esc_html__( 'Include only', 'the-post-grid' ),
 				'rand'                => esc_html__( 'Random order', 'the-post-grid' ),
 				'meta_value'          => esc_html__( 'Meta value', 'the-post-grid' ), //phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 				'meta_value_num'      => esc_html__( 'Meta value number', 'the-post-grid' ),
@@ -403,7 +404,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Archive Query Builder
@@ -1030,7 +1030,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Front-end Filter Settings
 	 *
@@ -1235,7 +1234,7 @@ class rtTPGElementorHelper {
 				$taxonomie_keys = array_keys( $_taxonomies );
 				$filter_cat     = array_filter(
 					$taxonomie_keys,
-					function ( $item ) {
+					function( $item ) {
 						return strpos( $item, 'cat' ) !== false;
 					}
 				);
@@ -1277,7 +1276,6 @@ class rtTPGElementorHelper {
 					'description' => esc_html__( 'Select a taxonomies for showing in filter', 'the-post-grid' ),
 				]
 			);
-
 
 			foreach ( $_taxonomies as $tax ) {
 				if ( in_array(
@@ -1476,8 +1474,8 @@ class rtTPGElementorHelper {
 				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter All Tax 2 Here..', 'the-post-grid' ),
 				'description' => esc_html__( 'This is optional. If you need you can change for 2nd taxonomy.', 'the-post-grid' ),
-				'condition' => [
-				    'multiple_taxonomy' => 'yes'
+				'condition'   => [
+					'multiple_taxonomy' => 'yes',
 				],
 			]
 		);
@@ -1489,12 +1487,11 @@ class rtTPGElementorHelper {
 				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter All Tax 3 Here..', 'the-post-grid' ),
 				'description' => esc_html__( 'This is optional. If you need you can change for 3rd taxonomy.', 'the-post-grid' ),
-				'condition' => [
-					'multiple_taxonomy' => 'yes'
+				'condition'   => [
+					'multiple_taxonomy' => 'yes',
 				],
 			]
 		);
-
 
 		$ref->add_control(
 			'author_filter_all_text',
@@ -1526,7 +1523,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * List Layout Settings
@@ -2111,7 +2107,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Section Title Settings
 	 *
@@ -2296,7 +2291,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Thumbnail Settings
@@ -2574,7 +2568,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Post Title Settings
 	 *
@@ -2731,7 +2724,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Post Excerpt Settings
@@ -3255,13 +3247,13 @@ class rtTPGElementorHelper {
 				$taxonomie_keys = array_keys( $_taxonomies );
 				$filter_cat     = array_filter(
 					$taxonomie_keys,
-					function ( $item ) {
+					function( $item ) {
 						return strpos( $item, 'cat' ) !== false;
 					}
 				);
 				$filter_tag     = array_filter(
 					$taxonomie_keys,
-					function ( $item ) {
+					function( $item ) {
 						return strpos( $item, 'tag' ) !== false;
 					}
 				);
@@ -3449,7 +3441,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Read More Settings
 	 *
@@ -3536,7 +3527,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 *  Advanced Custom Field ACF Settings
 	 *
@@ -3568,7 +3558,6 @@ class rtTPGElementorHelper {
 	}
 
 	public static function get_tpg_acf_settings( $ref, $is_archive = false ) {
-
 		$post_types = Fns::get_post_types();
 
 		if ( $is_archive ) {
@@ -3589,7 +3578,6 @@ class rtTPGElementorHelper {
 					'options'     => Fns::get_groups_by_post_type( 'post' ),
 				]
 			);
-
 		} else {
 			foreach ( $post_types as $post_type => $post_type_title ) {
 				$get_acf_field   = Fns::get_groups_by_post_type( $post_type );
@@ -3651,7 +3639,6 @@ class rtTPGElementorHelper {
 			]
 		);
 	}
-
 
 	/**
 	 * Links Settings
@@ -3725,7 +3712,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Promotions
 	 *
@@ -3760,7 +3746,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Section Title Style
@@ -4155,7 +4140,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Thumbnail Style Tab
@@ -4630,7 +4614,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Post Title Style
@@ -5494,7 +5477,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Read More style
 	 *
@@ -5934,7 +5916,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 * Pagination and Load more style tab
 	 *
@@ -6230,7 +6211,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Front-end Filter style / frontend style
@@ -6867,7 +6847,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Social Share Style
@@ -7634,7 +7613,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Slider Settings
@@ -8504,7 +8482,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 *  Link Style
 	 *
@@ -8598,7 +8575,6 @@ class rtTPGElementorHelper {
 		$ref->end_controls_section();
 	}
 
-
 	/**
 	 *  Slider thumb Settings for layout- 11, 12
 	 *
@@ -8684,7 +8660,6 @@ class rtTPGElementorHelper {
 
 		$ref->end_controls_section();
 	}
-
 
 	/**
 	 * Advanced Custom Field ACF Style
@@ -8912,4 +8887,5 @@ class rtTPGElementorHelper {
 			// End Tab
 		}
 	}
+
 }

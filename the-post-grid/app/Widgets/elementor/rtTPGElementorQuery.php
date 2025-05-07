@@ -5,7 +5,6 @@
  * @version 1.2
  */
 
-
 use RT\ThePostGrid\Helpers\Fns;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,7 +34,6 @@ class rtTPGElementorQuery {
 	 * @return array
 	 */
 	public static function post_query( $data, $prefix = '' ): array {
-
 		$_post_type  = ! empty( $data['post_type'] ) ? esc_html( $data['post_type'] ) : 'post';
 		$_post_types = ! empty( $data['post_types'] ) ? Fns::escape_array( $data['post_types'] ) : [ 'post' ];
 
@@ -71,12 +69,13 @@ class rtTPGElementorQuery {
 		}
 
 		if ( $orderby = $data['orderby'] ) {
-
 			$order_by        = ( $orderby == 'meta_value_datetime' ) ? 'meta_value_num' : $orderby;
 			$args['orderby'] = esc_html( $order_by );
 
 			if ( in_array( $orderby, [ 'meta_value', 'meta_value_num', 'meta_value_datetime' ] ) && $data['meta_key'] ) {
 				$args['meta_key'] = esc_html( $data['meta_key'] ); //phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			} elseif ( 'include_only' == $orderby ) {
+				$args['orderby'] = 'post__in';
 			}
 		}
 
@@ -438,4 +437,5 @@ class rtTPGElementorQuery {
 
 		return $args;
 	}
+
 }

@@ -1,6 +1,5 @@
 (function (global, $) {
     'use strict';
-
     var postType = $("#rt-sc-post-type").val();
     $(document).on('change', '#post_filter input[type=checkbox]', function () {
         var id = $(this).val();
@@ -133,6 +132,23 @@
     });
 
     $(document).ready(function () {
+        function handleAITypeChange() {
+            var aiType = $('#ai_type_holder select[name="ai_type"]').val();
+            $('.rt-ai-integration-settings-chatgpt, .rt-ai-integration-settings-gemini').hide();
+
+            if (aiType === 'chatgpt') {
+                $('.rt-ai-integration-settings-chatgpt').show();
+            } else if (aiType === 'gemini') {
+                $('.rt-ai-integration-settings-gemini').show();
+            }
+        }
+
+        // Trigger on page load
+        handleAITypeChange();
+
+        // Trigger on select change
+        $('#ai_type_holder select[name="ai_type"]').on('change', handleAITypeChange);
+
         checkCustomFieldSettings();
         rtTgpFilter();
         if ($(".rt-select2").length) {
