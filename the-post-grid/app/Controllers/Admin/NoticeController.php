@@ -7,6 +7,7 @@
 
 namespace RT\ThePostGrid\Controllers\Admin;
 use RT\ThePostGrid\Controllers\Admin\Notice\EidSpecial;
+use RT\ThePostGrid\Controllers\Admin\Notice\SummerSale;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,6 +38,7 @@ class NoticeController {
 
 		//Eid Special Deal
 		new EidSpecial();
+		new SummerSale();
 	}
 
 	/**

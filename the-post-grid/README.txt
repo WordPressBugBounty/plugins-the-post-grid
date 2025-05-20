@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 6.8
-Stable tag: 7.7.20
+Stable tag: 7.7.21
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -256,6 +256,13 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.7.21 (May 20, 2025) =
+Fixed: Undefined tax_filter_all_text in Fns.php on line 690
+Fixed: Taxonomies shared across multiple post types not appearing correctly
+Added: New API endpoint to retrieve terms in Gutenberg
+Updated: “Display Per Page” control moved from Pagination to Query Builder in Gutenberg
+Cleaned: Removed unnecessary console.log from Gutenberg script
 
 = 7.7.20 (May 7, 2025) =
 Fixed: Resolved image srcset conflict with Avada theme

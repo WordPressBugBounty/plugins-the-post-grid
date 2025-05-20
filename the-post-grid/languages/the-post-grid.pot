@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-07 06:27+0000\n"
+"POT-Creation-Date: 2025-05-20 10:55+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "The Post Grid"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:364, ../app/Controllers/BlocksController.php:458, ../app/Controllers/BlocksController.php:478, ../app/Controllers/Admin/AdminAjaxController.php:48, ../app/Controllers/Admin/NoticeController.php:180
+#: ../app/Controllers/BlocksController.php:364, ../app/Controllers/BlocksController.php:458, ../app/Controllers/BlocksController.php:478, ../app/Controllers/Admin/AdminAjaxController.php:48, ../app/Controllers/Admin/NoticeController.php:182
 msgid "User permission error"
 msgstr ""
 
@@ -224,90 +224,90 @@ msgstr ""
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4132
+#: ../app/Helpers/Fns.php:4150
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4157, ../app/Widgets/elementor/rtTPGElementorHelper.php:2916, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:4175, ../app/Widgets/elementor/rtTPGElementorHelper.php:2916, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4585
+#: ../app/Helpers/Fns.php:4603
 msgid "Dashboard"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4586
+#: ../app/Helpers/Fns.php:4604
 msgid "My Post"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4836
+#: ../app/Helpers/Fns.php:4854
 msgid "You are not authorize to submit a post."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4834
+#: ../app/Helpers/Fns.php:4852
 msgid "Post submit fail."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4832
+#: ../app/Helpers/Fns.php:4850
 msgid "Post submit successful"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4996, ../app/Helpers/Fns.php:5056
+#: ../app/Helpers/Fns.php:5014, ../app/Helpers/Fns.php:5074
 msgctxt "Thousand Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4997
+#: ../app/Helpers/Fns.php:5015
 msgctxt "Million Shorthand"
 msgid "M"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4998
+#: ../app/Helpers/Fns.php:5016
 msgctxt "Billion Shorthand"
 msgid "B"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4999
+#: ../app/Helpers/Fns.php:5017
 msgctxt "Trillion Shorthand"
 msgid "T"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5000
+#: ../app/Helpers/Fns.php:5018
 msgctxt "Quadrillion Shorthand"
 msgid "Qa"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5001
+#: ../app/Helpers/Fns.php:5019
 msgctxt "Quintillion Shorthand"
 msgid "Qi"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5057
+#: ../app/Helpers/Fns.php:5075
 msgctxt "Thousands Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5058
+#: ../app/Helpers/Fns.php:5076
 msgctxt "Lac Shorthand"
 msgid " Lac"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5059
+#: ../app/Helpers/Fns.php:5077
 msgctxt "Lacs Shorthand"
 msgid " Lacs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5060
+#: ../app/Helpers/Fns.php:5078
 msgctxt "Cr Shorthand"
 msgid " Cr"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5061
+#: ../app/Helpers/Fns.php:5079
 msgctxt "Crs Shorthand"
 msgid " Crs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5133, ../app/Widgets/elementor/rtTPGElementorHelper.php:308, ../app/Widgets/elementor/rtTPGElementorHelper.php:461, ../app/Widgets/elementor/rtTPGElementorHelper.php:3412, ../app/Widgets/elementor/widgets/news-ticker.php:594
+#: ../app/Helpers/Fns.php:5151, ../app/Widgets/elementor/rtTPGElementorHelper.php:308, ../app/Widgets/elementor/rtTPGElementorHelper.php:461, ../app/Widgets/elementor/rtTPGElementorHelper.php:3412, ../app/Widgets/elementor/widgets/news-ticker.php:594
 msgid "Date"
 msgstr ""
 
@@ -1743,23 +1743,23 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../app/Controllers/Admin/NoticeController.php:68
+#: ../app/Controllers/Admin/NoticeController.php:70
 msgid "You have selected only Elementor method. To use Shortcode Generator please enable shortcode or default from "
 msgstr ""
 
-#: ../app/Controllers/Admin/NoticeController.php:70, ../app/Controllers/Admin/NoticeController.php:87
+#: ../app/Controllers/Admin/NoticeController.php:72, ../app/Controllers/Admin/NoticeController.php:89
 msgid "Settings => Common Settings => Resource Load Type"
 msgstr ""
 
-#: ../app/Controllers/Admin/NoticeController.php:85
+#: ../app/Controllers/Admin/NoticeController.php:87
 msgid "You have selected only Shortcode Generator method. To use Elementor please enable Elementor or default from "
 msgstr ""
 
-#: ../app/Controllers/Admin/NoticeController.php:278
+#: ../app/Controllers/Admin/NoticeController.php:280
 msgid "Enjoying The Post Grid?"
 msgstr ""
 
-#: ../app/Controllers/Admin/NoticeController.php:279
+#: ../app/Controllers/Admin/NoticeController.php:281
 msgid "Thank you for choosing The Post Grid. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow."
 msgstr ""
 
