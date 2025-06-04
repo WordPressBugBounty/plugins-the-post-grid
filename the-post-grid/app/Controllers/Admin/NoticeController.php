@@ -37,7 +37,7 @@ class NoticeController {
 		add_action( 'admin_init', [ __CLASS__, 'rttpg_notice' ] );
 
 		//Eid Special Deal
-		new EidSpecial();
+//		new EidSpecial();
 		new SummerSale();
 	}
 

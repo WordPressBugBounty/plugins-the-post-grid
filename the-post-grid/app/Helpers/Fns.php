@@ -4114,25 +4114,24 @@ class Fns {
 		return $all_taxonomies;
 	}
 
-    public static function get_all_taxonomy_guten() {
-	    $post_types     = self::get_post_types();
-	    $taxonomies     = get_taxonomies( [], 'objects' );
-	    $all_taxonomies = [];
+	public static function get_all_taxonomy_guten() {
+		$post_types     = self::get_post_types();
+		$taxonomies     = get_taxonomies( [], 'objects' );
+		$all_taxonomies = [];
 
-	    foreach ( $taxonomies as $taxonomy => $object ) {
-		    if (
-			    ! isset( $object->object_type ) ||
-			    empty( array_intersect( (array) $object->object_type, array_keys( $post_types ) ) ) ||
-			    in_array( $taxonomy, self::get_excluded_taxonomy(), true )
-		    ) {
-			    continue;
-		    }
-		    $all_taxonomies[ $taxonomy ] = self::tpg_get_categories_by_id( $taxonomy );
-	    }
+		foreach ( $taxonomies as $taxonomy => $object ) {
+			if (
+				! isset( $object->object_type ) ||
+				empty( array_intersect( (array) $object->object_type, array_keys( $post_types ) ) ) ||
+				in_array( $taxonomy, self::get_excluded_taxonomy(), true )
+			) {
+				continue;
+			}
+			$all_taxonomies[ $taxonomy ] = self::tpg_get_categories_by_id( $taxonomy );
+		}
 
 		return $all_taxonomies;
 	}
-
 
 	/**
 	 * Get all image sizes.
@@ -5157,6 +5156,36 @@ class Fns {
 		}
 
 		return $taxonomy_list;
+	}
+
+	/**
+     * Get plugin install button
+     *
+     * @param $slug
+     */
+
+	public static function get_plugin_install_button( $slug ) {
+		$plugin_file = $slug . '/' . $slug . '.php';
+		$plugin_path = WP_PLUGIN_DIR . '/' . $plugin_file;
+
+		if ( is_plugin_active( $plugin_file ) ) {
+			$label = 'Activated';
+			$class = 'success-class';
+		} elseif ( file_exists( $plugin_path ) ) {
+			$label = 'Activate Now';
+			$class = 'not-activated';
+		} else {
+			$label = 'Install Now';
+			$class = 'install-plugins';
+		}
+		?>
+        <a data-slug="<?php echo esc_attr( $slug ); ?>"
+           href="https://wordpress.org/plugins/<?php echo esc_attr( $slug ); ?>/"
+           target="_blank"
+           class="rt-admin-btn <?php echo esc_attr( $class ) ?>">
+			<?php echo esc_html( $label ) ?>
+        </a>
+		<?php
 	}
 
 }

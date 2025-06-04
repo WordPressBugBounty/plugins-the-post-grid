@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-20 10:55+0000\n"
+"POT-Creation-Date: 2025-06-04 09:48+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -224,90 +224,90 @@ msgstr ""
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4150
+#: ../app/Helpers/Fns.php:4149
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4175, ../app/Widgets/elementor/rtTPGElementorHelper.php:2916, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:4174, ../app/Widgets/elementor/rtTPGElementorHelper.php:2916, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4603
+#: ../app/Helpers/Fns.php:4602
 msgid "Dashboard"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4604
+#: ../app/Helpers/Fns.php:4603
 msgid "My Post"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4854
+#: ../app/Helpers/Fns.php:4853
 msgid "You are not authorize to submit a post."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4852
+#: ../app/Helpers/Fns.php:4851
 msgid "Post submit fail."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4850
+#: ../app/Helpers/Fns.php:4849
 msgid "Post submit successful"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5014, ../app/Helpers/Fns.php:5074
+#: ../app/Helpers/Fns.php:5013, ../app/Helpers/Fns.php:5073
 msgctxt "Thousand Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5015
+#: ../app/Helpers/Fns.php:5014
 msgctxt "Million Shorthand"
 msgid "M"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5016
+#: ../app/Helpers/Fns.php:5015
 msgctxt "Billion Shorthand"
 msgid "B"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5017
+#: ../app/Helpers/Fns.php:5016
 msgctxt "Trillion Shorthand"
 msgid "T"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5018
+#: ../app/Helpers/Fns.php:5017
 msgctxt "Quadrillion Shorthand"
 msgid "Qa"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5019
+#: ../app/Helpers/Fns.php:5018
 msgctxt "Quintillion Shorthand"
 msgid "Qi"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5075
+#: ../app/Helpers/Fns.php:5074
 msgctxt "Thousands Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5076
+#: ../app/Helpers/Fns.php:5075
 msgctxt "Lac Shorthand"
 msgid " Lac"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5077
+#: ../app/Helpers/Fns.php:5076
 msgctxt "Lacs Shorthand"
 msgid " Lacs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5078
+#: ../app/Helpers/Fns.php:5077
 msgctxt "Cr Shorthand"
 msgid " Cr"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5079
+#: ../app/Helpers/Fns.php:5078
 msgctxt "Crs Shorthand"
 msgid " Crs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5151, ../app/Widgets/elementor/rtTPGElementorHelper.php:308, ../app/Widgets/elementor/rtTPGElementorHelper.php:461, ../app/Widgets/elementor/rtTPGElementorHelper.php:3412, ../app/Widgets/elementor/widgets/news-ticker.php:594
+#: ../app/Helpers/Fns.php:5150, ../app/Widgets/elementor/rtTPGElementorHelper.php:308, ../app/Widgets/elementor/rtTPGElementorHelper.php:461, ../app/Widgets/elementor/rtTPGElementorHelper.php:3412, ../app/Widgets/elementor/widgets/news-ticker.php:594
 msgid "Date"
 msgstr ""
 
@@ -1739,7 +1739,7 @@ msgstr ""
 msgid "Layout Settings"
 msgstr ""
 
-#: ../app/Controllers/Admin/MetaController.php:289, ../app/Controllers/Admin/SettingsController.php:194, ../app/Controllers/Admin/SettingsController.php:195
+#: ../app/Controllers/Admin/MetaController.php:289, ../app/Controllers/Admin/SettingsController.php:197, ../app/Controllers/Admin/SettingsController.php:198
 msgid "Settings"
 msgstr ""
 
@@ -1799,20 +1799,24 @@ msgstr ""
 msgid "No Post Grids found in Trash"
 msgstr ""
 
-#: ../app/Controllers/Admin/SettingsController.php:110
+#: ../app/Controllers/Admin/SettingsController.php:112
 msgid "Pro field alert!"
 msgstr ""
 
-#: ../app/Controllers/Admin/SettingsController.php:111
+#: ../app/Controllers/Admin/SettingsController.php:113
 msgid "Sorry! this is a Pro field. To use this field, you need to use Pro plugin."
 msgstr ""
 
-#: ../app/Controllers/Admin/SettingsController.php:112
+#: ../app/Controllers/Admin/SettingsController.php:114
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: ../app/Controllers/Admin/SettingsController.php:203, ../app/Controllers/Admin/SettingsController.php:204
+#: ../app/Controllers/Admin/SettingsController.php:206, ../app/Controllers/Admin/SettingsController.php:207
 msgid "Get Help"
+msgstr ""
+
+#: ../app/Controllers/Admin/SettingsController.php:226, ../app/Controllers/Admin/SettingsController.php:227
+msgid "Our Plugins"
 msgstr ""
 
 #: ../app/Controllers/Admin/UpgradeController.php:63

@@ -27,6 +27,7 @@ use RT\ThePostGrid\Controllers\ShortcodeController;
 use RT\ThePostGrid\Controllers\PageTemplateController;
 use RT\ThePostGrid\Controllers\Hooks\FilterHooks;
 use RT\ThePostGrid\Controllers\Hooks\ActionHooks;
+use RT\ThePostGrid\Controllers\Hooks\InstallPlugins;
 use RT\ThePostGrid\Controllers\WidgetController;
 use RT\ThePostGrid\Helpers\Install;
 use RT\ThePostGrid\Controllers\Admin\UpgradeController;
@@ -137,6 +138,7 @@ if ( ! class_exists( RtTpg::class ) ) {
 
 			FilterHooks::init();
 			ActionHooks::init();
+			InstallPlugins::init();
 
 			( new SettingsController() )->init();
 
