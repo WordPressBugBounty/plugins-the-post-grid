@@ -278,20 +278,20 @@ class Options {
 		return $other_settings;
 	}
 
-	public static function rtTPGAiIntegrationSettings(  ) {
-		$settings = get_option( rtTPG()->options['settings'] );
+	public static function rtTPGAiIntegrationSettings() {
+		$settings       = get_option( rtTPG()->options['settings'] );
 		$other_settings = [
 
 			'ai_type' => [
-				'type'  => 'select',
-				'name'  => 'chatgpt_status',
-				'label' => esc_html__( 'Select AI Tool', 'the-post-grid' ),
+				'type'    => 'select',
+				'name'    => 'chatgpt_status',
+				'label'   => esc_html__( 'Select AI Tool', 'the-post-grid' ),
 				'options' => [
-					'' => esc_html__( 'Select One', 'the-post-grid' ),
+					''        => esc_html__( 'Select One', 'the-post-grid' ),
 					'chatgpt' => esc_html__( 'ChatGPT', 'the-post-grid' ),
 					'gemini'  => esc_html__( 'Gemini', 'the-post-grid' ),
 				],
-				'value' => isset( $settings['ai_type'] ) ? $settings['ai_type'] : 'chatgpt',
+				'value'   => isset( $settings['ai_type'] ) ? $settings['ai_type'] : 'chatgpt',
 			],
 
 		];
@@ -360,6 +360,7 @@ class Options {
 
 		return $other_settings;
 	}
+
 	public static function rtTPGGeminiSettings() {
 		$settings = get_option( rtTPG()->options['settings'] );
 
@@ -390,8 +391,8 @@ class Options {
 				'class'       => 'select2',
 				'description' => __( 'Choose Gemini model. Default: Gemini 2.0 Flash', 'the-post-grid' ),
 				'options'     => [
-					'gemini-2.0-flash'    => 'Gemini 2.0 Flash',
-					'gemini-2.0-flash-lite'            => 'Gemini 2.0 Flash-Lite',
+					'gemini-2.0-flash'      => 'Gemini 2.0 Flash',
+					'gemini-2.0-flash-lite' => 'Gemini 2.0 Flash-Lite',
 				],
 				'value'       => isset( $settings['gemini_model'] ) ? $settings['gemini_model'] : 'gemini-2.0-flash',
 			],
@@ -509,6 +510,7 @@ class Options {
 				'options'     => [
 					'default'   => esc_html__( 'Default (Shortcode add Elementor / Gutenberg)', 'the-post-grid' ),
 					'elementor' => esc_html__( 'Elementor / Gutenberg', 'the-post-grid' ),
+					'divi'      => esc_html__( 'Divi Builder', 'the-post-grid' ),
 					'shortcode' => esc_html__( 'Shortcode Only', 'the-post-grid' ),
 				],
 				'description' => esc_html__( 'Please choose which type of block you want to use. If you select Default then all styles and scripts will load on your site. But if you use one then just this style and script will load on your site.', 'the-post-grid' ),
@@ -549,7 +551,7 @@ class Options {
 					'flaticon'    => esc_html__( 'Flat icon', 'the-post-grid' ),
 				],
 				'description' => esc_html__( 'You can change icon font from here', 'the-post-grid' ),
-				'value'       => isset( $settings['tpg_icon_font'] ) ? $settings['tpg_icon_font'] : 'fontawesome',
+				'value'       => isset( $settings['tpg_icon_font'] ) ? $settings['tpg_icon_font'] : 'flaticon',
 			],
 
 			'tpg_pagination_range' => [

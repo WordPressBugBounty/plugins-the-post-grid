@@ -1585,14 +1585,14 @@ body .rt-tpg-container .swiper-navigation .slider-btn {
     position: static;
 }
 
-.tpg-block-type-elementor-or-shortcode .notice-for-warning {
+.tpg-block-type-el-or-divi .notice-for-warning {
     background: #db1f31;
     color: #fff;
     border: none;
     border-radius: 10px;
 }
 
-.tpg-block-type-elementor-or-shortcode .notice-for-warning p {
+.tpg-block-type-el-or-divi .notice-for-warning p {
     font-size: 20px;
 }
 

@@ -1,10 +1,10 @@
-=== The Post Grid – Shortcode, Gutenberg Blocks and Elementor Addon for Post Grid ===
+=== The Post Grid – Shortcode, Gutenberg Blocks, Divi Modules and Elementor Addon for Post Grid ===
 Contributors: techlabpro1
 Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 6.8
-Stable tag: 7.7.22
+Stable tag: 7.8.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -257,6 +257,11 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.8.0 (Jun 18, 2025) =
+* Added: Three new widgets with nine layouts for the Divi Builder.
+* Fixed: Gutenberg block not working in the archive page builder for block themes.
+* Fixed: Polygon language conflict issue.
 
 = 7.7.22 (Jun 4, 2025) =
 Added: Add a new admin page for all plugins showcase

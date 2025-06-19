@@ -6,6 +6,7 @@
  */
 
 namespace RT\ThePostGrid\Controllers\Admin;
+
 use RT\ThePostGrid\Controllers\Admin\Notice\EidSpecial;
 use RT\ThePostGrid\Controllers\Admin\Notice\SummerSale;
 
@@ -37,7 +38,7 @@ class NoticeController {
 		add_action( 'admin_init', [ __CLASS__, 'rttpg_notice' ] );
 
 		//Eid Special Deal
-//		new EidSpecial();
+		//new EidSpecial();
 		new SummerSale();
 	}
 
@@ -54,20 +55,23 @@ class NoticeController {
 				$screen   = get_current_screen();
 
 				if ( isset( $settings['tpg_block_type'] ) ) {
-					if ( in_array(
-						     $screen->id,
-						     [
-							     'edit-rttpg',
-							     'rttpg',
-						     ],
-						     true
-					     ) && 'elementor' === $settings['tpg_block_type'] ) { ?>
+					if (
+						in_array( $screen->id, [ 'edit-rttpg', 'rttpg', ], true ) &&
+						in_array( $settings['tpg_block_type'], [ 'elementor', 'divi' ] )
+					) { ?>
                         <div class="notice notice-for-warning">
                             <p>
 								<?php
+								$block_type      = $settings['tpg_block_type'] == 'elementor' ? esc_html__( "Elementor and Gutenberg", "the-post-grid" ) : $settings['tpg_block_type'];
+								$selected_method = ucfirst( $block_type );
+
 								echo sprintf(
 									'%1$s<a style="color: #fff;" href="%2$s">%3$s</a>',
-									esc_html__( 'You have selected only Elementor method. To use Shortcode Generator please enable shortcode or default from ', 'the-post-grid' ),
+									sprintf(
+									/* translators: %s: Selected method (e.g., Elementor method) */
+										esc_html__( 'You have selected "%s" as the resource load type. To use the Shortcode Generator, please enable either "Shortcode" or "Default" from here ', 'the-post-grid' ),
+										$selected_method
+									),
 									esc_url( admin_url( 'edit.php?post_type=rttpg&page=rttpg_settings' ) ),
 									esc_html__( 'Settings => Common Settings => Resource Load Type', 'the-post-grid' )
 								);

@@ -152,9 +152,11 @@ class TPGSliderLayout extends Custom_Widget_Base {
 		$data    = $this->get_settings();
 		$_prefix = $this->prefix;
 		if ( ! rtTPG()->hasPro() ) { ?>
-            <h3 style="text-align: center"><?php echo esc_html__( 'Please upgrade to pro for slider layout!', 'the-post-grid' ); ?></h3>
 			<?php
-			return;
+			return sprintf(
+				'<h3 style="text-align: center">%s</h3>',
+				esc_html__( 'Please upgrade to pro for slider layout!', 'the-post-grid' )
+			);
 		}
 
 		if ( rtTPG()->hasPro() && ( 'popup' == $data['post_link_type'] || 'multi_popup' == $data['post_link_type'] ) ) {

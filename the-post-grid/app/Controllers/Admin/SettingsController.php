@@ -60,6 +60,16 @@ class SettingsController {
 			echo '}';
 			echo '</style>';
 		}
+
+		?>
+		<style>
+            #adminmenu .wp-submenu li a[href="edit.php?post_type=rttpg&page=rttpg_our_plugins"] {
+                color: #32d716 !important;
+                font-weight: bold !important;
+            }
+		</style>
+		<?php
+
 	}
 
 	/**

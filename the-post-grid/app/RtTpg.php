@@ -31,6 +31,7 @@ use RT\ThePostGrid\Controllers\Hooks\InstallPlugins;
 use RT\ThePostGrid\Controllers\WidgetController;
 use RT\ThePostGrid\Helpers\Install;
 use RT\ThePostGrid\Controllers\Admin\UpgradeController;
+use RT\ThePostGrid\Controllers\DiviController;
 
 if ( ! class_exists( RtTpg::class ) ) {
 	/**
@@ -129,9 +130,6 @@ if ( ! class_exists( RtTpg::class ) ) {
 				new MetaController();
 			}
 
-			if ( ! isset( $settings['tpg_block_type'] ) || in_array( $settings['tpg_block_type'], [ 'default', 'shortcode' ], true ) ) {
-				new ShortcodeController();
-			}
 			new GutenBergController();
 
 			new RestApi();
@@ -142,9 +140,20 @@ if ( ! class_exists( RtTpg::class ) ) {
 
 			( new SettingsController() )->init();
 
-			if ( ! isset( $settings['tpg_block_type'] ) || in_array( $settings['tpg_block_type'], [ 'default', 'elementor' ], true ) ) {
+			//Load Shortcode.
+			if ( ! isset( $settings['tpg_block_type'] ) || in_array( $settings['tpg_block_type'], [ 'default', 'shortcode' ] ) ) {
+				new ShortcodeController();
+			}
+
+			//Load Gutenberg and And Elementor.
+			if ( isset( $settings['tpg_block_type'] ) && in_array( $settings['tpg_block_type'], [ 'default', 'elementor' ] ) ) {
 				new ElementorController();
 				new BlocksController();
+			}
+
+			//Load Divi.
+			if ( isset( $settings['tpg_block_type'] ) && in_array( $settings['tpg_block_type'], [ 'default', 'divi' ] ) ) {
+				new DiviController();
 			}
 
 			$this->load_hooks();

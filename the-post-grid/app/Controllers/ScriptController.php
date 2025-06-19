@@ -8,6 +8,7 @@
 namespace RT\ThePostGrid\Controllers;
 
 // Do not allow directly accessing this file.
+use RT\ThePostGrid\Helpers\DiviFns;
 use RT\ThePostGrid\Helpers\Fns;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -142,7 +143,7 @@ class ScriptController {
 				wp_enqueue_style( 'rt-tpg' );
 			}
 
-			if ( 'elementor' === $block_type ) {
+			if ( in_array( $block_type, [ 'elementor', 'divi' ] ) ) {
 				wp_enqueue_style( 'rt-tpg-block' );
 			}
 
@@ -197,7 +198,7 @@ class ScriptController {
 		$settings = get_option( rtTPG()->options['settings'] );
 
 		$this->admin_frontend_script();
-		if ( isset( $settings['tpg_load_script'] ) ) :
+		if ( isset( $settings['tpg_load_script'] ) && ! DiviFns::is_divi_builder_preview() ) :
 			?>
             <style>
                 .rt-container-fluid {

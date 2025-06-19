@@ -19,6 +19,7 @@ class TPGListLayout extends Custom_Widget_Base {
 
 	/**
 	 * GridLayout constructor.
+	 * GridLayout constructor.
 	 *
 	 * @param array $data
 	 * @param null $args

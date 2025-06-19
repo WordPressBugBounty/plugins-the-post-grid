@@ -195,7 +195,8 @@ class rtTPGElementorQuery {
 					$tempArgs['post__not_in'] = $offset_posts; //phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 				}
 
-				$tempQ = new \WP_Query( $tempArgs );
+				$tempQ = new \WP_Query( apply_filters( 'tpg_sc_temp_query_args', $tempArgs ) );
+
 				if ( ! empty( $tempQ->posts ) ) {
 					$_post_per_page = ( 'show' == $data['show_pagination'] && $data['display_per_page'] ) ? $data['display_per_page'] : $data['post_limit'];
 					if ( $data['post_limit'] > 0 ) {
@@ -276,7 +277,7 @@ class rtTPGElementorQuery {
 			$args['posts_per_page'] = intval( $slider_per_page );
 		}
 
-		return $args;
+		return apply_filters( 'tpg_sc_query_args', $args );
 	}
 
 	/**
