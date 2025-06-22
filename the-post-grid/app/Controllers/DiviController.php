@@ -60,8 +60,7 @@ if (!class_exists('DiviController')) :
                 ListLayout::class,
             ];
 
-
-            if (version_compare(RT_TPG_PRO_VERSION, '7.8.0', '>')) {
+            if (defined('RT_TPG_PRO_VERSION') && version_compare(RT_TPG_PRO_VERSION, '7.8.0', '>')) {
                 $modules = apply_filters('rttpg_divi_modules', $modules);
             }
 
