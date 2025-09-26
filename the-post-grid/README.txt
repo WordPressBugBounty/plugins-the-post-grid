@@ -1,10 +1,10 @@
-=== The Post Grid – Shortcode, Gutenberg Blocks, Divi Modules and Elementor Addon for Post Grid ===
+=== The Post Grid – Shortcode, Gutenberg Blocks and Elementor Addon for Post Grid ===
 Contributors: techlabpro1
 Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 6.8
-Stable tag: 7.8.4
+Stable tag: 7.8.5
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -25,19 +25,21 @@ Port Grid is the leading WordPress Post Grid Plugin for creating News, Magazine,
 
 With this best post grid plugin, you can create and display your posts in grid, list, and isotope views. The best part is that it exempts you from the need of any coding expertise. It has pre-made layouts that you can work with easily. The Post Grid makes it easy to generate grids from the admin end and insert them into any page or post.
 
+[youtube https://www.youtube.com/watch?v=PLeKWXbEok0]
+
 == 🏆 Unlimited Shortcode Generator ==
 Since the Post Grid plugin is equipped with a shortcode generator, you can use any page builder easily. The plugin facilitates the generation of unlimited shortcodes and their application on any page or post.
 
 👉 [Shortcode Demo](https://www.radiustheme.com/demo/plugins/the-post-grid/)
 
-[youtube https://www.youtube.com/watch?v=_xZBDU4kgKk]
+[youtube https://www.youtube.com/watch?v=OopvaDA_woA]
 
 == 🏆 Post Grid Elementor Addon ==
 Elementor Page Builder was the most popular page builder with over 7 million active users! With this plugin, you get to combine the best post grid plugin with the best page builder. The Elementor Addon only makes it an even smoother user experience.
 
 👉 [Elementor Demo](https://www.radiustheme.com/demo/plugins/the-post-grid-elementor/)
 
-[youtube https://www.youtube.com/watch?v=Px7c91A0W5Y]
+[youtube https://www.youtube.com/watch?v=6rb70U9KciI]
 
 == 🏆 Gutenberg Post Grid Blocks ==
 Gutenberg post grid blocks has multiple blocks like grid, list, grid hover, grid filer and slider blocks to display posts is different layouts. There are total 4 Gutenberg blocks inclide Grid Layout it has 9 additional layout variations, List Layout it is 7 layout variations, grid hover layout has 16 layout variations and slider layout has 13 layout variations. All grid, list and Grid hover layouts can turn into grid filder layouts.
@@ -48,7 +50,14 @@ Gutenberg post grid blocks has multiple blocks like grid, list, grid hover, grid
 
 == Gutenberg Block Section and Layout Import ==
 
-[youtube https://www.youtube.com/watch?v=d5Ldh9qg-fk]
+[youtube https://www.youtube.com/watch?v=viGzB5oAloc]
+
+== 🏆 Post Grid Divi ==
+Divi Builder is one of the most popular page builders with millions of users worldwide! With The Post Grid plugin, you can combine its powerful grid features with the flexibility of Divi Builder. Our Divi Addon ensures an even smoother, more intuitive user experience when displaying your posts.
+
+👉 [Divi Demo](https://www.radiustheme.com/demo/plugins/the-post-grid-elementor/)
+
+[youtube https://www.youtube.com/watch?v=BRyPtfKxwp0]
 
 == REVIEW FROM WORDPRESS COMMUNITY EXPERT Mak ==
 
@@ -136,19 +145,21 @@ With the Post Grid PRO, you get to use the Single Page Builder, which is based o
 == 🏆 Gutenberg Blocks with Archive and Single Page Builder ==
 The premium version of this plugin, the Post Grid PRO comes with Gutenberg Blocks to enable quite a few extra features. You get 4 widgets, including the Grid Hover Layout, Grid Layout, Slider Layout, and List Layout. Apart from this, you also get a total of 20 layouts.
 
-== 🏆 Chat GPT Integration ==
-Post Grid is now integrated with ChatGPT in the Gutenberg editor. This allows you to easily generate content and change the format as needed.
+== 🏆 AI Integration (ChatGPT, Gemini) ==
+Post Grid is now integrated with ChatGPT and Gemini in the Gutenberg editor. This allows you to easily generate content and change the format as needed.
 
+[youtube https://www.youtube.com/watch?v=Sa-8-ljRZZo]
 👉 [Documentation](https://www.radiustheme.com/docs/the-post-grid/chat-cpt-integration/)
 
 == 🏆 Front End Submission [Pro]: ==
 We have added the option for a front-end dashboard, which includes user login and registration functionality, along with front-end post submission and management. This allows registered users to submit and manage their posts directly from the front end.
 
+[youtube https://www.youtube.com/watch?v=OGMBnxA5_zg]
 👉 [Documentation](https://www.radiustheme.com/docs/the-post-grid/front-end-submission/)
 
 == 🏆 Pre-made Sections and Layouts [Pro]: ==
 The Post Grid offers over 90 pre-made sections for Elementor and Gutenberg, along with more than 10 pre-made page designs. Users can easily import these pre-made sections and layouts to quickly build their websites.
-
+[youtube https://www.youtube.com/watch?v=ogUfyOuE_zI]
 
 👉 [Get The PRO](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/)
 👉 [PRO Version Demo](https://www.radiustheme.com/demo/plugins/the-post-grid/)
@@ -257,6 +268,11 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.8.5 (Sep 26, 2025) =
+* Updated: All readme video updated
+* Fixed: Gutenberg block primary and secondary color issue
+* Fixed: Gutenberg pagination notice wrong
 
 = 7.8.4 (Sep 2, 2025) =
 * Fixed: SVG icon conflict issue.

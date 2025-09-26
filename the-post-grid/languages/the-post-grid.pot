@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-02 05:23+0000\n"
+"POT-Creation-Date: 2025-09-26 10:17+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -300,95 +300,95 @@ msgstr ""
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4214
+#: ../app/Helpers/Fns.php:4230
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4239, ../app/Widgets/elementor/rtTPGElementorHelper.php:2949, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:4255, ../app/Widgets/elementor/rtTPGElementorHelper.php:2949, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4667
+#: ../app/Helpers/Fns.php:4683
 msgid "Dashboard"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4668
+#: ../app/Helpers/Fns.php:4684
 msgid "My Post"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4918
+#: ../app/Helpers/Fns.php:4934
 msgid "You are not authorize to submit a post."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4916
+#: ../app/Helpers/Fns.php:4932
 msgid "Post submit fail."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4914
+#: ../app/Helpers/Fns.php:4930
 msgid "Post submit successful"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5078, ../app/Helpers/Fns.php:5138
+#: ../app/Helpers/Fns.php:5094, ../app/Helpers/Fns.php:5154
 msgctxt "Thousand Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5079
+#: ../app/Helpers/Fns.php:5095
 msgctxt "Million Shorthand"
 msgid "M"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5080
+#: ../app/Helpers/Fns.php:5096
 msgctxt "Billion Shorthand"
 msgid "B"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5081
+#: ../app/Helpers/Fns.php:5097
 msgctxt "Trillion Shorthand"
 msgid "T"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5082
+#: ../app/Helpers/Fns.php:5098
 msgctxt "Quadrillion Shorthand"
 msgid "Qa"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5083
+#: ../app/Helpers/Fns.php:5099
 msgctxt "Quintillion Shorthand"
 msgid "Qi"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5139
+#: ../app/Helpers/Fns.php:5155
 msgctxt "Thousands Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5140
+#: ../app/Helpers/Fns.php:5156
 msgctxt "Lac Shorthand"
 msgid " Lac"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5141
+#: ../app/Helpers/Fns.php:5157
 msgctxt "Lacs Shorthand"
 msgid " Lacs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5142
+#: ../app/Helpers/Fns.php:5158
 msgctxt "Cr Shorthand"
 msgid " Cr"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5143
+#: ../app/Helpers/Fns.php:5159
 msgctxt "Crs Shorthand"
 msgid " Crs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5215, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:309, ../app/Widgets/elementor/rtTPGElementorHelper.php:450, ../app/Widgets/elementor/rtTPGElementorHelper.php:3441, ../app/Widgets/elementor/widgets/news-ticker.php:594
+#: ../app/Helpers/Fns.php:5231, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:309, ../app/Widgets/elementor/rtTPGElementorHelper.php:450, ../app/Widgets/elementor/rtTPGElementorHelper.php:3441, ../app/Widgets/elementor/widgets/news-ticker.php:594
 msgid "Date"
 msgstr ""
 
 #. translators: %1$s: opening anchor tag, %2$s: closing anchor tag, %3$s: additional message
-#: ../app/Helpers/Fns.php:5240
+#: ../app/Helpers/Fns.php:5256
 msgid "Please upgrade to pro for more options %s"
 msgstr ""
 

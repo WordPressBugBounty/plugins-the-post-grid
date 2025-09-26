@@ -2143,6 +2143,11 @@ class Fns {
 					'strong' => [],
 					'b'      => [],
 					'br'     => [ [] ],
+					'iframe' => [
+						'src'    => [],
+						'height' => [],
+						'width'  => [],
+					]
 				];
 
 				$excerpt = nl2br( wp_kses( $excerpt, $allowed_html ) );
@@ -3813,35 +3818,7 @@ class Fns {
 		}
 	}
 
-	/**
-	 * Get post thumbnail html
-	 *
-	 * @param         $pID
-	 * @param         $data
-	 * @param         $link_start
-	 * @param         $link_end
-	 * @param false $offset_size
-	 */
-	public static function get_post_thumbnail( $pID, $data, $link_start, $link_end, $offset_size = false ) {
-		$thumb_cat_condition = ( ! ( 'above_title' === $data['category_position'] || 'default' === $data['category_position'] ) );
-
-		if ( 'grid-layout4' === $data['layout'] && 'default' === $data['category_position'] ) {
-			$thumb_cat_condition = true;
-		} elseif ( in_array(
-			           $data['layout'],
-			           [
-				           'grid-layout4',
-				           'grid_hover-layout11',
-				           'slider-layout3',
-			           ]
-		           ) && 'default' === $data['category_position'] ) {
-			$thumb_cat_condition = true;
-		}
-
-		if ( rtTPG()->hasPro() && in_array( $data['show_category'], [ 'show', 'on' ] ) && $thumb_cat_condition && 'with_meta' !== $data['category_position'] ) {
-			self::get_el_thumb_cat( $data );
-		}
-
+	public static function tpg_post_image( $pID, $data, $link_start, $link_end, $offset_size ) {
 		$img_link     = get_the_post_thumbnail_url( $pID, 'full' );
 		$img_size_key = 'image_size';
 
@@ -3961,6 +3938,45 @@ class Fns {
 		<?php endif; ?>
         <div class="overlay grid-hover-content"></div>
 		<?php
+	}
+
+	/**
+	 * Get post thumbnail html
+	 *
+	 * @param         $pID
+	 * @param         $data
+	 * @param         $link_start
+	 * @param         $link_end
+	 * @param false $offset_size
+	 */
+	public static function get_post_thumbnail( $pID, $data, $link_start, $link_end, $offset_size = false ) {
+		$thumb_cat_condition = ( ! ( 'above_title' === $data['category_position'] || 'default' === $data['category_position'] ) );
+
+		if ( 'grid-layout4' === $data['layout'] && 'default' === $data['category_position'] ) {
+			$thumb_cat_condition = true;
+		} elseif ( in_array(
+			           $data['layout'],
+			           [
+				           'grid-layout4',
+				           'grid_hover-layout11',
+				           'slider-layout3',
+			           ]
+		           ) && 'default' === $data['category_position'] ) {
+			$thumb_cat_condition = true;
+		}
+
+		if ( rtTPG()->hasPro() && in_array( $data['show_category'], [ 'show', 'on' ] ) && $thumb_cat_condition && 'with_meta' !== $data['category_position'] ) {
+			self::get_el_thumb_cat( $data );
+		}
+
+		$video_url = get_post_meta( $pID, '_tpg_video_url', true );
+
+		if ( $video_url && rtTPG()->hasPro() ) {
+            echo do_shortcode( '[tpg_video_thumbnail]' );
+		} else {
+			self::tpg_post_image( $pID, $data, $link_start, $link_end, $offset_size );
+		}
+
 	}
 
 	/**
