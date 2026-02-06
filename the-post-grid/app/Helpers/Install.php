@@ -18,9 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Install {
 
 	public static function activate() {
+		self::rttpg_activation_time();
 		self::insertDefaultData();
 		self::create_cron_jobs();
 		add_option( 'rttpg_activation_redirect', true );
+	}
+
+	public static function rttpg_activation_time() {
+		$get_activation_time = strtotime( 'now' );
+		add_option( 'rttpg_plugin_activation_time', $get_activation_time );
 	}
 
 	public static function deactivate() {

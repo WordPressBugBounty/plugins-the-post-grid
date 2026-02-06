@@ -228,8 +228,8 @@
     $(".rttpg-wrapper .rt-tab-nav li").on('click', 'a', function (e) {
         e.preventDefault();
         var container = $(this).parents('.rt-tab-container'),
-            nav = container.children('.rt-tab-nav'),
-            content = container.children(".rt-tab-content"),
+            nav = container.find('.rt-tab-nav'),
+            content = container.find(".rt-tab-content"),
             $this = $(this),
             $id = $this.attr('href'),
             _target = $id.replace('#', '');
@@ -764,7 +764,7 @@
             data = data + "&rttpg_nonce=" + rttpg.nonce;
         }
 
-        data += "&uid="+rttpg.uid;
+        data += "&uid=" + rttpg.uid;
 
         $.ajax({
             type: "post",
@@ -819,11 +819,11 @@
         tpgAjaxCall(bindElement, 'rtTPGSettings', arg, function (data) {
             if (data.error) {
                 $('.rt-response').addClass('error');
-                $('.rt-response').show('slow').text(data.msg);
+                $('.rt-response').text(data.msg).fadeIn();
             } else {
                 $('.rt-response').addClass('updated');
                 $('.rt-response').removeClass('error');
-                $('.rt-response').show('slow').text(data.msg);
+                $('.rt-response').text(data.msg).fadeIn();
                 var holder = $("#license_key_holder");
                 if (!$(".license-status", holder).length && $("#license_key", holder).val()) {
                     var bindElement = $("#license_key", holder),
@@ -882,9 +882,10 @@
         });
     }
 
+
     function tpgInstallPlugion() {
 
-        $('.rt-plugin-item .install-plugins').on('click', function(e) {
+        $('.rt-plugin-item .install-plugins').on('click', function (e) {
             e.preventDefault();
 
             var $btn = $(this);
@@ -897,7 +898,7 @@
                 action: 'install_plugin',
                 slug: slug,
                 rttpg_nonce: rttpg.nonce,
-            }, function(response) {
+            }, function (response) {
                 if (response.success) {
                     $btn.text('Activating...');
                     $btn.addClass('activating');
@@ -906,12 +907,12 @@
                         action: 'activate_plugin',
                         plugin: response.data.plugin,
                         rttpg_nonce: rttpg.nonce,
-                    }, function(activateResponse) {
+                    }, function (activateResponse) {
                         if (activateResponse.success) {
                             console.log({activateResponse})
                             $btn.text('Activated')
-                            .removeClass('activating')
-                            .addClass('success-class');
+                                .removeClass('activating')
+                                .addClass('success-class');
                         } else {
                             alert(activateResponse.data.message || 'Activation failed.');
                             $btn.text('Activate');
@@ -927,7 +928,7 @@
 
 
         // Only activate plugin if it's already installed
-        $('.rt-plugin-item .not-activated').on('click', function(e) {
+        $('.rt-plugin-item .not-activated').on('click', function (e) {
             e.preventDefault();
 
             var $btn = $(this);
@@ -940,11 +941,11 @@
                 action: 'activate_plugin',
                 plugin: pluginFile,
                 rttpg_nonce: rttpg.nonce,
-            }, function(response) {
+            }, function (response) {
                 if (response.success) {
                     $btn.text('Activated')
-                    .removeClass('not-activated')
-                    .addClass('success-class');
+                        .removeClass('not-activated')
+                        .addClass('success-class');
                 } else {
                     alert(response.data.message || 'Activation failed.');
                     $btn.text('Activate').prop('disabled', false);
