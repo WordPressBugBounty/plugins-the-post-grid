@@ -1081,7 +1081,7 @@ class Options {
 		$options = [
 			'ignore_sticky_posts' => [
 				'type'        => 'switch',
-				'label'       => esc_html__( 'Show sticky posts at the top', 'the-post-grid' ),
+				'label'       => esc_html__( 'Ignore Sticky Post', 'the-post-grid' ),
 				'holderClass' => 'pro-field',
 				'alignment'   => 'vertical',
 				'default'     => false,
@@ -1178,6 +1178,29 @@ class Options {
 				'value'       => ! empty( $settings['cf_hide_group_title'] ) ? 1 : 0,
 			];
 		}
+
+		return $fields;
+	}
+
+	public static function rtTpgSettingsPostOrderSelection() {
+		$settings = get_option( rtTPG()->options['settings'] );
+
+
+		$fields = [
+			'post_ordering' => [
+				'type'        => 'checkbox',
+				'label'       => esc_html__( 'Enable Post Ordering', 'the-post-grid' ),
+				'description' => __( 'This feature is intended for use when the post count does not exceed 999 items. Drag-and-drop ordering is available only on the first page of the list, so all posts must be displayed on the first page via Screen Options for sorting to work correctly.', 'the-post-grid' ),
+				'id'          => 'post_ordering',
+				'holderClass' => 'pro-field',
+				'alignment'   => 'vertical',
+				'multiple'    => true,
+				'options'     => Fns::get_post_types(), //self::detailAvailableFields(),
+//				'default'     => array_keys( self::detailAvailableFields() ),
+				'value'       => isset( $settings['post_ordering'] ) ? $settings['post_ordering'] : [],
+			],
+		];
+
 
 		return $fields;
 	}

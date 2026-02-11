@@ -43,6 +43,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 									'label' => __( 'PopUp field selection', 'the-post-grid' ),
 									'icon'  => 'popup',
 								],
+                                'post-ordering'            => [
+                                        'label' => __( 'Post Ordering', 'the-post-grid' ),
+                                        'icon'  => 'ordering',
+                                ],
 								'social-share'            => [
 									'label' => __( 'Social Share', 'the-post-grid' ),
 									'icon'  => 'share',
@@ -92,6 +96,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <!-- Popup Fields -->
                         <div id="popup-fields" class="rt-tab-content" <?php echo $last_tab === 'popup-fields' ? 'style="display:block"' : ''; ?>>
 							<?php echo Fns::rtFieldGenerator( Options::rtTpgSettingsDetailFieldSelection() ); ?>
+                        </div>
+
+                        <!-- Post Ordering -->
+                        <div id="post-ordering" class="rt-tab-content" <?php echo $last_tab === 'post-ordering' ? 'style="display:block"' : ''; ?>>
+                            <?php echo Fns::rtFieldGenerator( Options::rtTpgSettingsPostOrderSelection() ); ?>
                         </div>
 
                         <!-- Social Share -->

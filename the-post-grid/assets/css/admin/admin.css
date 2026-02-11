@@ -2386,17 +2386,29 @@ body .ui-datepicker {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    width: 300px;
+    width: 250px;
+    z-index: 99999;
 }
 
 .rttpg_page_rttpg_settings .notice,
 .rttpg_page_rttpg_settings div.updated,
 .rttpg_page_rttpg_settings div.error {
     border: 1px solid #d1dbe8;
-    padding: 10px 14px !important;
+    padding: 15px 30px !important;
     border-radius: 5px;
 }
 
+.rttpg_page_rttpg_settings div.updated {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.rttpg_page_rttpg_settings div.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
 .rttpg_page_rttpg_settings .rttpg-wrapper {
     padding: 0 !important;
     margin: 0;
