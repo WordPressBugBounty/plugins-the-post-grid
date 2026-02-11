@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Display WordPress posts in beautiful grid, list, slider, and filter layouts. Works with Gutenberg, Elementor, Divi, and Shortcodes. No coding required.
 
-== Description ==
+== 📖 Description ==
 
 [The Post Grid](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/)is a powerful WordPress plugin that transforms how you display blog posts, news articles, and custom content. Whether you're building a news portal, magazine website, or personal blog, this plugin provides everything you need to create stunning post layouts that engage visitors and improve content discovery.
 
@@ -22,61 +22,55 @@ With native support for Gutenberg blocks, Elementor widgets, Divi modules, and a
 
 🎯 **Try Admin Demo**: [Click Here](https://radiustheme.net/sandbox/the-post-grid/)
 
-== Why Choose The Post Grid? ==
+== 🌟 Why Choose The Post Grid? ==
 
 **Trusted by 100,000+ WordPress websites**, The Post Grid combines flexibility with simplicity. Display your content exactly how you envision it—without touching a single line of code. The intuitive visual interface lets you configure layouts, select posts, and customize styles in minutes.
 
 ⭐⭐⭐⭐⭐
 [They solved my problem immediately.](https://wordpress.org/support/topic/they-solved-my-problem-immediately/)
 When I had a problem with the plugin and asked for their help, they responded immediately and fixed the problem. The speed with which they responded and fixed the problem gave me confidence in their company.
--athan43
+— ***athan43***
 
 ⭐⭐⭐⭐⭐
 [Great plugin and great support](https://wordpress.org/support/topic/great-plugin-and-great-support-925/)
 I have used this to update a site and replace another grid system. This plugin and good and where I encountered problems the advice was prompt and good.
--bobjgarrett
+— ***bobjgarrett***
 
 
 [youtube https://www.youtube.com/watch?v=PLeKWXbEok0]
 
-== How The Post Grid Works ==
+== ⚙️ How The Post Grid Works ==
 
-**Step 1: Select Your Content**
+**1️⃣ Step 1: Select Your Content**
 Use the built-in query builder to choose which posts to display. Filter by categories, tags, authors, or dates. Include or exclude specific posts with precision.
 
-**Step 2: Choose Your Layout**
+**2️⃣ Step 2: Choose Your Layout**
 Pick from multiple layout styles including grid, list, masonry, hover effects, and sliders. Each layout adapts automatically to your theme and screen sizes.
 
-**Step 3: Customize the Appearance**
+**3️⃣ Step 3: Customize the Appearance**
 Adjust colors, typography, spacing, and element visibility. Control which fields appear—title, excerpt, author, date, categories, and more.
 
-**Step 4: Insert Anywhere**
+**4️⃣ Step 4: Insert Anywhere**
 Add your configured grid to any page, post, or widget area using Gutenberg blocks, Elementor widgets, Divi modules, or simple shortcodes.
 
 [youtube https://www.youtube.com/watch?v=wHWAnfL0VhU]
 
-== Core Features ==
+== 🚀 Core Features ==
 
-**Universal Page Builder Compatibility**
-Works with Gutenberg (WordPress Block Editor), Elementor, Divi Builder, and any page builder that supports shortcodes.
+- **Universal Page Builder Compatibility:** Works with Gutenberg (WordPress Block Editor), Elementor, Divi Builder, and any page builder that supports shortcodes.
 
-**Multiple Layout Types**
-Create grid layouts with even or masonry arrangements, horizontal list views, animated hover effects, and dynamic post sliders.
+- **Multiple Layout Types:** Create grid layouts with even or masonry arrangements, horizontal list views, animated hover effects, and dynamic post sliders.
 
-**Responsive Design**
-Every layout automatically adjusts for desktop, tablet, and mobile screens. Your grids look polished on any device.
+- **Responsive Design:** Every layout automatically adjusts for desktop, tablet, and mobile screens. Your grids look polished on any device.
 
-**Advanced Query Builder**
-Display posts from specific categories, tags, custom post types, or custom taxonomies. Order by date, title, popularity, or random selection.
+- **Advanced Query Builder:** Display posts from specific categories, tags, custom post types, or custom taxonomies. Order by date, title, popularity, or random selection.
 
-**Shortcode Generator**
-Generate unlimited shortcodes for use anywhere on your site. Perfect for sidebars, footers, and custom page builder elements.
+- **Shortcode Generator:** Generate unlimited shortcodes for use anywhere on your site. Perfect for sidebars, footers, and custom page builder elements.
 
-**Performance Optimized**
-Clean, lightweight code ensures fast page loading. Lazy loading support and efficient asset management keep your site speedy.
+- **Performance Optimized:** Clean, lightweight code ensures fast page loading. Lazy loading support and efficient asset management keep your site speedy.
 
 
-== Gutenberg Blocks for Post Grid ==
+== 🌟 Gutenberg Blocks for Post Grid ==
 
 The Post Grid provides dedicated Gutenberg blocks that integrate directly into the WordPress block editor:
 
@@ -88,7 +82,7 @@ The Post Grid provides dedicated Gutenberg blocks that integrate directly into t
 All blocks include live preview editing, letting you see changes instantly without leaving the editor.
 
 
-== Elementor Widgets for Post Grid ==
+== 🌟 Elementor Widgets for Post Grid ==
 
 For Elementor users, The Post Grid delivers 4 powerful widgets:
 
@@ -101,7 +95,7 @@ Each widget includes full Elementor styling controls—adjust typography, colors
 
 [youtube https://www.youtube.com/watch?v=6rb70U9KciI]
 
-== Divi Builder Integration ==
+== 🌟 Divi Builder Integration ==
 
 The Post Grid now includes native Divi Builder modules with full Visual Builder compatibility. Create post grids directly within the Divi interface using:
 
@@ -114,41 +108,35 @@ All modules support Divi's inline editing and design options.
 
 [youtube https://www.youtube.com/watch?v=BRyPtfKxwp0]
 
-== Pro Features Overview ==
+== 💎 Pro Features Overview ==
 
 The Post Grid Pro unlocks advanced capabilities for professional websites:
 
-**AJAX Filtering and Pagination**
-Let visitors filter posts by category or tag without page reloads. Implement smooth AJAX pagination, load more buttons, or infinite scroll.
+- **AJAX Filtering and Pagination:** Let visitors filter posts by category or tag without page reloads. Implement smooth AJAX pagination, load more buttons, or infinite scroll.
 
-**Archive and Single Page Builder**
-Create custom templates for category pages, tag archives, author pages, and individual posts using Elementor or Gutenberg.
+- **Archive and Single Page Builder:** Create custom templates for category pages, tag archives, author pages, and individual posts using Elementor or Gutenberg.
 
-**Custom Post Type Support**
-Display content from any custom post type—portfolios, products, events, testimonials, or any registered CPT.
+- **Custom Post Type Support:** Display content from any custom post type—portfolios, products, events, testimonials, or any registered CPT.
 
-**Front-End Post Submission**
-Enable registered users to submit and manage posts from the front end with built-in login and registration forms.
+- **Front-End Post Submission:** Enable registered users to submit and manage posts from the front end with built-in login and registration forms.
 
-**AI Content Generation**
-Integrated ChatGPT and Gemini support within Gutenberg for generating post content and descriptions.
+- **AI Content Generation:** Integrated ChatGPT and Gemini support within Gutenberg for generating post content and descriptions.
 
-**90+ Pre-made Sections & Layouts**
-Import professionally designed sections and complete page layouts for Elementor and Gutenberg.
+- **90+ Pre-made Sections & Layouts:** Import professionally designed sections and complete page layouts for Elementor and Gutenberg.
 
 👉 [Compare Free vs Pro](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/) | [View Pro Demo](https://www.radiustheme.com/demo/plugins/the-post-grid/)
 
 
-== REVIEW FROM WORDPRESS COMMUNITY EXPERT Mak ==
+== 🎬 REVIEW FROM WORDPRESS COMMUNITY EXPERT Mak ==
 
 [youtube https://www.youtube.com/watch?v=eelP7LkEWD0]
 
-== REVIEW FROM WORDPRESS COMMUNITY EXPERT Mr Web ==
+== 🎬 REVIEW FROM WORDPRESS COMMUNITY EXPERT Mr Web ==
 
 [youtube https://www.youtube.com/watch?v=SCA945URSDY]
 
 
-== Perfect For ==
+== 🎯 Perfect For ==
 
 - **Bloggers** – Showcase recent posts, featured articles, and related content in engaging layouts
 - **News Websites** – Build magazine-style homepages with categorized news sections
@@ -157,7 +145,7 @@ Import professionally designed sections and complete page layouts for Elementor 
 - **Content Publishers** – Organize large content libraries with filterable grids and search
 
 
-== Support and Documentation ==
+== 🛠 Support and Documentation ==
 
 Need help? Access comprehensive resources:
 
@@ -206,7 +194,7 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 3. Activate through the Plugins menu in WordPress
 
 
-== Frequently Asked Questions ==
+== ❓ Frequently Asked Questions ==
 
 = How do I create my first post grid?
 
@@ -245,7 +233,7 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 * Report security vulnerabilities through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/the-post-grid).
 
 
-== Screenshots ==
+== 🖼 Screenshots ==
 
 01. Elementor addons
 02. Gutenberg Blocks
