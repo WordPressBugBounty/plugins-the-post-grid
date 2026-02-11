@@ -11,12 +11,11 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Display WordPress posts in beautiful grid, list, slider, and filter layouts. Works with Gutenberg, Elementor, Divi, and Shortcodes. No coding required.
 
-== 📖 Description ==
+== Description ==
 
-[The Post Grid](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/)is a powerful WordPress plugin that transforms how you display blog posts, news articles, and custom content. Whether you're building a news portal, magazine website, or personal blog, this plugin provides everything you need to create stunning post layouts that engage visitors and improve content discovery.
+[The Post Grid](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/) is a powerful WordPress plugin that transforms how you display blog posts, news articles, and custom content. Whether you're building a news portal, magazine website, or personal blog, this plugin provides everything you need to create stunning post layouts that engage visitors and improve content discovery.
 
 With native support for Gutenberg blocks, Elementor widgets, Divi modules, and a universal shortcode generator, The Post Grid works seamlessly with your preferred page builder. Choose from grid layouts, list views, hover effects, sliders, and filterable galleries—all fully responsive and optimized for every device.
-
 
 👉 [Plugin Demo](https://www.radiustheme.com/demo/plugins/the-post-grid/) | [Elementor Demo](https://www.radiustheme.com/demo/plugins/the-post-grid-elementor/) | [Gutenberg Demo](https://www.radiustheme.com/demo/plugins/the-post-grid-gutenberg/) | [Documentation](https://www.radiustheme.com/docs/the-post-grid/) | [Get Pro](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/) 👈
 
@@ -41,16 +40,16 @@ I have used this to update a site and replace another grid system. This plugin a
 
 == ⚙️ How The Post Grid Works ==
 
-**1️⃣ Step 1: Select Your Content**
+**👉 Step 1: Select Your Content**
 Use the built-in query builder to choose which posts to display. Filter by categories, tags, authors, or dates. Include or exclude specific posts with precision.
 
-**2️⃣ Step 2: Choose Your Layout**
+**👉 Step 2: Choose Your Layout**
 Pick from multiple layout styles including grid, list, masonry, hover effects, and sliders. Each layout adapts automatically to your theme and screen sizes.
 
-**3️⃣ Step 3: Customize the Appearance**
+**👉 Step 3: Customize the Appearance**
 Adjust colors, typography, spacing, and element visibility. Control which fields appear—title, excerpt, author, date, categories, and more.
 
-**4️⃣ Step 4: Insert Anywhere**
+**👉 Step 4: Insert Anywhere**
 Add your configured grid to any page, post, or widget area using Gutenberg blocks, Elementor widgets, Divi modules, or simple shortcodes.
 
 [youtube https://www.youtube.com/watch?v=wHWAnfL0VhU]
@@ -127,22 +126,26 @@ The Post Grid Pro unlocks advanced capabilities for professional websites:
 👉 [Compare Free vs Pro](https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/) | [View Pro Demo](https://www.radiustheme.com/demo/plugins/the-post-grid/)
 
 
-== 🎬 REVIEW FROM WORDPRESS COMMUNITY EXPERT Mak ==
+== REVIEW FROM WORDPRESS COMMUNITY EXPERT Mak ==
 
 [youtube https://www.youtube.com/watch?v=eelP7LkEWD0]
 
-== 🎬 REVIEW FROM WORDPRESS COMMUNITY EXPERT Mr Web ==
+== REVIEW FROM WORDPRESS COMMUNITY EXPERT Mr Web ==
 
 [youtube https://www.youtube.com/watch?v=SCA945URSDY]
 
 
 == 🎯 Perfect For ==
 
-- **Bloggers** – Showcase recent posts, featured articles, and related content in engaging layouts
-- **News Websites** – Build magazine-style homepages with categorized news sections
-- **Agencies** – Display portfolio items, case studies, and team posts professionally
-- **eCommerce Sites** – Highlight blog content, announcements, and product-related posts
-- **Content Publishers** – Organize large content libraries with filterable grids and search
+**✅ Bloggers** – Showcase recent posts, featured articles, and related content in engaging layouts
+
+**✅ News Websites** – Build magazine-style homepages with categorized news sections
+
+**✅ Agencies** – Display portfolio items, case studies, and team posts professionally
+
+**✅ eCommerce Sites** – Highlight blog content, announcements, and product-related posts
+
+**✅ Content Publishers** – Organize large content libraries with filterable grids and search
 
 
 == 🛠 Support and Documentation ==
@@ -194,7 +197,7 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 3. Activate through the Plugins menu in WordPress
 
 
-== ❓ Frequently Asked Questions ==
+== Frequently Asked Questions ==
 
 = How do I create my first post grid?
 
@@ -233,7 +236,7 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 * Report security vulnerabilities through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/the-post-grid).
 
 
-== 🖼 Screenshots ==
+== Screenshots ==
 
 01. Elementor addons
 02. Gutenberg Blocks
