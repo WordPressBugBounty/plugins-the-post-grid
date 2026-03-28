@@ -26,13 +26,11 @@
                 <li>Pre-made Sections & Layouts</li>
             </ul>
 
-			<?php if ( Fns::is_black_friday_active() ) : ?>
                 <div class="offer black-friday-offer">
                     <a href="https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/?utm_source=wp_deshborad&utm_medium=banner&utm_campaign=tpg" target="_blank">
-                        <img style="width:100%" src="<?php echo rtTPG()->get_assets_uri( 'images/offer/black-friday-ribbon.svg' ) ?>" alt="The post grid">
+                        <img style="width:100%" src="<?php echo rtTPG()->get_assets_uri( 'images/offer/happy-20.svg' ) ?>" alt="The post grid">
                     </a>
                 </div>
-			<?php endif; ?>
 
             <a class="rt-admin-btn" href="https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/?utm_source=wp_deshborad&utm_medium=banner&utm_campaign=tpg" target="_blank">
                 Get The Deal!

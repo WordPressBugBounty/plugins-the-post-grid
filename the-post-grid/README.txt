@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 6.9
-Stable tag: 7.8.9
+Stable tag: 7.9.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,15 +26,16 @@ With native support for Gutenberg blocks, Elementor widgets, Divi modules, and a
 **Trusted by 100,000+ WordPress websites**, The Post Grid combines flexibility with simplicity. Display your content exactly how you envision it—without touching a single line of code. The intuitive visual interface lets you configure layouts, select posts, and customize styles in minutes.
 
 ⭐⭐⭐⭐⭐
-[They solved my problem immediately.](https://wordpress.org/support/topic/they-solved-my-problem-immediately/)
+**They solved my problem immediately**
 When I had a problem with the plugin and asked for their help, they responded immediately and fixed the problem. The speed with which they responded and fixed the problem gave me confidence in their company.
 — ***athan43***
 
 ⭐⭐⭐⭐⭐
-[Great plugin and great support](https://wordpress.org/support/topic/great-plugin-and-great-support-925/)
+**Great plugin and great support**
 I have used this to update a site and replace another grid system. This plugin and good and where I encountered problems the advice was prompt and good.
 — ***bobjgarrett***
 
+👉 [Check out our great reviews!](https://wordpress.org/support/plugin/the-post-grid/reviews/)
 
 [youtube https://www.youtube.com/watch?v=PLeKWXbEok0]
 
@@ -252,6 +253,15 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.0 (Mar 28, 2026) =
+* Fixed: Resolved layout issues with TranslatePress
+* Fixed: wpautop not applying correctly to the first post
+* Added: Option to disable post view count
+* Updated: Refined plugin settings for improved usability.
+* Integration: Added ChatGPT and Gemini integration for content writing assistance.
+* Added: Introduced a setup wizard guide to help new users get started.
+* Fixed: Resolved pagination issue in Elementor taxonomy builder
 
 = 7.8.9 (Feb 10, 2026) =
 * Fixed: Resolved CSS conflicts in the Divi Editor

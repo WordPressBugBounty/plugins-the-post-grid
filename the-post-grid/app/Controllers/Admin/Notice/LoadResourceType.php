@@ -45,7 +45,7 @@ class LoadResourceType {
 						$selected_method = ucfirst( $block_type );
 
 						echo sprintf(
-							'%1$s<a style="color: #fff;" href="%2$s">%3$s</a>',
+							'%1$s<a href="%2$s">%3$s</a>',
 							sprintf(
 							/* translators: %s: Selected method (e.g., Elementor method) */
 								esc_html__( 'You have selected "%s" as the resource load type. To use the Shortcode Generator, please enable either "Shortcode" or "Default" from here ', 'the-post-grid' ),
@@ -66,7 +66,7 @@ class LoadResourceType {
                     <p>
 						<?php
 						echo sprintf(
-							'%1$s<a style="color: #fff;" href="%2$s">%3$s</a>',
+							'%1$s<a href="%2$s">%3$s</a>',
 							esc_html__( 'You have selected only Shortcode Generator method. To use Elementor please enable Elementor or default from ', 'the-post-grid' ),
 							esc_url( admin_url( 'edit.php?post_type=rttpg&page=rttpg_settings&section=common-settings' ) ),
 							esc_html__( 'Settings => Common Settings => Resource Load Type', 'the-post-grid' )
