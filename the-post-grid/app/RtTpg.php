@@ -133,6 +133,8 @@ if ( ! class_exists( RtTpg::class ) ) {
 				new MetaController();
 			}
 
+			new GutenBergController();
+
 			new RestApi();
 
 			// SetupWizardController must be outside is_admin() for REST API routes to work.
@@ -148,8 +150,6 @@ if ( ! class_exists( RtTpg::class ) ) {
 			if ( ! isset( $settings['tpg_block_type'] ) || in_array( $settings['tpg_block_type'], [ 'default', 'shortcode' ] ) ) {
 				new ShortcodeController();
 			}
-
-			new GutenBergController();
 
 			//Load Gutenberg and And Elementor.
 			if ( isset( $settings['tpg_block_type'] ) && in_array( $settings['tpg_block_type'], [ 'default', 'elementor' ] ) ) {

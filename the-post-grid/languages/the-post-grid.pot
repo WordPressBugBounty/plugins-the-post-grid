@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-26 10:19+0000\n"
+"POT-Creation-Date: 2026-05-24 07:12+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -162,7 +162,7 @@ msgstr ""
 msgid "You don't have proper authorization to perform this action"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:140, ../app/Controllers/ElementorController.php:292, ../app/Widgets/ElementorWidget.php:28, ../app/Widgets/ElementorWidget.php:43, ../app/Widgets/TPGWidget.php:31, ../app/Controllers/Admin/PostTypeController.php:49, ../app/Controllers/Admin/PostTypeController.php:50, ../app/Controllers/Admin/SetupWizardController.php:227, ../resources/parts/settings-header.php:22
+#: ../app/Controllers/BlocksController.php:140, ../app/Controllers/ElementorController.php:292, ../app/Widgets/ElementorWidget.php:28, ../app/Widgets/ElementorWidget.php:43, ../app/Widgets/TPGWidget.php:31, ../app/Controllers/Admin/PostTypeController.php:49, ../app/Controllers/Admin/PostTypeController.php:50, ../app/Controllers/Admin/SetupWizardController.php:243, ../resources/parts/settings-header.php:22
 msgid "The Post Grid"
 msgstr ""
 
@@ -234,11 +234,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:875, ../app/Helpers/Fns.php:714, ../app/Helpers/Fns.php:895, ../app/Helpers/Fns.php:1146, ../app/Controllers/Admin/AdminAjaxController.php:858
+#: ../app/Controllers/ShortcodeController.php:875, ../app/Helpers/Fns.php:713, ../app/Helpers/Fns.php:894, ../app/Helpers/Fns.php:1145, ../app/Controllers/Admin/AdminAjaxController.php:858
 msgid "Search..."
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:893, ../app/Helpers/Fns.php:689, ../app/Helpers/Options.php:76, ../app/Controllers/Admin/AdminAjaxController.php:872, ../app/Divi/Fields/ContentQuery.php:197, ../app/Widgets/elementor/rtTPGElementorHelper.php:325, ../app/Widgets/elementor/widgets/news-ticker.php:607
+#: ../app/Controllers/ShortcodeController.php:893, ../app/Helpers/Fns.php:688, ../app/Helpers/Options.php:76, ../app/Controllers/Admin/AdminAjaxController.php:872, ../app/Divi/Fields/ContentQuery.php:197, ../app/Widgets/elementor/rtTPGElementorHelper.php:325, ../app/Widgets/elementor/widgets/news-ticker.php:607
 msgid "Meta value"
 msgstr ""
 
@@ -280,39 +280,39 @@ msgstr ""
 msgid "%s does not exist."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:606
+#: ../app/Helpers/Fns.php:605
 msgid "All Users"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:691, ../app/Divi/Fields/ContentQuery.php:155, ../app/Divi/Fields/ContentQuery.php:168, ../app/Widgets/elementor/rtTPGElementorHelper.php:230, ../app/Widgets/elementor/rtTPGElementorHelper.php:246, ../app/Widgets/elementor/widgets/news-ticker.php:529
+#: ../app/Helpers/Fns.php:690, ../app/Divi/Fields/ContentQuery.php:155, ../app/Divi/Fields/ContentQuery.php:168, ../app/Widgets/elementor/rtTPGElementorHelper.php:230, ../app/Widgets/elementor/rtTPGElementorHelper.php:246, ../app/Widgets/elementor/widgets/news-ticker.php:529
 msgid "By "
 msgstr ""
 
-#: ../app/Helpers/Fns.php:687
+#: ../app/Helpers/Fns.php:686
 msgid "Sort By"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:775, ../app/Helpers/Fns.php:773, ../app/Helpers/Fns.php:771, ../app/Helpers/Fns.php:769, ../app/Helpers/Fns.php:1007
+#: ../app/Helpers/Fns.php:774, ../app/Helpers/Fns.php:772, ../app/Helpers/Fns.php:770, ../app/Helpers/Fns.php:768, ../app/Helpers/Fns.php:1006
 msgid "All "
 msgstr ""
 
-#: ../app/Helpers/Fns.php:956, ../app/Helpers/Fns.php:1209
+#: ../app/Helpers/Fns.php:955, ../app/Helpers/Fns.php:1208
 msgid "Search terms..."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:907, ../app/Helpers/Fns.php:1158
+#: ../app/Helpers/Fns.php:906, ../app/Helpers/Fns.php:1157
 msgid "Clear"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:2004
+#: ../app/Helpers/Fns.php:2005
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4302
+#: ../app/Helpers/Fns.php:4301
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4327, ../app/Widgets/elementor/rtTPGElementorHelper.php:3015, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:4326, ../app/Widgets/elementor/rtTPGElementorHelper.php:3015, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
@@ -400,15 +400,15 @@ msgstr ""
 msgid "Please upgrade to pro for more options %s"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5494
+#: ../app/Helpers/Fns.php:5496
 msgid "Date & Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5503
+#: ../app/Helpers/Fns.php:5506
 msgid "End Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5513
+#: ../app/Helpers/Fns.php:5516
 msgid "Location: "
 msgstr ""
 
@@ -1236,15 +1236,15 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: ../app/Helpers/Options.php:1256, ../app/Helpers/Options.php:1497, ../app/Helpers/Options.php:1971, ../app/Helpers/Options.php:1980, ../app/Divi/Fields/SettingsReadMore.php:61, ../app/Divi/Fields/StylePagination.php:30, ../app/Widgets/elementor/rtTPGElementorHelper.php:995, ../app/Widgets/elementor/rtTPGElementorHelper.php:1784, ../app/Widgets/elementor/rtTPGElementorHelper.php:3613, ../app/Widgets/elementor/rtTPGElementorHelper.php:3951, ../app/Widgets/elementor/rtTPGElementorHelper.php:4266, ../app/Widgets/elementor/rtTPGElementorHelper.php:4940, ../app/Widgets/elementor/rtTPGElementorHelper.php:5168, ../app/Widgets/elementor/rtTPGElementorHelper.php:5308, ../app/Widgets/elementor/rtTPGElementorHelper.php:5726, ../app/Widgets/elementor/rtTPGElementorHelper.php:6229, ../app/Widgets/elementor/rtTPGElementorHelper.php:6577, ../app/Widgets/elementor/rtTPGElementorHelper.php:6607, ../app/Widgets/elementor/rtTPGElementorHelper.php:8489, ../app/Widgets/elementor/rtTPGElementorHelper.php:9013, ../app/Widgets/elementor/widgets/category-block.php:159, ../app/Widgets/elementor/widgets/post-timeline.php:231, ../app/Widgets/elementor/widgets/section-title.php:212
+#: ../app/Helpers/Options.php:1256, ../app/Helpers/Options.php:1497, ../app/Helpers/Options.php:1971, ../app/Helpers/Options.php:1980, ../app/Divi/Fields/SettingsReadMore.php:61, ../app/Divi/Fields/StylePagination.php:30, ../app/Widgets/elementor/rtTPGElementorHelper.php:995, ../app/Widgets/elementor/rtTPGElementorHelper.php:1784, ../app/Widgets/elementor/rtTPGElementorHelper.php:3613, ../app/Widgets/elementor/rtTPGElementorHelper.php:3951, ../app/Widgets/elementor/rtTPGElementorHelper.php:4266, ../app/Widgets/elementor/rtTPGElementorHelper.php:4940, ../app/Widgets/elementor/rtTPGElementorHelper.php:5168, ../app/Widgets/elementor/rtTPGElementorHelper.php:5308, ../app/Widgets/elementor/rtTPGElementorHelper.php:5726, ../app/Widgets/elementor/rtTPGElementorHelper.php:6229, ../app/Widgets/elementor/rtTPGElementorHelper.php:6577, ../app/Widgets/elementor/rtTPGElementorHelper.php:6607, ../app/Widgets/elementor/rtTPGElementorHelper.php:8489, ../app/Widgets/elementor/rtTPGElementorHelper.php:9053, ../app/Widgets/elementor/widgets/category-block.php:159, ../app/Widgets/elementor/widgets/post-timeline.php:231, ../app/Widgets/elementor/widgets/section-title.php:212
 msgid "Left"
 msgstr ""
 
-#: ../app/Helpers/Options.php:1257, ../app/Helpers/Options.php:1498, ../app/Helpers/Options.php:1972, ../app/Helpers/Options.php:1981, ../app/Divi/Fields/ContentLayout.php:86, ../app/Divi/Fields/SettingsReadMore.php:62, ../app/Divi/Fields/StylePagination.php:32, ../app/Widgets/elementor/rtTPGElementorHelper.php:708, ../app/Widgets/elementor/rtTPGElementorHelper.php:1003, ../app/Widgets/elementor/rtTPGElementorHelper.php:1792, ../app/Widgets/elementor/rtTPGElementorHelper.php:3614, ../app/Widgets/elementor/rtTPGElementorHelper.php:3959, ../app/Widgets/elementor/rtTPGElementorHelper.php:4274, ../app/Widgets/elementor/rtTPGElementorHelper.php:4948, ../app/Widgets/elementor/rtTPGElementorHelper.php:5176, ../app/Widgets/elementor/rtTPGElementorHelper.php:5316, ../app/Widgets/elementor/rtTPGElementorHelper.php:5734, ../app/Widgets/elementor/rtTPGElementorHelper.php:6237, ../app/Widgets/elementor/rtTPGElementorHelper.php:6585, ../app/Widgets/elementor/rtTPGElementorHelper.php:6615, ../app/Widgets/elementor/rtTPGElementorHelper.php:6645, ../app/Widgets/elementor/rtTPGElementorHelper.php:6737, ../app/Widgets/elementor/rtTPGElementorHelper.php:8497, ../app/Widgets/elementor/rtTPGElementorHelper.php:9021, ../app/Widgets/elementor/widgets/category-block.php:167, ../app/Widgets/elementor/widgets/post-timeline.php:239, ../app/Widgets/elementor/widgets/section-title.php:220
+#: ../app/Helpers/Options.php:1257, ../app/Helpers/Options.php:1498, ../app/Helpers/Options.php:1972, ../app/Helpers/Options.php:1981, ../app/Divi/Fields/ContentLayout.php:86, ../app/Divi/Fields/SettingsReadMore.php:62, ../app/Divi/Fields/StylePagination.php:32, ../app/Widgets/elementor/rtTPGElementorHelper.php:708, ../app/Widgets/elementor/rtTPGElementorHelper.php:1003, ../app/Widgets/elementor/rtTPGElementorHelper.php:1792, ../app/Widgets/elementor/rtTPGElementorHelper.php:3614, ../app/Widgets/elementor/rtTPGElementorHelper.php:3959, ../app/Widgets/elementor/rtTPGElementorHelper.php:4274, ../app/Widgets/elementor/rtTPGElementorHelper.php:4948, ../app/Widgets/elementor/rtTPGElementorHelper.php:5176, ../app/Widgets/elementor/rtTPGElementorHelper.php:5316, ../app/Widgets/elementor/rtTPGElementorHelper.php:5734, ../app/Widgets/elementor/rtTPGElementorHelper.php:6237, ../app/Widgets/elementor/rtTPGElementorHelper.php:6585, ../app/Widgets/elementor/rtTPGElementorHelper.php:6615, ../app/Widgets/elementor/rtTPGElementorHelper.php:6645, ../app/Widgets/elementor/rtTPGElementorHelper.php:6737, ../app/Widgets/elementor/rtTPGElementorHelper.php:8497, ../app/Widgets/elementor/rtTPGElementorHelper.php:9061, ../app/Widgets/elementor/widgets/category-block.php:167, ../app/Widgets/elementor/widgets/post-timeline.php:239, ../app/Widgets/elementor/widgets/section-title.php:220
 msgid "Right"
 msgstr ""
 
-#: ../app/Helpers/Options.php:1258, ../app/Helpers/Options.php:1499, ../app/Helpers/Options.php:1973, ../app/Helpers/Options.php:1982, ../app/Divi/Fields/StyleCard.php:56, ../app/Divi/Fields/StylePagination.php:31, ../app/Widgets/elementor/rtTPGElementorHelper.php:934, ../app/Widgets/elementor/rtTPGElementorHelper.php:966, ../app/Widgets/elementor/rtTPGElementorHelper.php:999, ../app/Widgets/elementor/rtTPGElementorHelper.php:1687, ../app/Widgets/elementor/rtTPGElementorHelper.php:1788, ../app/Widgets/elementor/rtTPGElementorHelper.php:3955, ../app/Widgets/elementor/rtTPGElementorHelper.php:4270, ../app/Widgets/elementor/rtTPGElementorHelper.php:4944, ../app/Widgets/elementor/rtTPGElementorHelper.php:5172, ../app/Widgets/elementor/rtTPGElementorHelper.php:5312, ../app/Widgets/elementor/rtTPGElementorHelper.php:5730, ../app/Widgets/elementor/rtTPGElementorHelper.php:6233, ../app/Widgets/elementor/rtTPGElementorHelper.php:6581, ../app/Widgets/elementor/rtTPGElementorHelper.php:6611, ../app/Widgets/elementor/rtTPGElementorHelper.php:6641, ../app/Widgets/elementor/rtTPGElementorHelper.php:6733, ../app/Widgets/elementor/rtTPGElementorHelper.php:8493, ../app/Widgets/elementor/rtTPGElementorHelper.php:9017, ../app/Widgets/elementor/widgets/category-block.php:163, ../app/Widgets/elementor/widgets/post-timeline.php:235, ../app/Widgets/elementor/widgets/section-title.php:216
+#: ../app/Helpers/Options.php:1258, ../app/Helpers/Options.php:1499, ../app/Helpers/Options.php:1973, ../app/Helpers/Options.php:1982, ../app/Divi/Fields/StyleCard.php:56, ../app/Divi/Fields/StylePagination.php:31, ../app/Widgets/elementor/rtTPGElementorHelper.php:934, ../app/Widgets/elementor/rtTPGElementorHelper.php:966, ../app/Widgets/elementor/rtTPGElementorHelper.php:999, ../app/Widgets/elementor/rtTPGElementorHelper.php:1687, ../app/Widgets/elementor/rtTPGElementorHelper.php:1788, ../app/Widgets/elementor/rtTPGElementorHelper.php:3955, ../app/Widgets/elementor/rtTPGElementorHelper.php:4270, ../app/Widgets/elementor/rtTPGElementorHelper.php:4944, ../app/Widgets/elementor/rtTPGElementorHelper.php:5172, ../app/Widgets/elementor/rtTPGElementorHelper.php:5312, ../app/Widgets/elementor/rtTPGElementorHelper.php:5730, ../app/Widgets/elementor/rtTPGElementorHelper.php:6233, ../app/Widgets/elementor/rtTPGElementorHelper.php:6581, ../app/Widgets/elementor/rtTPGElementorHelper.php:6611, ../app/Widgets/elementor/rtTPGElementorHelper.php:6641, ../app/Widgets/elementor/rtTPGElementorHelper.php:6733, ../app/Widgets/elementor/rtTPGElementorHelper.php:8493, ../app/Widgets/elementor/rtTPGElementorHelper.php:9057, ../app/Widgets/elementor/widgets/category-block.php:163, ../app/Widgets/elementor/widgets/post-timeline.php:235, ../app/Widgets/elementor/widgets/section-title.php:216
 msgid "Center"
 msgstr ""
 
@@ -1508,7 +1508,7 @@ msgstr ""
 msgid "First Image from content"
 msgstr ""
 
-#: ../app/Helpers/Options.php:1786, ../app/Helpers/Options.php:1988, ../app/Widgets/elementor/rtTPGElementorHelper.php:4497, ../app/Widgets/elementor/rtTPGElementorHelper.php:4972, ../app/Widgets/elementor/rtTPGElementorHelper.php:5200, ../app/Widgets/elementor/rtTPGElementorHelper.php:5356, ../app/Widgets/elementor/rtTPGElementorHelper.php:5514, ../app/Widgets/elementor/rtTPGElementorHelper.php:5797, ../app/Widgets/elementor/rtTPGElementorHelper.php:6330, ../app/Widgets/elementor/rtTPGElementorHelper.php:6793, ../app/Widgets/elementor/rtTPGElementorHelper.php:7284, ../app/Widgets/elementor/rtTPGElementorHelper.php:7694, ../app/Widgets/elementor/rtTPGElementorHelper.php:8369, ../app/Widgets/elementor/rtTPGElementorHelper.php:8661, ../app/Widgets/elementor/rtTPGElementorHelper.php:9044, ../app/Widgets/elementor/widgets/category-block.php:252, ../app/Widgets/elementor/widgets/category-block.php:376, ../app/Widgets/elementor/widgets/category-block.php:675
+#: ../app/Helpers/Options.php:1786, ../app/Helpers/Options.php:1988, ../app/Widgets/elementor/rtTPGElementorHelper.php:4497, ../app/Widgets/elementor/rtTPGElementorHelper.php:4972, ../app/Widgets/elementor/rtTPGElementorHelper.php:5200, ../app/Widgets/elementor/rtTPGElementorHelper.php:5356, ../app/Widgets/elementor/rtTPGElementorHelper.php:5514, ../app/Widgets/elementor/rtTPGElementorHelper.php:5797, ../app/Widgets/elementor/rtTPGElementorHelper.php:6330, ../app/Widgets/elementor/rtTPGElementorHelper.php:6793, ../app/Widgets/elementor/rtTPGElementorHelper.php:7284, ../app/Widgets/elementor/rtTPGElementorHelper.php:7694, ../app/Widgets/elementor/rtTPGElementorHelper.php:8369, ../app/Widgets/elementor/rtTPGElementorHelper.php:8661, ../app/Widgets/elementor/rtTPGElementorHelper.php:9084, ../app/Widgets/elementor/widgets/category-block.php:252, ../app/Widgets/elementor/widgets/category-block.php:376, ../app/Widgets/elementor/widgets/category-block.php:675
 msgid "Normal"
 msgstr ""
 
@@ -1844,7 +1844,7 @@ msgstr ""
 msgid "Layout Preview"
 msgstr ""
 
-#: ../app/Controllers/Admin/MetaController.php:160, ../app/Controllers/Admin/MetaController.php:201, ../resources/parts/settings-header.php:71
+#: ../app/Controllers/Admin/MetaController.php:160, ../app/Controllers/Admin/MetaController.php:201, ../resources/parts/settings-header.php:85
 msgid "Documentation"
 msgstr ""
 
@@ -1932,187 +1932,187 @@ msgstr ""
 msgid "Our Plugins"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:123
+#: ../app/Controllers/Admin/SetupWizardController.php:123, ../app/Controllers/Admin/SetupWizardController.php:144
 msgid "The Post Grid Setup Wizard"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:124
+#: ../app/Controllers/Admin/SetupWizardController.php:124, ../resources/parts/settings-header.php:54
 msgid "Setup Wizard"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:139
+#: ../app/Controllers/Admin/SetupWizardController.php:155
 msgid "You do not have permission to access this page."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:277
-msgid "Radius Booking"
+#: ../app/Controllers/Admin/SetupWizardController.php:293
+msgid "Schema Engine AI"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:278
-msgid "WordPress booking plugin for appointments, staff management..."
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:283
-msgid "Review Schema"
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:284
-msgid "Add rich snippet reviews for better SEO and Google visibility."
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:289
-msgid "Classified Listing"
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:290
-msgid "AI-powered WordPress plugin for classified listings and directories."
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:295
-msgid "ShopBuilder"
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:296
-msgid "Build stunning WooCommerce stores with drag-and-drop builder."
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:301
-msgid "Food Menu"
+#: ../app/Controllers/Admin/SetupWizardController.php:294
+msgid "Generate AI-powered schema markup for better SEO and rich Google results."
 msgstr ""
 
 #: ../app/Controllers/Admin/SetupWizardController.php:302
-msgid "Create beautiful restaurant menus, categories, and layouts."
+msgid "Radius Booking"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:307
-msgid "Team Members"
+#: ../app/Controllers/Admin/SetupWizardController.php:303
+msgid "WordPress booking plugin for appointments, staff management and reminders."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:308
-msgid "Showcase your team with beautiful profiles and social links."
+#: ../app/Controllers/Admin/SetupWizardController.php:310
+msgid "ShopBuilder"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:313
-msgid "Testimonial Slider"
+#: ../app/Controllers/Admin/SetupWizardController.php:311
+msgid "Build stunning WooCommerce stores with drag-and-drop builder."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:314
-msgid "Display customer testimonials with responsive slider and grid layouts."
+#: ../app/Controllers/Admin/SetupWizardController.php:318
+msgid "Classified Listing"
 msgstr ""
 
 #: ../app/Controllers/Admin/SetupWizardController.php:319
-msgid "Variation Gallery"
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:320
-msgid "WooCommerce plugin for unlimited additional variation image galleries."
-msgstr ""
-
-#: ../app/Controllers/Admin/SetupWizardController.php:325
-msgid "Variation Swatches"
+msgid "AI-powered WordPress plugin for classified listings and directories."
 msgstr ""
 
 #: ../app/Controllers/Admin/SetupWizardController.php:326
+msgid "Food Menu"
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:327
+msgid "Create beautiful restaurant menus, categories, and layouts."
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:334
+msgid "Team Members"
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:335
+msgid "Showcase your team with beautiful profiles and social links."
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:342
+msgid "Testimonial Slider"
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:343
+msgid "Display customer testimonials with responsive slider and grid layouts."
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:350
+msgid "Variation Gallery"
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:351
+msgid "WooCommerce plugin for unlimited additional variation image galleries."
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:358
+msgid "Variation Swatches"
+msgstr ""
+
+#: ../app/Controllers/Admin/SetupWizardController.php:359
 msgid "WooCommerce variations into images, colors, labels, and radios."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:374
+#: ../app/Controllers/Admin/SetupWizardController.php:409
 msgid "The post grid all in one"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:375
+#: ../app/Controllers/Admin/SetupWizardController.php:410
 msgid "How to Use The Post Grid Plugin with Shortcode, Elementor and Gutenberg"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:379
+#: ../app/Controllers/Admin/SetupWizardController.php:414
 msgid "Gutenberg Blocks"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:380
+#: ../app/Controllers/Admin/SetupWizardController.php:415
 msgid "How to use The Post Grid Gutenberg Blocks [Free]"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:384
+#: ../app/Controllers/Admin/SetupWizardController.php:419
 msgid "Elementor Integration"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:385
+#: ../app/Controllers/Admin/SetupWizardController.php:420
 msgid "How to Use The Post Grid Plugin with Elementor | Step-by-Step Tutorial"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:402
+#: ../app/Controllers/Admin/SetupWizardController.php:437
 msgid "General Settings"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:403
+#: ../app/Controllers/Admin/SetupWizardController.php:438
 msgid "Configure performance, display options, and colors for your post grids."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:407, ../resources/settings/settings.php:59
+#: ../app/Controllers/Admin/SetupWizardController.php:442, ../resources/settings/settings.php:59
 msgid "AI Integration"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:408
+#: ../app/Controllers/Admin/SetupWizardController.php:443
 msgid "Configure AI-powered features using ChatGPT or Google Gemini."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:412
+#: ../app/Controllers/Admin/SetupWizardController.php:447
 msgid "Website Powerups"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:413
+#: ../app/Controllers/Admin/SetupWizardController.php:448
 msgid "Enhance your website with powerful features to create a complete WordPress experience."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:417
+#: ../app/Controllers/Admin/SetupWizardController.php:452
 msgid "Master Post Grid"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:418
+#: ../app/Controllers/Admin/SetupWizardController.php:453
 msgid "Watch these quick video tutorials to get the most out of your new post grid builder. We have simplified the complex for you."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:504
+#: ../app/Controllers/Admin/SetupWizardController.php:539
 msgid "You do not have permission to perform this action."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:521
+#: ../app/Controllers/Admin/SetupWizardController.php:556
 msgid "You do not have permission to install plugins."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:711
+#: ../app/Controllers/Admin/SetupWizardController.php:746
 msgid "Settings saved successfully."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:720
+#: ../app/Controllers/Admin/SetupWizardController.php:755
 msgid "No changes were made to settings."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:742
+#: ../app/Controllers/Admin/SetupWizardController.php:777
 msgid "Setup wizard skipped."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:765
+#: ../app/Controllers/Admin/SetupWizardController.php:800
 msgid "Setup wizard completed successfully!"
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:816
+#: ../app/Controllers/Admin/SetupWizardController.php:851
 msgid "Plugin not found on WordPress.org."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:832
+#: ../app/Controllers/Admin/SetupWizardController.php:867
 msgid "Plugin installation failed."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:840
+#: ../app/Controllers/Admin/SetupWizardController.php:875
 msgid "Plugin installed successfully."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:866
+#: ../app/Controllers/Admin/SetupWizardController.php:901
 msgid "Plugin is not installed."
 msgstr ""
 
-#: ../app/Controllers/Admin/SetupWizardController.php:880
+#: ../app/Controllers/Admin/SetupWizardController.php:915
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -3344,15 +3344,15 @@ msgstr ""
 msgid "Label Min Width"
 msgstr ""
 
-#: ../app/Divi/Fields/StyleACF.php:39, ../app/Widgets/elementor/rtTPGElementorHelper.php:9051
+#: ../app/Divi/Fields/StyleACF.php:39, ../app/Widgets/elementor/rtTPGElementorHelper.php:9091
 msgid "Group Title Color"
 msgstr ""
 
-#: ../app/Divi/Fields/StyleACF.php:49, ../app/Widgets/elementor/rtTPGElementorHelper.php:6153, ../app/Widgets/elementor/rtTPGElementorHelper.php:9065
+#: ../app/Divi/Fields/StyleACF.php:49, ../app/Widgets/elementor/rtTPGElementorHelper.php:6153, ../app/Widgets/elementor/rtTPGElementorHelper.php:9105
 msgid "Label Color"
 msgstr ""
 
-#: ../app/Divi/Fields/StyleACF.php:59, ../app/Widgets/elementor/rtTPGElementorHelper.php:9079
+#: ../app/Divi/Fields/StyleACF.php:59, ../app/Widgets/elementor/rtTPGElementorHelper.php:9119
 msgid "Value Color"
 msgstr ""
 
@@ -3872,7 +3872,7 @@ msgstr ""
 msgid "Vertical Align"
 msgstr ""
 
-#: ../app/Widgets/elementor/rtTPGElementorHelper.php:991, ../app/Widgets/elementor/rtTPGElementorHelper.php:1780, ../app/Widgets/elementor/rtTPGElementorHelper.php:9009, ../app/Widgets/elementor/widgets/post-timeline.php:227
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:991, ../app/Widgets/elementor/rtTPGElementorHelper.php:1780, ../app/Widgets/elementor/rtTPGElementorHelper.php:9049, ../app/Widgets/elementor/widgets/post-timeline.php:227
 msgid "Text Align"
 msgstr ""
 
@@ -4181,7 +4181,7 @@ msgstr ""
 msgid "Title Hover Border Color"
 msgstr ""
 
-#: ../app/Widgets/elementor/rtTPGElementorHelper.php:5064, ../app/Widgets/elementor/rtTPGElementorHelper.php:5236, ../app/Widgets/elementor/rtTPGElementorHelper.php:5436, ../app/Widgets/elementor/rtTPGElementorHelper.php:5603, ../app/Widgets/elementor/rtTPGElementorHelper.php:6033, ../app/Widgets/elementor/rtTPGElementorHelper.php:7406, ../app/Widgets/elementor/rtTPGElementorHelper.php:9094
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:5064, ../app/Widgets/elementor/rtTPGElementorHelper.php:5236, ../app/Widgets/elementor/rtTPGElementorHelper.php:5436, ../app/Widgets/elementor/rtTPGElementorHelper.php:5603, ../app/Widgets/elementor/rtTPGElementorHelper.php:6033, ../app/Widgets/elementor/rtTPGElementorHelper.php:7406, ../app/Widgets/elementor/rtTPGElementorHelper.php:9134
 msgid "Box Hover"
 msgstr ""
 
@@ -4697,15 +4697,27 @@ msgstr ""
 msgid "ACF Fields Typography"
 msgstr ""
 
-#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9101
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9009
+msgid "Image Width/height"
+msgstr ""
+
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9027
+msgid "Image Radius"
+msgstr ""
+
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9039
+msgid "Image Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9141
 msgid "Group Title Color - Hover"
 msgstr ""
 
-#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9115
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9155
 msgid "Label Color - Hover"
 msgstr ""
 
-#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9129
+#: ../app/Widgets/elementor/rtTPGElementorHelper.php:9169
 msgid "Value Color - Hover"
 msgstr ""
 
@@ -5106,11 +5118,11 @@ msgstr ""
 msgid "TPG - Slider Layout Archive"
 msgstr ""
 
-#: ../resources/parts/settings-header.php:49
+#: ../resources/parts/settings-header.php:63
 msgid "Support"
 msgstr ""
 
-#: ../resources/parts/settings-header.php:57
+#: ../resources/parts/settings-header.php:71
 msgid "Help"
 msgstr ""
 

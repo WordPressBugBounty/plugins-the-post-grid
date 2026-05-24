@@ -9003,6 +9003,46 @@ class rtTPGElementorHelper {
 			]
 		);
 
+		$ref->add_responsive_control(
+			'acf_img_width',
+			[
+				'label'      => esc_html__( 'Image Width/height', 'the-post-grid' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range'      => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 1000,
+						'step' => 1,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .tgp-cf-field-value img' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};object-fit:cover;',
+				],
+			]
+		);
+		$ref->add_responsive_control(
+			'acf_img_radius',
+			[
+				'label'      => esc_html__( 'Image Radius', 'the-post-grid' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} .tgp-cf-field-value img' => 'border-radius: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$ref->add_control(
+			'acf_img_margin',
+			[
+				'label'              => esc_html__( 'Image Spacing', 'the-post-grid' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => [ 'px' ],
+				'selectors'          => [ '{{WRAPPER}} .tgp-cf-field-value img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
+			]
+		);
+
 		$ref->add_control(
 			'acf_alignment',
 			[
