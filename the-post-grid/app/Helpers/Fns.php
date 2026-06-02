@@ -4702,10 +4702,10 @@ class Fns {
 	 * @return mixed|string
 	 */
 	public static function change_icon( $fontawesome, $flaticon, $default_class = '' ) {
-		if ( self::tpg_option( 'tpg_icon_font' ) === 'flaticon' ) {
+		if ( self::tpg_option( 'tpg_icon_font', 'flaticon' ) === 'flaticon' ) {
 			$flaticon = ( $flaticon == 'twitter' ? 'twitter-x' : $flaticon );
 
-			return 'flaticon-' . $flaticon . ' ' . $default_class;
+			return 'tpg-flaticon-' . $flaticon . ' ' . $default_class;
 		}
 		$fontawesome = ( $fontawesome === 'fab fa-twitter' ? 'fab fa-x-twitter' : $fontawesome );
 

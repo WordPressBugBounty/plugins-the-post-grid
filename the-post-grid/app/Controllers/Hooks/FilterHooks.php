@@ -80,7 +80,7 @@ class FilterHooks {
 			$classes[] = 'tpg-myaccount-page';
 		}
 
-		$icon_font = Fns::tpg_option( 'tpg_icon_font' );
+		$icon_font = Fns::tpg_option( 'tpg_icon_font', 'flaticon' );
 		$classes[] = 'rttpg';
 		$classes[] = 'rttpg-' . RT_THE_POST_GRID_VERSION;
 		$classes[] = 'radius-frontend rttpg-body-wrap';

@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 6.9
-Stable tag: 7.9.2
+Stable tag: 7.9.3
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -254,8 +254,17 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 == Changelog ==
 
+= 7.9.3 (Jun 2, 2026) =
+* Security: AI REST endpoint now requires edit_posts (app/Controllers/Api/AIIntegration.php:18).
+* Security: Elementor import endpoint requires per-post cap and nonce (app/Controllers/Api/ElImport.php:22, 35).
+* Security: Nonce check added to rtTPGShortCodeList AJAX (app/Controllers/AjaxController.php:346).
+* Security: Block CSS save requires per-post cap and sanitizes CSS (app/Controllers/BlocksController.php:485).
+* Security: Block CSS get-posts requires read_post cap (app/Controllers/BlocksController.php:465).
+* Improved: Import layout modal — skeleton loader, persistent cache, and faster re-open.
+* Fixed: Flat icon conflict issue resolved
+
 = 7.9.2 (May 24, 2026) =
-* Fixed: Pagination posts_per_page handling.
+* Fixed: Pagination posts_per_page handling
 * Improved: Settings improved
 * Improved: Setup Wizard improved
 

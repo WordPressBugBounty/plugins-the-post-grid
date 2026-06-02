@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-24 07:12+0000\n"
+"POT-Creation-Date: 2026-06-02 11:47+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Settings successfully updated"
 msgstr ""
 
-#: ../app/Controllers/AjaxController.php:222, ../app/Controllers/AjaxController.php:262, ../app/Controllers/AjaxController.php:323, ../app/Controllers/AjaxController.php:382
+#: ../app/Controllers/AjaxController.php:222, ../app/Controllers/AjaxController.php:262, ../app/Controllers/AjaxController.php:323, ../app/Controllers/AjaxController.php:385
 msgid "Security error"
 msgstr ""
 
@@ -142,15 +142,15 @@ msgstr ""
 msgid "Operator"
 msgstr ""
 
-#: ../app/Controllers/AjaxController.php:377
+#: ../app/Controllers/AjaxController.php:380
 msgid "No shortCode found."
 msgstr ""
 
-#: ../app/Controllers/AjaxController.php:364
+#: ../app/Controllers/AjaxController.php:367
 msgid "Select Short code"
 msgstr ""
 
-#: ../app/Controllers/AjaxController.php:366, ../app/Helpers/Options.php:1243, ../app/Helpers/Options.php:1254, ../app/Helpers/Options.php:1277, ../app/Helpers/Options.php:1292, ../app/Helpers/Options.php:1316, ../app/Helpers/Options.php:1359, ../app/Helpers/Options.php:1375, ../app/Helpers/Options.php:1439, ../app/Helpers/Options.php:1495, ../app/Helpers/Options.php:1708, ../app/Divi/Fields/ContentFilter.php:304, ../app/Divi/Fields/SettingsACF.php:80, ../app/Divi/Fields/SettingsMetaData.php:25, ../app/Divi/Fields/SettingsMetaData.php:98, ../app/Divi/Fields/SettingsMetaData.php:139, ../app/Divi/Fields/SettingsPostTitle.php:25, ../app/Divi/Fields/SettingsPostTitle.php:79, ../app/Divi/Fields/SettingsPostTitle.php:92, ../app/Divi/Fields/SettingsSlider.php:44, ../app/Divi/Fields/SettingsSlider.php:85, ../app/Divi/Fields/SettingsThumbnail.php:98, ../app/Divi/Fields/SettingsThumbnail.php:124, ../app/Divi/Fields/SettingsThumbnail.php:137, ../app/Divi/Fields/SettingsThumbnail.php:150, ../app/Divi/Fields/StyleCard.php:54, ../app/Divi/Fields/StyleCard.php:73, ../app/Divi/Fields/StylePostTitle.php:42, ../app/Divi/Fields/StyleThumbnail.php:29, ../app/Widgets/elementor/rtTPGElementorHelper.php:932, ../app/Widgets/elementor/rtTPGElementorHelper.php:964, ../app/Widgets/elementor/rtTPGElementorHelper.php:1402, ../app/Widgets/elementor/rtTPGElementorHelper.php:1685, ../app/Widgets/elementor/rtTPGElementorHelper.php:1707, ../app/Widgets/elementor/rtTPGElementorHelper.php:2597, ../app/Widgets/elementor/rtTPGElementorHelper.php:2616, ../app/Widgets/elementor/rtTPGElementorHelper.php:2708, ../app/Widgets/elementor/rtTPGElementorHelper.php:2753, ../app/Widgets/elementor/rtTPGElementorHelper.php:2778, ../app/Widgets/elementor/rtTPGElementorHelper.php:2792, ../app/Widgets/elementor/rtTPGElementorHelper.php:2955, ../app/Widgets/elementor/rtTPGElementorHelper.php:3014, ../app/Widgets/elementor/rtTPGElementorHelper.php:3140, ../app/Widgets/elementor/rtTPGElementorHelper.php:3231, ../app/Widgets/elementor/rtTPGElementorHelper.php:4369, ../app/Widgets/elementor/rtTPGElementorHelper.php:4766, ../app/Widgets/elementor/rtTPGElementorHelper.php:4782, ../app/Widgets/elementor/rtTPGElementorHelper.php:4922, ../app/Widgets/elementor/rtTPGElementorHelper.php:7943, ../app/Widgets/elementor/rtTPGElementorHelper.php:7997, ../app/Widgets/elementor/rtTPGElementorHelper.php:8972, ../app/Widgets/elementor/widgets/category-block.php:515, ../app/Widgets/elementor/widgets/post-timeline.php:192
+#: ../app/Controllers/AjaxController.php:369, ../app/Helpers/Options.php:1243, ../app/Helpers/Options.php:1254, ../app/Helpers/Options.php:1277, ../app/Helpers/Options.php:1292, ../app/Helpers/Options.php:1316, ../app/Helpers/Options.php:1359, ../app/Helpers/Options.php:1375, ../app/Helpers/Options.php:1439, ../app/Helpers/Options.php:1495, ../app/Helpers/Options.php:1708, ../app/Divi/Fields/ContentFilter.php:304, ../app/Divi/Fields/SettingsACF.php:80, ../app/Divi/Fields/SettingsMetaData.php:25, ../app/Divi/Fields/SettingsMetaData.php:98, ../app/Divi/Fields/SettingsMetaData.php:139, ../app/Divi/Fields/SettingsPostTitle.php:25, ../app/Divi/Fields/SettingsPostTitle.php:79, ../app/Divi/Fields/SettingsPostTitle.php:92, ../app/Divi/Fields/SettingsSlider.php:44, ../app/Divi/Fields/SettingsSlider.php:85, ../app/Divi/Fields/SettingsThumbnail.php:98, ../app/Divi/Fields/SettingsThumbnail.php:124, ../app/Divi/Fields/SettingsThumbnail.php:137, ../app/Divi/Fields/SettingsThumbnail.php:150, ../app/Divi/Fields/StyleCard.php:54, ../app/Divi/Fields/StyleCard.php:73, ../app/Divi/Fields/StylePostTitle.php:42, ../app/Divi/Fields/StyleThumbnail.php:29, ../app/Widgets/elementor/rtTPGElementorHelper.php:932, ../app/Widgets/elementor/rtTPGElementorHelper.php:964, ../app/Widgets/elementor/rtTPGElementorHelper.php:1402, ../app/Widgets/elementor/rtTPGElementorHelper.php:1685, ../app/Widgets/elementor/rtTPGElementorHelper.php:1707, ../app/Widgets/elementor/rtTPGElementorHelper.php:2597, ../app/Widgets/elementor/rtTPGElementorHelper.php:2616, ../app/Widgets/elementor/rtTPGElementorHelper.php:2708, ../app/Widgets/elementor/rtTPGElementorHelper.php:2753, ../app/Widgets/elementor/rtTPGElementorHelper.php:2778, ../app/Widgets/elementor/rtTPGElementorHelper.php:2792, ../app/Widgets/elementor/rtTPGElementorHelper.php:2955, ../app/Widgets/elementor/rtTPGElementorHelper.php:3014, ../app/Widgets/elementor/rtTPGElementorHelper.php:3140, ../app/Widgets/elementor/rtTPGElementorHelper.php:3231, ../app/Widgets/elementor/rtTPGElementorHelper.php:4369, ../app/Widgets/elementor/rtTPGElementorHelper.php:4766, ../app/Widgets/elementor/rtTPGElementorHelper.php:4782, ../app/Widgets/elementor/rtTPGElementorHelper.php:4922, ../app/Widgets/elementor/rtTPGElementorHelper.php:7943, ../app/Widgets/elementor/rtTPGElementorHelper.php:7997, ../app/Widgets/elementor/rtTPGElementorHelper.php:8972, ../app/Widgets/elementor/widgets/category-block.php:515, ../app/Widgets/elementor/widgets/post-timeline.php:192
 msgid "Default"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "The Post Grid"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:364, ../app/Controllers/BlocksController.php:458, ../app/Controllers/BlocksController.php:478, ../app/Controllers/Admin/AdminAjaxController.php:48, ../app/Controllers/Admin/Notice/BlackFriday.php:95
+#: ../app/Controllers/BlocksController.php:364, ../app/Controllers/BlocksController.php:466, ../app/Controllers/BlocksController.php:492, ../app/Controllers/Admin/AdminAjaxController.php:48, ../app/Controllers/Admin/Notice/BlackFriday.php:95
 msgid "User permission error"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgstr ""
 msgid "Data Delete Done"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:396, ../app/Controllers/BlocksController.php:498
+#: ../app/Controllers/BlocksController.php:396, ../app/Controllers/BlocksController.php:510
 msgid "CSS can not be saved due to permission!!!"
 msgstr ""
 
@@ -186,11 +186,11 @@ msgstr ""
 msgid "Css file has been updated"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:465, ../app/Controllers/BlocksController.php:502
+#: ../app/Controllers/BlocksController.php:462, ../app/Controllers/BlocksController.php:472
 msgid "Data not found!!"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:500
+#: ../app/Controllers/BlocksController.php:512
 msgid "Data retrieve done"
 msgstr ""
 
@@ -2118,6 +2118,14 @@ msgstr ""
 
 #: ../app/Controllers/Admin/UpgradeController.php:63
 msgid "The Post Grid Pro"
+msgstr ""
+
+#: ../app/Controllers/Api/ElImport.php:32
+msgid "Invalid request"
+msgstr ""
+
+#: ../app/Controllers/Api/ElImport.php:36
+msgid "Invalid nonce"
 msgstr ""
 
 #: ../app/Controllers/Api/GetPostsV1.php:403, ../app/Controllers/Api/GetTickerPostsV1.php:180

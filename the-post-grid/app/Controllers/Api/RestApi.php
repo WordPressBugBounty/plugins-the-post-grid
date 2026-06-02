@@ -18,7 +18,7 @@ class RestApi {
 		new GetTickerPostsV1();
 		new ACFV1();
 		new FrontEndFilterV1();
-		//new ElImport();
+		new ElImport();
 		new GetCategories();
 		new GetBuilderData();
 		new GetTermObject();

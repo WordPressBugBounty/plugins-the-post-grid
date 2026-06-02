@@ -293,7 +293,7 @@ class BlocksController {
 				'enableAIButton'      => $enable_ai_button,
 				'enableChatGPTButton' => $chatgpt_status ? 'yes' : 'no',
 				'enableGeminiButton' => $gemini_status ? 'yes' : 'no',
-				'iconFont'            => Fns::tpg_option( 'tpg_icon_font' ),
+				'iconFont'            => Fns::tpg_option( 'tpg_icon_font', 'flaticon' ),
 				'avatar'              => esc_url( get_avatar_url( get_current_user_id() ) ),
 			]
 		);
@@ -454,16 +454,25 @@ class BlocksController {
 	 * @return void
 	 */
 	public function get_posts_call() {
-		if ( ! current_user_can( 'edit_posts' ) ) {
-			wp_send_json_success( new WP_Error( 'rttpg_block_user_permission', __( 'User permission error', 'the-post-grid' ) ) );
-		}
-		$post_id = absint( $_POST['postId'] );
 		check_ajax_referer( 'rttpg_nonce', 'nonce' );
-		if ( $post_id ) {
-			wp_send_json_success( get_post( $post_id )->post_content );
-		} else {
-			wp_send_json_error( new WP_Error( 'rttpg_block_data_not_found', __( 'Data not found!!', 'the-post-grid' ) ) );
+
+		$post_id = isset( $_POST['postId'] ) ? absint( $_POST['postId'] ) : 0;
+
+		if ( ! $post_id ) {
+			wp_send_json_error( [ 'message' => __( 'Data not found!!', 'the-post-grid' ) ] );
 		}
+
+		if ( ! current_user_can( 'read_post', $post_id ) ) {
+			wp_send_json_error( [ 'message' => __( 'User permission error', 'the-post-grid' ) ] );
+		}
+
+		$post = get_post( $post_id );
+
+		if ( ! $post ) {
+			wp_send_json_error( [ 'message' => __( 'Data not found!!', 'the-post-grid' ) ] );
+		}
+
+		wp_send_json_success( $post->post_content );
 	}
 
 	/**
@@ -474,33 +483,33 @@ class BlocksController {
 	 * @since v.1.0.0
 	 */
 	public function appended( $server ) {
-		if ( ! current_user_can( 'edit_posts' ) ) {
-			wp_send_json_success( new WP_Error( 'rttpg_block_user_permission', __( 'User permission error', 'the-post-grid' ) ) );
-		}
 		check_ajax_referer( 'rttpg_nonce', 'nonce' );
+
+		$post    = $server->get_params();
+		$post_id = isset( $post['post_id'] ) ? absint( $post['post_id'] ) : 0;
+
+		if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {
+			wp_send_json_error( [ 'message' => __( 'User permission error', 'the-post-grid' ) ] );
+		}
+
 		global $wp_filesystem;
 		if ( ! $wp_filesystem ) {
 			require_once ABSPATH . 'wp-admin/includes/file.php';
 		}
-		$post    = $server->get_params();
-		$css     = $post['inner_css'];
-		$post_id = (int) sanitize_text_field( $post['post_id'] );
 
-		if ( $post_id ) {
-			$upload_dir_url = wp_upload_dir();
-			$filename       = "rttpg-block-css-$post_id.css";
-			$dir            = trailingslashit( $upload_dir_url['basedir'] ) . 'rttpg/';
-			WP_Filesystem( false, $upload_dir_url['basedir'], true );
-			if ( ! $wp_filesystem->is_dir( $dir ) ) {
-				$wp_filesystem->mkdir( $dir );
-			}
-			if ( ! $wp_filesystem->put_contents( $dir . $filename, $css ) ) {
-				wp_send_json_error( [ 'message' => __( 'CSS can not be saved due to permission!!!', 'the-post-grid' ) ] );
-			}
-			wp_send_json_success( [ 'message' => __( 'Data retrieve done', 'the-post-grid' ) ] );
-		} else {
-			wp_send_json_error( [ 'message' => __( 'Data not found!!', 'the-post-grid' ) ] );
+		$css = isset( $post['inner_css'] ) ? wp_strip_all_tags( (string) $post['inner_css'] ) : '';
+
+		$upload_dir_url = wp_upload_dir();
+		$filename       = "rttpg-block-css-$post_id.css";
+		$dir            = trailingslashit( $upload_dir_url['basedir'] ) . 'rttpg/';
+		WP_Filesystem( false, $upload_dir_url['basedir'], true );
+		if ( ! $wp_filesystem->is_dir( $dir ) ) {
+			$wp_filesystem->mkdir( $dir );
 		}
+		if ( ! $wp_filesystem->put_contents( $dir . $filename, $css ) ) {
+			wp_send_json_error( [ 'message' => __( 'CSS can not be saved due to permission!!!', 'the-post-grid' ) ] );
+		}
+		wp_send_json_success( [ 'message' => __( 'Data retrieve done', 'the-post-grid' ) ] );
 	}
 
 	/**

@@ -343,6 +343,9 @@ class AjaxController {
 		if ( ! current_user_can( 'edit_posts' ) ) {
 			$is_ok = false;
 		}
+		if ( ! Fns::verifyNonce() ) {
+			$is_ok = false;
+		}
 		if ( $is_ok ) {
 
 			$html = null;
