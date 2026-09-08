@@ -91,7 +91,7 @@ class SettingsThumbnail {
 			],
 
 			'hover_animation'       => [
-				'label'       => esc_html__( 'Image Hover Animation', 'the-post-grid' ),
+				'label'       => esc_html__( 'Img Hover Animation', 'the-post-grid' ),
 				'type'        => 'select',
 				'default'     => 'default',
 				'options'     => [
@@ -130,7 +130,7 @@ class SettingsThumbnail {
 				'toggle_slug' => 'tpg_thumbnail',
 			],
 			'on_hover_overlay'          => [
-				'label'       => esc_html__( 'Overlay Height on hover', 'the-post-grid' ),
+				'label'       => esc_html__( 'Overlay Height:hover', 'the-post-grid' ),
 				'type'        => 'select',
 				'default'     => 'default',
 				'options'     => [

@@ -700,7 +700,7 @@ class rtTPGElementorHelper {
 		$ref->add_control(
 			'offset_img_position',
 			[
-				'label'        => esc_html__( 'Offset Image Position', 'the-post-grid' ),
+				'label'        => esc_html__( 'Offset Img Position', 'the-post-grid' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'image-left',
 				'options'      => [
@@ -2590,7 +2590,7 @@ class rtTPGElementorHelper {
 		$ref->add_control(
 			'hover_animation',
 			[
-				'label'        => esc_html__( 'Image Hover Animation', 'the-post-grid' ),
+				'label'        => esc_html__( 'Img Hover Animation', 'the-post-grid' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'default',
 				'options'      => [
@@ -3297,7 +3297,7 @@ class rtTPGElementorHelper {
 			$ref->add_control(
 				'show_cat_icon',
 				[
-					'label'        => esc_html__( 'Show Over Image Category Icon', 'the-post-grid' ),
+					'label'        => esc_html__( 'Over Image Cat Icon', 'the-post-grid' ),
 					'type'         => Controls_Manager::SWITCHER,
 					'label_on'     => esc_html__( 'Show', 'the-post-grid' ),
 					'label_off'    => esc_html__( 'Hide', 'the-post-grid' ),
@@ -4362,7 +4362,7 @@ class rtTPGElementorHelper {
 		$ref->add_control(
 			'image_width',
 			[
-				'label'     => esc_html__( 'Image Width (Optional)', 'the-post-grid' ),
+				'label'     => esc_html__( 'Image Width', 'the-post-grid' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'inherit',
 				'options'   => [
@@ -4775,7 +4775,7 @@ class rtTPGElementorHelper {
 		$ref->add_control(
 			'on_hover_overlay',
 			[
-				'label'        => esc_html__( 'Overlay Height on hover', 'the-post-grid' ),
+				'label'        => esc_html__( 'Overlay Height:hover', 'the-post-grid' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'default',
 				'options'      => [
@@ -7603,7 +7603,7 @@ class rtTPGElementorHelper {
 			$ref->add_control(
 				'is_box_border',
 				[
-					'label'        => esc_html__( 'Enable Border & Box Shadow', 'the-post-grid' ),
+					'label'        => esc_html__( 'Border & Box shadow', 'the-post-grid' ),
 					'type'         => Controls_Manager::SELECT,
 					'default'      => 'enable',
 					'options'      => [
@@ -7626,7 +7626,7 @@ class rtTPGElementorHelper {
 			$ref->add_control(
 				'box_border_bottom',
 				[
-					'label'        => esc_html__( 'Enable Border Bottom', 'the-post-grid' ),
+					'label'        => esc_html__( 'Border Bottom', 'the-post-grid' ),
 					'type'         => Controls_Manager::SELECT,
 					'default'      => 'disable',
 					'options'      => [
@@ -8694,7 +8694,7 @@ class rtTPGElementorHelper {
 			'dots_wrap_bg',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Dots Wrapper Background', 'the-post-grid' ),
+				'label'     => esc_html__( 'Dots Wrapper BG', 'the-post-grid' ),
 				'selectors' => [
 					'{{WRAPPER}}.slider-dots-style-background .tpg-el-main-wrapper .swiper-pagination' => 'background-color: {{VALUE}}',
 				],
@@ -8899,10 +8899,10 @@ class rtTPGElementorHelper {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'thumb_wrapper_bg',
-				'label'          => esc_html__( 'Thumb Wrapper Background', 'the-post-grid' ),
+				'label'          => esc_html__( 'Thumb Wrapper BG', 'the-post-grid' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Thumb Wrapper Background', 'the-post-grid' ),
+						'label' => esc_html__( 'Thumb Wrapper BG', 'the-post-grid' ),
 					],
 				],
 				'types'          => [ 'classic', 'gradient' ],

@@ -3626,7 +3626,7 @@ class Fns {
 					}
 				}
 				?>
-				<?php if ( in_array( $data['date_archive_link'], [ 'yes', 'on' ] ) ) : ?>
+				<?php if ( !empty($data['date_archive_link']) && in_array( $data['date_archive_link'], [ 'yes', 'on' ] ) ) : ?>
 					<a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) ); ?>">
 					<?php echo esc_html( $date ); ?>
 				</a>
@@ -4014,6 +4014,66 @@ class Fns {
 	}
 
 	/**
+	 * Check whether a URL is a supported video link.
+	 *
+	 * The video thumbnail feature only supports direct video files
+	 * (mp4, webm, ogg) and known oEmbed video providers (YouTube, Vimeo,
+	 * etc.). Any other URL - e.g. a regular page link - is not a video and
+	 * should fall back to the normal featured image.
+	 *
+	 * @param string $url
+	 *
+	 * @return bool
+	 */
+	public static function is_valid_video_url( $url ) {
+		if ( empty( $url ) || ! is_string( $url ) ) {
+			return false;
+		}
+
+		$url = trim( $url );
+
+		$host = wp_parse_url( $url, PHP_URL_HOST );
+		if ( ! $host ) {
+			return false;
+		}
+
+		// Direct video files.
+		$ext        = strtolower( pathinfo( (string) wp_parse_url( $url, PHP_URL_PATH ), PATHINFO_EXTENSION ) );
+		$video_exts = [ 'mp4', 'webm', 'ogg' ];
+		if ( in_array( $ext, $video_exts, true ) ) {
+			return true;
+		}
+
+		// Known oEmbed video providers.
+		$host           = strtolower( preg_replace( '/^www\./', '', $host ) );
+		$video_hosts    = [
+			'youtube.com',
+			'youtu.be',
+			'youtube-nocookie.com',
+			'vimeo.com',
+			'dailymotion.com',
+			'dai.ly',
+			'wistia.com',
+			'wi.st',
+			'ted.com',
+			'facebook.com',
+			'twitch.tv',
+			'vine.co',
+			'videopress.com',
+			'vid.me',
+		];
+
+		foreach ( $video_hosts as $video_host ) {
+			$suffix = '.' . $video_host;
+			if ( $host === $video_host || substr( $host, - strlen( $suffix ) ) === $suffix ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Get post thumbnail html
 	 *
 	 * @param         $pID
@@ -4043,8 +4103,7 @@ class Fns {
 		}
 
 		$video_url = get_post_meta( $pID, '_tpg_video_url', true );
-
-		if ( $video_url && rtTPG()->hasPro() ) {
+		if ( $video_url && rtTPG()->hasPro() && self::is_valid_video_url( $video_url ) ) {
 			echo do_shortcode( '[tpg_video_thumbnail]' );
 		} else {
 			self::tpg_post_image( $pID, $data, $link_start, $link_end, $offset_size );

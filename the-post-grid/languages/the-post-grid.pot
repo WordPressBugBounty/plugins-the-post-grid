@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-02 11:47+0000\n"
+"POT-Creation-Date: 2026-09-08 10:31+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -154,63 +154,60 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:67, ../app/Controllers/BlocksController.php:106, ../app/Controllers/ElementorController.php:115, ../app/Controllers/ElementorController.php:156
-msgid "You don't have permission to perform this action"
+#. translators: %s: reason the request failed.
+#: ../app/Controllers/BlocksController.php:112, ../app/Controllers/ElementorController.php:165
+msgid "Could not load layouts: %s Please check that your server can reach radiustheme.com, then retry."
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:72, ../app/Controllers/BlocksController.php:111, ../app/Controllers/ElementorController.php:120, ../app/Controllers/ElementorController.php:161
-msgid "You don't have proper authorization to perform this action"
-msgstr ""
-
-#: ../app/Controllers/BlocksController.php:140, ../app/Controllers/ElementorController.php:292, ../app/Widgets/ElementorWidget.php:28, ../app/Widgets/ElementorWidget.php:43, ../app/Widgets/TPGWidget.php:31, ../app/Controllers/Admin/PostTypeController.php:49, ../app/Controllers/Admin/PostTypeController.php:50, ../app/Controllers/Admin/SetupWizardController.php:243, ../resources/parts/settings-header.php:22
+#: ../app/Controllers/BlocksController.php:143, ../app/Controllers/ElementorController.php:298, ../app/Widgets/ElementorWidget.php:28, ../app/Widgets/ElementorWidget.php:43, ../app/Widgets/TPGWidget.php:31, ../app/Controllers/Admin/PostTypeController.php:49, ../app/Controllers/Admin/PostTypeController.php:50, ../app/Controllers/Admin/SetupWizardController.php:243, ../resources/parts/settings-header.php:22
 msgid "The Post Grid"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:364, ../app/Controllers/BlocksController.php:466, ../app/Controllers/BlocksController.php:492, ../app/Controllers/Admin/AdminAjaxController.php:48, ../app/Controllers/Admin/Notice/BlackFriday.php:95
+#: ../app/Controllers/BlocksController.php:368, ../app/Controllers/BlocksController.php:470, ../app/Controllers/BlocksController.php:496, ../app/Controllers/Admin/AdminAjaxController.php:48, ../app/Controllers/Admin/Notice/BlackFriday.php:95
 msgid "User permission error"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:377
+#: ../app/Controllers/BlocksController.php:381
 msgid "Widget CSS Saved"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:406
+#: ../app/Controllers/BlocksController.php:410
 msgid "Data Delete Done"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:396, ../app/Controllers/BlocksController.php:510
+#: ../app/Controllers/BlocksController.php:400, ../app/Controllers/BlocksController.php:514
 msgid "CSS can not be saved due to permission!!!"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:399
+#: ../app/Controllers/BlocksController.php:403
 msgid "Css file has been updated"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:462, ../app/Controllers/BlocksController.php:472
+#: ../app/Controllers/BlocksController.php:466, ../app/Controllers/BlocksController.php:476
 msgid "Data not found!!"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:512
+#: ../app/Controllers/BlocksController.php:516
 msgid "Data retrieve done"
 msgstr ""
 
-#: ../app/Controllers/ElementorController.php:287
+#: ../app/Controllers/ElementorController.php:293
 msgid "TPG Template Builder Element"
 msgstr ""
 
-#: ../app/Controllers/ElementorController.php:324, ../app/Controllers/ElementorController.php:325, ../app/Widgets/elementor/widgets/slider-layout.php:31
+#: ../app/Controllers/ElementorController.php:330, ../app/Controllers/ElementorController.php:331, ../app/Widgets/elementor/widgets/slider-layout.php:31
 msgid "TPG - Slider Layout"
 msgstr ""
 
-#: ../app/Controllers/ElementorController.php:331, ../app/Controllers/ElementorController.php:332, ../app/Widgets/elementor/widgets/category-block.php:33
+#: ../app/Controllers/ElementorController.php:337, ../app/Controllers/ElementorController.php:338, ../app/Widgets/elementor/widgets/category-block.php:33
 msgid "TPG - Category Block"
 msgstr ""
 
-#: ../app/Controllers/ElementorController.php:338, ../app/Controllers/ElementorController.php:339, ../app/Widgets/elementor/widgets/news-ticker.php:35
+#: ../app/Controllers/ElementorController.php:344, ../app/Controllers/ElementorController.php:345, ../app/Widgets/elementor/widgets/news-ticker.php:35
 msgid "TPG - News Ticker"
 msgstr ""
 
-#: ../app/Controllers/ElementorController.php:345, ../app/Controllers/ElementorController.php:346, ../app/Widgets/elementor/widgets/post-timeline.php:32
+#: ../app/Controllers/ElementorController.php:351, ../app/Controllers/ElementorController.php:352, ../app/Widgets/elementor/widgets/post-timeline.php:32
 msgid "TPG - Post Timeline"
 msgstr ""
 
@@ -250,7 +247,7 @@ msgstr ""
 msgid "Loading ..."
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:931, ../app/Controllers/Admin/AdminAjaxController.php:1165, ../app/Controllers/Blocks/GridHoverLayout.php:192, ../app/Controllers/Blocks/GridLayout.php:188, ../app/Controllers/Blocks/ListLayout.php:173, ../app/Divi/Render/GridHoverLayoutRenderer.php:128, ../app/Divi/Render/GridLayoutRenderer.php:136, ../app/Divi/Render/ListLayoutRender.php:121, ../app/Widgets/elementor/widgets/grid-hover-layout-archive.php:268, ../app/Widgets/elementor/widgets/grid-hover-layout.php:292, ../app/Widgets/elementor/widgets/grid-layout-archive.php:263, ../app/Widgets/elementor/widgets/grid-layout.php:298, ../app/Widgets/elementor/widgets/list-layout-archive.php:262, ../app/Widgets/elementor/widgets/list-layout.php:284, ../app/Widgets/elementor/widgets/post-timeline.php:629, ../app/Widgets/elementor/widgets/slider-layout-archive.php:324, ../app/Widgets/elementor/widgets/slider-layout-archive.php:385, ../app/Widgets/elementor/widgets/slider-layout.php:318, ../app/Widgets/elementor/widgets/slider-layout.php:391
+#: ../app/Controllers/ShortcodeController.php:931, ../app/Controllers/Admin/AdminAjaxController.php:1165, ../app/Controllers/Blocks/GridHoverLayout.php:192, ../app/Controllers/Blocks/GridLayout.php:188, ../app/Controllers/Blocks/ListLayout.php:173, ../app/Divi/Render/GridHoverLayoutRenderer.php:128, ../app/Divi/Render/GridLayoutRenderer.php:136, ../app/Divi/Render/ListLayoutRender.php:121, ../app/Widgets/elementor/widgets/grid-hover-layout-archive.php:268, ../app/Widgets/elementor/widgets/grid-hover-layout.php:292, ../app/Widgets/elementor/widgets/grid-layout-archive.php:263, ../app/Widgets/elementor/widgets/grid-layout.php:298, ../app/Widgets/elementor/widgets/list-layout-archive.php:262, ../app/Widgets/elementor/widgets/list-layout.php:284, ../app/Widgets/elementor/widgets/post-timeline.php:629, ../app/Widgets/elementor/widgets/slider-layout-archive.php:315, ../app/Widgets/elementor/widgets/slider-layout-archive.php:376, ../app/Widgets/elementor/widgets/slider-layout.php:318, ../app/Widgets/elementor/widgets/slider-layout.php:391
 msgid "No post found"
 msgstr ""
 
@@ -308,108 +305,125 @@ msgstr ""
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4301
+#: ../app/Helpers/Fns.php:4360
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4326, ../app/Widgets/elementor/rtTPGElementorHelper.php:3015, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:4385, ../app/Widgets/elementor/rtTPGElementorHelper.php:3015, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4800
+#: ../app/Helpers/Fns.php:4859
 msgid "Dashboard"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4801
+#: ../app/Helpers/Fns.php:4860
 msgid "My Post"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5051
+#: ../app/Helpers/Fns.php:5110
 msgid "You are not authorize to submit a post."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5049
+#: ../app/Helpers/Fns.php:5108
 msgid "Post submit fail."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5047
+#: ../app/Helpers/Fns.php:5106
 msgid "Post submit successful"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5211, ../app/Helpers/Fns.php:5271
+#: ../app/Helpers/Fns.php:5270, ../app/Helpers/Fns.php:5330
 msgctxt "Thousand Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5212
+#: ../app/Helpers/Fns.php:5271
 msgctxt "Million Shorthand"
 msgid "M"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5213
+#: ../app/Helpers/Fns.php:5272
 msgctxt "Billion Shorthand"
 msgid "B"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5214
+#: ../app/Helpers/Fns.php:5273
 msgctxt "Trillion Shorthand"
 msgid "T"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5215
+#: ../app/Helpers/Fns.php:5274
 msgctxt "Quadrillion Shorthand"
 msgid "Qa"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5216
+#: ../app/Helpers/Fns.php:5275
 msgctxt "Quintillion Shorthand"
 msgid "Qi"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5272
+#: ../app/Helpers/Fns.php:5331
 msgctxt "Thousands Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5273
+#: ../app/Helpers/Fns.php:5332
 msgctxt "Lac Shorthand"
 msgid " Lac"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5274
+#: ../app/Helpers/Fns.php:5333
 msgctxt "Lacs Shorthand"
 msgid " Lacs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5275
+#: ../app/Helpers/Fns.php:5334
 msgctxt "Cr Shorthand"
 msgid " Cr"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5276
+#: ../app/Helpers/Fns.php:5335
 msgctxt "Crs Shorthand"
 msgid " Crs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5348, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:311, ../app/Widgets/elementor/rtTPGElementorHelper.php:452, ../app/Widgets/elementor/rtTPGElementorHelper.php:3507, ../app/Widgets/elementor/widgets/news-ticker.php:594
+#: ../app/Helpers/Fns.php:5407, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:311, ../app/Widgets/elementor/rtTPGElementorHelper.php:452, ../app/Widgets/elementor/rtTPGElementorHelper.php:3507, ../app/Widgets/elementor/widgets/news-ticker.php:594
 msgid "Date"
 msgstr ""
 
 #. translators: %1$s: opening anchor tag, %2$s: closing anchor tag, %3$s: additional message
-#: ../app/Helpers/Fns.php:5373
+#: ../app/Helpers/Fns.php:5432
 msgid "Please upgrade to pro for more options %s"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5496
+#: ../app/Helpers/Fns.php:5555
 msgid "Date & Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5506
+#: ../app/Helpers/Fns.php:5565
 msgid "End Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5516
+#: ../app/Helpers/Fns.php:5575
 msgid "Location: "
+msgstr ""
+
+#. translators: %d: HTTP status code returned by the layout server.
+#: ../app/Helpers/ImportLayouts.php:402
+msgid "The layout server returned HTTP %d."
+msgstr ""
+
+#: ../app/Helpers/ImportLayouts.php:411
+msgid "The layout server sent a response we could not read."
+msgstr ""
+
+#: ../app/Helpers/ImportLayouts.php:589
+msgid "Your session has expired. Please reload the editor and try again."
+msgstr ""
+
+#: ../app/Helpers/ImportLayouts.php:593
+msgid "You don't have permission to perform this action."
 msgstr ""
 
 #: ../app/Helpers/Options.php:48
@@ -2405,7 +2419,7 @@ msgid "6 Columns"
 msgstr ""
 
 #: ../app/Divi/Fields/ContentLayout.php:81, ../app/Widgets/elementor/rtTPGElementorHelper.php:703
-msgid "Offset Image Position"
+msgid "Offset Img Position"
 msgstr ""
 
 #: ../app/Divi/Fields/ContentLayout.php:85, ../app/Widgets/elementor/rtTPGElementorHelper.php:707
@@ -2945,7 +2959,7 @@ msgid "Please note: If you are using a different background color for the catego
 msgstr ""
 
 #: ../app/Divi/Fields/SettingsMetaData.php:180, ../app/Widgets/elementor/rtTPGElementorHelper.php:3300
-msgid "Show Over Image Category Icon"
+msgid "Over Image Cat Icon"
 msgstr ""
 
 #: ../app/Divi/Fields/SettingsMetaData.php:192, ../app/Widgets/elementor/rtTPGElementorHelper.php:3367
@@ -3305,7 +3319,7 @@ msgid "Offset Image Size"
 msgstr ""
 
 #: ../app/Divi/Fields/SettingsThumbnail.php:94, ../app/Widgets/elementor/rtTPGElementorHelper.php:2593
-msgid "Image Hover Animation"
+msgid "Img Hover Animation"
 msgstr ""
 
 #: ../app/Divi/Fields/SettingsThumbnail.php:99, ../app/Widgets/elementor/rtTPGElementorHelper.php:2598
@@ -3341,7 +3355,7 @@ msgid "100%"
 msgstr ""
 
 #: ../app/Divi/Fields/SettingsThumbnail.php:133, ../app/Widgets/elementor/rtTPGElementorHelper.php:4778
-msgid "Overlay Height on hover"
+msgid "Overlay Height:hover"
 msgstr ""
 
 #: ../app/Divi/Fields/SettingsThumbnail.php:146, ../app/Widgets/elementor/rtTPGElementorHelper.php:2612
@@ -3369,7 +3383,7 @@ msgid "Background:hover"
 msgstr ""
 
 #: ../app/Divi/Fields/StyleCard.php:41
-msgid "Sticky Background"
+msgid "Sticky BG"
 msgstr ""
 
 #: ../app/Divi/Fields/StyleCard.php:50, ../app/Widgets/elementor/rtTPGElementorHelper.php:1682, ../app/Widgets/elementor/rtTPGElementorHelper.php:6633, ../app/Widgets/elementor/rtTPGElementorHelper.php:6725
@@ -3724,8 +3738,8 @@ msgstr ""
 msgid "Icon Background"
 msgstr ""
 
-#: ../app/Divi/Fields/StyleThumbnail.php:26, ../app/Widgets/elementor/rtTPGElementorHelper.php:4365
-msgid "Image Width (Optional)"
+#: ../app/Divi/Fields/StyleThumbnail.php:26, ../app/Widgets/elementor/rtTPGElementorHelper.php:4365, ../app/Widgets/elementor/widgets/category-block.php:323
+msgid "Image Width"
 msgstr ""
 
 #: ../app/Divi/Fields/StyleThumbnail.php:38, ../app/Widgets/elementor/rtTPGElementorHelper.php:2541, ../app/Widgets/elementor/widgets/category-block.php:342
@@ -4542,11 +4556,11 @@ msgid "Card Border Radius"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:7606
-msgid "Enable Border & Box Shadow"
+msgid "Border & Box shadow"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:7629
-msgid "Enable Border Bottom"
+msgid "Border Bottom"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:7651
@@ -4642,7 +4656,7 @@ msgid "Active Dots Color"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:8697
-msgid "Dots Wrapper Background"
+msgid "Dots Wrapper BG"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:8721
@@ -4694,7 +4708,7 @@ msgid "Thumb Active/Hover Background"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:8902, ../app/Widgets/elementor/rtTPGElementorHelper.php:8905
-msgid "Thumb Wrapper Background"
+msgid "Thumb Wrapper BG"
 msgstr ""
 
 #: ../app/Widgets/elementor/rtTPGElementorHelper.php:8951
@@ -4772,10 +4786,6 @@ msgstr ""
 
 #: ../app/Widgets/elementor/widgets/category-block.php:300, ../app/Widgets/elementor/widgets/category-block.php:467
 msgid "Count Visibility"
-msgstr ""
-
-#: ../app/Widgets/elementor/widgets/category-block.php:323
-msgid "Image Width"
 msgstr ""
 
 #: ../app/Widgets/elementor/widgets/category-block.php:384

@@ -26,6 +26,11 @@ class Tpg_Migration {
 	const BATCH_SIZE = 500;
 
 	/**
+	 * Option marking the legacy layout-cache cleanup as done
+	 */
+	const LAYOUT_CACHE_CLEANUP_OPTION = 'tpg_layout_cache_cleanup_done';
+
+	/**
 	 * Initialize migration: schedule cleanup if not done
 	 */
 	public static function init() {
@@ -35,6 +40,32 @@ class Tpg_Migration {
 			}
 		}
 		add_action( self::CRON_HOOK, [ __CLASS__, 'run_cleanup_batch' ] );
+
+		self::cleanup_legacy_layout_cache();
+	}
+
+	/**
+	 * Drop the transients used by the pre-file layout cache.
+	 *
+	 * Those held the full ~1MB payload, so leaving them behind would keep a
+	 * couple of megabytes of dead rows in wp_options on every install.
+	 *
+	 * @return void
+	 */
+	public static function cleanup_legacy_layout_cache() {
+		if ( 'yes' === get_option( self::LAYOUT_CACHE_CLEANUP_OPTION, 'no' ) ) {
+			return;
+		}
+
+		foreach ( [ 'gutenberg', 'elementor' ] as $key ) {
+			delete_transient( 'rttpg_layouts_' . $key );
+			delete_transient( 'rttpg_layouts_fresh_' . $key );
+		}
+
+		// Autoloaded on purpose: init_hooks() checks this flag on every
+		// request, so it must come from the alloptions cache rather than
+		// costing a query of its own.
+		update_option( self::LAYOUT_CACHE_CLEANUP_OPTION, 'yes' );
 	}
 
 	/**

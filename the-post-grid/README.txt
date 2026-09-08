@@ -3,8 +3,8 @@ Contributors: techlabpro1, mamunnu
 Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
-Tested up to: 6.9
-Stable tag: 7.9.3
+Tested up to: 7.1
+Stable tag: 7.9.4
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -253,6 +253,22 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.4 (Sep 8, 2026) =
+* Added: Sync button in the import modal header to fetch the latest layouts anytime.
+* Improved: Layouts are saved on your own site, so the modal loads without remote calls.
+* Improved: The saved copy never expires, and updated layouts arrive with each plugin update.
+* Improved: The import modal now shows why it could not load, with a Retry button.
+* Fixed: Import modal showed no layouts when the browser could not reach the library.
+* Fixed: Block editor fired taxonomy requests endlessly, flooding the server while a post was open.
+* Fixed: Text Align and device switcher icons were invisible in the block editor sidebar.
+* Fixed: Controls with help text squashed their input down to a few pixels wide.
+* Fixed: Dimension inputs and the link button now line up at the same height.
+* Fixed: Enable Border & Box Shadow select showed no value until you picked one.
+* Fixed: Text fields were taller than the number fields sitting next to them.
+* Fixed: Taxonomy select boxes were taller than the other fields around them.
+* Fixed: Start and End Date calendar opened too wide and spilled outside the sidebar.
+* Fixed: Editor locked up for up to fifteen seconds on pages with several blocks.
 
 = 7.9.3 (Jun 2, 2026) =
 * Security: AI REST endpoint now requires edit_posts (app/Controllers/Api/AIIntegration.php:18).

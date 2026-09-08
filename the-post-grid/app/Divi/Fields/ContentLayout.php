@@ -78,7 +78,7 @@ class ContentLayout {
 			],
 
 			'offset_img_position' => [
-				'label'       => esc_html__( 'Offset Image Position', 'the-post-grid' ),
+				'label'       => esc_html__( 'Offset Img Position', 'the-post-grid' ),
 				'type'        => 'select',
 				'default'     => 'image-left',
 				'options'     => [
