@@ -116,7 +116,7 @@ class AdminAjaxController {
 			}
 
 			/* post__in */
-			$post__in = ( isset( $_REQUEST['post__in'] ) ? sanitize_text_field( $_REQUEST['post__in'] ) : null );
+			$post__in = ( isset( $_REQUEST['post__in'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['post__in'] ) ) : null );
 
 			if ( $post__in ) {
 				$post__in         = explode( ',', $post__in );
@@ -328,9 +328,10 @@ class AdminAjaxController {
 			$containerDataAttr  = null;
 			$containerDataAttr .= " data-layout='{$layout}' data-desktop-col='{$dCol}'  data-tab-col='{$tCol}'  data-mobile-col='{$mCol}'";
 
+			// Each breakpoint has to test its own value; see ShortcodeController.
 			$dCol = 5 === $dCol ? '24' : round( 12 / $dCol );
-			$tCol = 5 === $dCol ? '24' : round( 12 / $tCol );
-			$mCol = 5 === $dCol ? '24' : round( 12 / $mCol );
+			$tCol = 5 === $tCol ? '24' : round( 12 / $tCol );
+			$mCol = 5 === $mCol ? '24' : round( 12 / $mCol );
 
 			if ( $isCarousel ) {
 				$dCol = $tCol = $mCol = 12;
@@ -428,7 +429,10 @@ class AdminAjaxController {
 						$arg['anchorClass'] .= ' tpg-multi-popup';
 					}
 				} else {
-					$arg['link_target'] = ! empty( $_REQUEST['link_target'] ) ? ' target="' . sanitize_text_field( wp_unslash( $_REQUEST['link_target'] ) ) . '"' : null;
+					$link_target_value  = ! empty( $_REQUEST['link_target'] ) ? sanitize_key( wp_unslash( $_REQUEST['link_target'] ) ) : '';
+					$arg['link_target'] = in_array( $link_target_value, [ '_blank', '_self', '_parent', '_top' ], true )
+						? ' target="' . esc_attr( $link_target_value ) . '"'
+						: null;
 				}
 			} else {
 				$arg['anchorClass'] = ' disabled';

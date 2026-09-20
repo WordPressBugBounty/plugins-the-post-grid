@@ -94,7 +94,7 @@ class ImportLayouts {
 			return null;
 		}
 
-		if ( ! is_writable( $dir ) ) {
+		if ( ! is_writable( $dir ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_is_writable -- WP_Filesystem has no writability probe, and loading it here would be heavier than the check.
 			return null;
 		}
 

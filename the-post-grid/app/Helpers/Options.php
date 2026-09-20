@@ -1013,6 +1013,13 @@ class Options {
 				'options'     => self::postLoadingType(),
 			],
 
+			'pagination_items' => [
+				'type'        => 'number',
+				'label'       => esc_html__( 'Pagination Items', 'the-post-grid' ),
+				'holderClass' => 'pagination-item pagination-items tpg-hidden',
+				'description' => esc_html__( 'How many page numbers to show at once. Leave empty to use the global setting.', 'the-post-grid' ),
+			],
+
 			'posts_per_page' => [
 				'type'        => 'number',
 				'label'       => esc_html__( 'Display per page', 'the-post-grid' ),

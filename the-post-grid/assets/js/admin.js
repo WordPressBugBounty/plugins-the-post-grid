@@ -895,7 +895,7 @@
 
 
             $.post(rttpg.ajaxurl, {
-                action: 'install_plugin',
+                action: 'rttpg_install_plugin',
                 slug: slug,
                 rttpg_nonce: rttpg.nonce,
             }, function (response) {
@@ -904,7 +904,7 @@
                     $btn.addClass('activating');
                     // Activate the plugin
                     $.post(rttpg.ajaxurl, {
-                        action: 'activate_plugin',
+                        action: 'rttpg_activate_plugin',
                         plugin: response.data.plugin,
                         rttpg_nonce: rttpg.nonce,
                     }, function (activateResponse) {
@@ -938,7 +938,7 @@
             $btn.text('Activating...').prop('disabled', true);
 
             $.post(rttpg.ajaxurl, {
-                action: 'activate_plugin',
+                action: 'rttpg_activate_plugin',
                 plugin: pluginFile,
                 rttpg_nonce: rttpg.nonce,
             }, function (response) {

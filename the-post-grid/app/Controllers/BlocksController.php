@@ -373,15 +373,20 @@ class BlocksController {
 				require_once ABSPATH . 'wp-admin/includes/file.php';
 			}
 
-			$post_id  = ! empty( $_POST['post_id'] ) ? sanitize_text_field( $_POST['post_id'] ) : '';
-			$blockCss = ! empty( $_POST['block_css'] ) ? sanitize_text_field( $_POST['block_css'] ) : '';
+			$post_id  = ! empty( $_POST['post_id'] ) ? sanitize_text_field( wp_unslash( $_POST['post_id'] ) ) : '';
+			$blockCss = ! empty( $_POST['block_css'] ) ? wp_strip_all_tags( wp_unslash( $_POST['block_css'] ) ) : '';
 
 			if ( $post_id == 'rttpg-widget' && isset( $_POST['has_block'] ) ) {
 				update_option( $post_id, $blockCss );
 				wp_send_json_success( [ 'message' => __( 'Widget CSS Saved', 'the-post-grid' ) ] );
 			}
 
-			$post_id        = absint( $post_id );
+			$post_id = absint( $post_id );
+
+			if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {
+				wp_send_json_error( [ 'message' => __( 'User permission error', 'the-post-grid' ) ] );
+			}
+
 			$filename       = "rttpg-block-css-{$post_id}.css";
 			$upload_dir_url = wp_upload_dir();
 			$dir            = trailingslashit( $upload_dir_url['basedir'] ) . 'rttpg/';
@@ -486,10 +491,10 @@ class BlocksController {
 	 * @throws Exception
 	 * @since v.1.0.0
 	 */
-	public function appended( $server ) {
+	public function appended() {
 		check_ajax_referer( 'rttpg_nonce', 'nonce' );
 
-		$post    = $server->get_params();
+		$post    = wp_unslash( $_POST ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each value is sanitized below.
 		$post_id = isset( $post['post_id'] ) ? absint( $post['post_id'] ) : 0;
 
 		if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {

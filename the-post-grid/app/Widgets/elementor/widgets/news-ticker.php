@@ -342,7 +342,7 @@ class NewsTicker extends Custom_Widget_Base {
 		$this->add_control(
 			'animation_control',
 			[
-				'label'     => esc_html__( 'Animation Control', 'textdomain' ),
+				'label'     => esc_html__( 'Animation Control', 'the-post-grid' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -817,7 +817,7 @@ class NewsTicker extends Custom_Widget_Base {
 		$this->add_control(
 			'title_icon',
 			[
-				'label'     => esc_html__( 'Choose Icon', 'textdomain' ),
+				'label'     => esc_html__( 'Choose Icon', 'the-post-grid' ),
 				'type'      => Controls_Manager::ICONS,
 				'condition' => [
 					'show_icon' => 'custom',
@@ -828,7 +828,7 @@ class NewsTicker extends Custom_Widget_Base {
 		$this->add_control(
 			'live_animation',
 			[
-				'label'        => esc_html__( 'Live Animation', 'textdomain' ),
+				'label'        => esc_html__( 'Live Animation', 'the-post-grid' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => false,
 				'return_value' => 'yes',

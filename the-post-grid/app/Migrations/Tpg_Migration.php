@@ -76,7 +76,7 @@ class Tpg_Migration {
 
 		try {
 			// 1. Get a batch of tpg_cache transients
-			$tpg_transients = $wpdb->get_col(
+			$tpg_transients = $wpdb->get_col( //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- one-off transient cleanup, there is no API for a LIKE lookup on option_name.
 				$wpdb->prepare(
 					"SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s LIMIT %d",
 					'_transient_tpg_cache_%',
@@ -103,7 +103,9 @@ class Tpg_Migration {
 			}
 
 		} catch ( \Exception $e ) {
-			error_log( 'TPG Cache Migration Error: ' . $e->getMessage() );
+			if ( defined( 'WP_DEBUG' ) && WP_DEBUG && defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+				error_log( 'TPG Cache Migration Error: ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- debug builds only.
+			}
 		}
 	}
 }

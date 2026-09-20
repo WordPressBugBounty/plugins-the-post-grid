@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 7.9.4
+Stable tag: 7.9.5
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -254,6 +254,23 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 == Changelog ==
 
+= 7.9.5 (Sep 20, 2026) =
+* Security: Contributors could store iframe, style and input elements WordPress would normally strip.
+* Security: Grid shortcode accepted any post ID and rendered that post's settings unescaped.
+* Security: Grid colors, filters and data attributes are escaped before they reach the page.
+* Security: Settings, block CSS and plugin install requests are now properly checked and namespaced.
+* Security: Deactivating the plugin from a link now needs confirmation, so it cannot be forced.
+* Improved: Block names now start with the layout, so /grid and /list find them first.
+* Improved: Elementor pagination now points to the Display Per Page field it depends on.
+* Fixed: Collapsable filter wrapped onto several lines when another plugin restyled it.
+* Added: Pagination Items setting limits how many page numbers show, per grid.
+* Added: Elementor and Divi layouts can now use five or six columns.
+* Fixed: Five columns on tablet or mobile rendered six columns instead.
+* Fixed: Pagination range passed by a layout was ignored, so only the global setting applied.
+* Fixed: Plugin header was missing the License line required by WordPress.org checks.
+* Fixed: Setup wizard hid admin notices on other screens when its flag was in the URL.
+* Fixed: Several admin strings used the wrong text domain and stayed untranslated.
+
 = 7.9.4 (Sep 8, 2026) =
 * Added: Sync button in the import modal header to fetch the latest layouts anytime.
 * Improved: Layouts are saved on your own site, so the modal loads without remote calls.
@@ -269,6 +286,7 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 * Fixed: Taxonomy select boxes were taller than the other fields around them.
 * Fixed: Start and End Date calendar opened too wide and spilled outside the sidebar.
 * Fixed: Editor locked up for up to fifteen seconds on pages with several blocks.
+* Fixed: Category widget caused a fatal error when a chosen category no longer existed.
 
 = 7.9.3 (Jun 2, 2026) =
 * Security: AI REST endpoint now requires edit_posts (app/Controllers/Api/AIIntegration.php:18).
