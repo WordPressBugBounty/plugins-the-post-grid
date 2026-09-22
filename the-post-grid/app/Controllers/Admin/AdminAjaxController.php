@@ -429,10 +429,7 @@ class AdminAjaxController {
 						$arg['anchorClass'] .= ' tpg-multi-popup';
 					}
 				} else {
-					$link_target_value  = ! empty( $_REQUEST['link_target'] ) ? sanitize_key( wp_unslash( $_REQUEST['link_target'] ) ) : '';
-					$arg['link_target'] = in_array( $link_target_value, [ '_blank', '_self', '_parent', '_top' ], true )
-						? ' target="' . esc_attr( $link_target_value ) . '"'
-						: null;
+					$arg['link_target'] = Fns::link_attributes( ! empty( $_REQUEST['link_target'] ) ? sanitize_key( wp_unslash( $_REQUEST['link_target'] ) ) : '' );
 				}
 			} else {
 				$arg['anchorClass'] = ' disabled';

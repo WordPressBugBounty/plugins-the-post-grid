@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 7.9.5
+Stable tag: 7.9.6
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -253,6 +253,11 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.6 (Sep 21, 2026) =
+* Security: Section title link target could add extra attributes to the link and run scripts.
+* Security: Post link target from grid settings is now checked against the allowed link targets.
+* Security: Image alt text and source are escaped, so a post title cannot break the markup.
 
 = 7.9.5 (Sep 20, 2026) =
 * Security: Contributors could store iframe, style and input elements WordPress would normally strip.

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-20 11:14+0000\n"
+"POT-Creation-Date: 2026-09-21 05:23+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Custom Field group"
 msgstr ""
 
-#: ../app/Controllers/AjaxController.php:122, ../app/Controllers/AjaxController.php:179, ../app/Controllers/Admin/AdminAjaxController.php:1243
+#: ../app/Controllers/AjaxController.php:122, ../app/Controllers/AjaxController.php:179, ../app/Controllers/Admin/AdminAjaxController.php:1240
 msgid "Session Error !!"
 msgstr ""
 
@@ -223,7 +223,7 @@ msgstr ""
 msgid "The Post Grid Canvas"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:1381
+#: ../app/Controllers/ShortcodeController.php:1378
 msgid "No shortCode found"
 msgstr ""
 
@@ -231,43 +231,43 @@ msgstr ""
 msgid "Show all"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:659, ../app/Controllers/Admin/AdminAjaxController.php:604
+#: ../app/Controllers/ShortcodeController.php:656, ../app/Controllers/Admin/AdminAjaxController.php:601
 msgid "All"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:914, ../app/Helpers/Fns.php:718, ../app/Helpers/Fns.php:899, ../app/Helpers/Fns.php:1150, ../app/Controllers/Admin/AdminAjaxController.php:862
+#: ../app/Controllers/ShortcodeController.php:911, ../app/Helpers/Fns.php:718, ../app/Helpers/Fns.php:899, ../app/Helpers/Fns.php:1150, ../app/Controllers/Admin/AdminAjaxController.php:859
 msgid "Search..."
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:932, ../app/Helpers/Fns.php:693, ../app/Helpers/Options.php:76, ../app/Controllers/Admin/AdminAjaxController.php:876, ../app/Divi/Fields/ContentQuery.php:197, ../app/Widgets/elementor/rtTPGElementorHelper.php:325, ../app/Widgets/elementor/widgets/news-ticker.php:607
+#: ../app/Controllers/ShortcodeController.php:929, ../app/Helpers/Fns.php:693, ../app/Helpers/Options.php:76, ../app/Controllers/Admin/AdminAjaxController.php:873, ../app/Divi/Fields/ContentQuery.php:197, ../app/Widgets/elementor/rtTPGElementorHelper.php:325, ../app/Widgets/elementor/widgets/news-ticker.php:607
 msgid "Meta value"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:930, ../app/Controllers/ShortcodeController.php:938, ../app/Controllers/Admin/AdminAjaxController.php:874, ../app/Controllers/Admin/AdminAjaxController.php:882
+#: ../app/Controllers/ShortcodeController.php:927, ../app/Controllers/ShortcodeController.php:935, ../app/Controllers/Admin/AdminAjaxController.php:871, ../app/Controllers/Admin/AdminAjaxController.php:879
 msgid "Sort By None"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:968, ../app/Controllers/Admin/AdminAjaxController.php:910
+#: ../app/Controllers/ShortcodeController.php:965, ../app/Controllers/Admin/AdminAjaxController.php:907
 msgid "Loading ..."
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:970, ../app/Controllers/Admin/AdminAjaxController.php:1169, ../app/Controllers/Blocks/GridHoverLayout.php:192, ../app/Controllers/Blocks/GridLayout.php:188, ../app/Controllers/Blocks/ListLayout.php:173, ../app/Divi/Render/GridHoverLayoutRenderer.php:128, ../app/Divi/Render/GridLayoutRenderer.php:136, ../app/Divi/Render/ListLayoutRender.php:121, ../app/Widgets/elementor/widgets/grid-hover-layout-archive.php:268, ../app/Widgets/elementor/widgets/grid-hover-layout.php:292, ../app/Widgets/elementor/widgets/grid-layout-archive.php:263, ../app/Widgets/elementor/widgets/grid-layout.php:298, ../app/Widgets/elementor/widgets/list-layout-archive.php:262, ../app/Widgets/elementor/widgets/list-layout.php:284, ../app/Widgets/elementor/widgets/post-timeline.php:633, ../app/Widgets/elementor/widgets/slider-layout-archive.php:315, ../app/Widgets/elementor/widgets/slider-layout-archive.php:376, ../app/Widgets/elementor/widgets/slider-layout.php:318, ../app/Widgets/elementor/widgets/slider-layout.php:391
+#: ../app/Controllers/ShortcodeController.php:967, ../app/Controllers/Admin/AdminAjaxController.php:1166, ../app/Controllers/Blocks/GridHoverLayout.php:192, ../app/Controllers/Blocks/GridLayout.php:188, ../app/Controllers/Blocks/ListLayout.php:173, ../app/Divi/Render/GridHoverLayoutRenderer.php:128, ../app/Divi/Render/GridLayoutRenderer.php:136, ../app/Divi/Render/ListLayoutRender.php:121, ../app/Widgets/elementor/widgets/grid-hover-layout-archive.php:268, ../app/Widgets/elementor/widgets/grid-hover-layout.php:292, ../app/Widgets/elementor/widgets/grid-layout-archive.php:263, ../app/Widgets/elementor/widgets/grid-layout.php:298, ../app/Widgets/elementor/widgets/list-layout-archive.php:262, ../app/Widgets/elementor/widgets/list-layout.php:284, ../app/Widgets/elementor/widgets/post-timeline.php:633, ../app/Widgets/elementor/widgets/slider-layout-archive.php:315, ../app/Widgets/elementor/widgets/slider-layout-archive.php:376, ../app/Widgets/elementor/widgets/slider-layout.php:318, ../app/Widgets/elementor/widgets/slider-layout.php:391
 msgid "No post found"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:1084, ../app/Helpers/Options.php:768, ../app/Controllers/Admin/AdminAjaxController.php:1016
+#: ../app/Controllers/ShortcodeController.php:1081, ../app/Helpers/Options.php:768, ../app/Controllers/Admin/AdminAjaxController.php:1013
 msgid "Search"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:1286, ../app/Helpers/Fns.php:370, ../app/Controllers/Admin/AdminAjaxController.php:1198, ../app/Divi/Fields/ContentPagination.php:99, ../app/Widgets/elementor/rtTPGElementorHelper.php:1952
+#: ../app/Controllers/ShortcodeController.php:1283, ../app/Helpers/Fns.php:370, ../app/Controllers/Admin/AdminAjaxController.php:1195, ../app/Divi/Fields/ContentPagination.php:99, ../app/Widgets/elementor/rtTPGElementorHelper.php:1952
 msgid "Load More"
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:1403
+#: ../app/Controllers/ShortcodeController.php:1400
 msgid "This is a restricted content, you need to logged in to view this content."
 msgstr ""
 
-#: ../app/Controllers/ShortcodeController.php:1396
+#: ../app/Controllers/ShortcodeController.php:1393
 msgid "You are not permitted to view this content."
 msgstr ""
 
@@ -305,139 +305,139 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:2010
+#: ../app/Helpers/Fns.php:2054
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4563
+#: ../app/Helpers/Fns.php:4607
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:4588, ../app/Widgets/elementor/rtTPGElementorHelper.php:3160, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:4632, ../app/Widgets/elementor/rtTPGElementorHelper.php:3160, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5337
+#: ../app/Helpers/Fns.php:5381
 msgid "Single"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5338
+#: ../app/Helpers/Fns.php:5382
 msgid "Post Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5339
+#: ../app/Helpers/Fns.php:5383
 msgid "Author Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5340
+#: ../app/Helpers/Fns.php:5384
 msgid "Search Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5341
+#: ../app/Helpers/Fns.php:5385
 msgid "Date Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5342
+#: ../app/Helpers/Fns.php:5386
 msgid "Category Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5343
+#: ../app/Helpers/Fns.php:5387
 msgid "Tags Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5373
+#: ../app/Helpers/Fns.php:5417
 msgid "Dashboard"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5374
+#: ../app/Helpers/Fns.php:5418
 msgid "My Post"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5624
+#: ../app/Helpers/Fns.php:5668
 msgid "You are not authorize to submit a post."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5622
+#: ../app/Helpers/Fns.php:5666
 msgid "Post submit fail."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5620
+#: ../app/Helpers/Fns.php:5664
 msgid "Post submit successful"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5784, ../app/Helpers/Fns.php:5844
+#: ../app/Helpers/Fns.php:5828, ../app/Helpers/Fns.php:5888
 msgctxt "Thousand Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5785
+#: ../app/Helpers/Fns.php:5829
 msgctxt "Million Shorthand"
 msgid "M"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5786
+#: ../app/Helpers/Fns.php:5830
 msgctxt "Billion Shorthand"
 msgid "B"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5787
+#: ../app/Helpers/Fns.php:5831
 msgctxt "Trillion Shorthand"
 msgid "T"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5788
+#: ../app/Helpers/Fns.php:5832
 msgctxt "Quadrillion Shorthand"
 msgid "Qa"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5789
+#: ../app/Helpers/Fns.php:5833
 msgctxt "Quintillion Shorthand"
 msgid "Qi"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5845
+#: ../app/Helpers/Fns.php:5889
 msgctxt "Thousands Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5846
+#: ../app/Helpers/Fns.php:5890
 msgctxt "Lac Shorthand"
 msgid " Lac"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5847
+#: ../app/Helpers/Fns.php:5891
 msgctxt "Lacs Shorthand"
 msgid " Lacs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5848
+#: ../app/Helpers/Fns.php:5892
 msgctxt "Cr Shorthand"
 msgid " Cr"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5849
+#: ../app/Helpers/Fns.php:5893
 msgctxt "Crs Shorthand"
 msgid " Crs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5921, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:311, ../app/Widgets/elementor/rtTPGElementorHelper.php:452, ../app/Widgets/elementor/rtTPGElementorHelper.php:3652, ../app/Widgets/elementor/widgets/news-ticker.php:594
+#: ../app/Helpers/Fns.php:5965, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:311, ../app/Widgets/elementor/rtTPGElementorHelper.php:452, ../app/Widgets/elementor/rtTPGElementorHelper.php:3652, ../app/Widgets/elementor/widgets/news-ticker.php:594
 msgid "Date"
 msgstr ""
 
 #. translators: %1$s: opening anchor tag, %2$s: closing anchor tag, %3$s: additional message
-#: ../app/Helpers/Fns.php:5946
+#: ../app/Helpers/Fns.php:5990
 msgid "Please upgrade to pro for more options %s"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6069
+#: ../app/Helpers/Fns.php:6113
 msgid "Date & Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6079
+#: ../app/Helpers/Fns.php:6123
 msgid "End Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6089
+#: ../app/Helpers/Fns.php:6133
 msgid "Location: "
 msgstr ""
 

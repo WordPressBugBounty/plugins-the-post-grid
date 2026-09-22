@@ -154,11 +154,11 @@ class NewsTicker extends Custom_Widget_Base {
 		}
 		$direction = '';
 		if ( 'vertical' === $data['direction'] ) {
-			$direction = 'data-swiper-parallax-y=-40';
+			$direction = ' data-swiper-parallax-y="-40"';
 		}
 
 		if ( 'horizontal' === $data['direction'] ) {
-			$direction = 'data-swiper-parallax=-120';
+			$direction = ' data-swiper-parallax="-120"';
 		}
 		?>
 		<div class="swiper tpg-news-ticker news-ticker-slider" data-swiper='<?php echo wp_json_encode( $swiperConfig ); ?>'>
@@ -169,7 +169,7 @@ class NewsTicker extends Custom_Widget_Base {
 					$query->the_post();
 					?>
 					<div class="swiper-slide">
-						<div style="--transitionDuration:<?php echo esc_attr( $data['delay'] ); ?>ms" class="ticker-content" <?php echo esc_attr( $direction ); ?>>
+						<div style="--transitionDuration:<?php echo esc_attr( $data['delay'] ); ?>ms" class="ticker-content"<?php echo $direction; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Fixed markup, no user input. ?>>
 							<?php
 							if ( 'none' !== $data['post_icon'] ) {
 								$this->get_breaking_icon( $data['post_icon'] );

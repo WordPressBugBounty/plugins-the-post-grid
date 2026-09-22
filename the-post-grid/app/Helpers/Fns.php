@@ -1393,6 +1393,48 @@ class Fns {
 	}
 
 	/**
+	 * Validate a link target against the allowed browsing contexts.
+	 *
+	 * Anything else - including values carrying spaces, which would break out
+	 * of an attribute slot - is dropped.
+	 *
+	 * @param mixed $target Raw target value.
+	 *
+	 * @return string Allowed target, or an empty string.
+	 */
+	public static function validate_link_target( $target ) {
+		$target = is_scalar( $target ) ? strtolower( trim( (string) $target ) ) : '';
+
+		return in_array( $target, [ '_blank', '_self', '_parent', '_top' ], true ) ? $target : '';
+	}
+
+	/**
+	 * Build the link attribute fragment for an anchor.
+	 *
+	 * Returns an already quoted and escaped string so no call site can print a
+	 * raw value into an unquoted attribute slot.
+	 *
+	 * @param mixed $target   Raw target value.
+	 * @param bool  $nofollow Whether the link needs rel="nofollow".
+	 *
+	 * @return string Ready to print attribute fragment.
+	 */
+	public static function link_attributes( $target = '', $nofollow = false ) {
+		$attributes = '';
+		$target     = self::validate_link_target( $target );
+
+		if ( $target ) {
+			$attributes .= ' target="' . esc_attr( $target ) . '"';
+		}
+
+		if ( $nofollow ) {
+			$attributes .= ' rel="nofollow"';
+		}
+
+		return $attributes;
+	}
+
+	/**
 	 * Get Section Title
 	 *
 	 * @param $data
@@ -1402,15 +1444,17 @@ class Fns {
 			return;
 		}
 
-		$_is_link = $target = $nofollow = '';
+		$_is_link = $link_attributes = '';
 		if ( $is_guten ) {
-			$_is_link = $data['section_external_url'] ?? '';
-			$target   = ! empty( $data['section_external_url_target'] ) ? ' target="' . $data['section_external_url_target'] . '"' : '';
-			$nofollow = '';
+			$external_url    = $data['section_external_url'] ?? '';
+			$_is_link        = is_scalar( $external_url ) ? $external_url : '';
+			$link_attributes = self::link_attributes( $data['section_external_url_target'] ?? '' );
 		} elseif ( ! empty( $data['section_external_url']['url'] ) ) {
-			$_is_link = $data['section_external_url']['url'];
-			$target   = $data['section_external_url']['is_external'] ? ' target="_blank"' : '';
-			$nofollow = $data['section_external_url']['nofollow'] ? ' rel="nofollow"' : '';
+			$_is_link        = $data['section_external_url']['url'];
+			$link_attributes = self::link_attributes(
+				! empty( $data['section_external_url']['is_external'] ) ? '_blank' : '',
+				! empty( $data['section_external_url']['nofollow'] )
+			);
 		}
 
 		?>
@@ -1425,7 +1469,7 @@ class Fns {
 			<?php
 			if ( $_is_link ) {
 				?>
-			<a href="<?php echo esc_url( $_is_link ); ?>" <?php echo esc_attr( $target . ' ' . $nofollow ); ?>>
+			<a href="<?php echo esc_url( $_is_link ); ?>"<?php echo $link_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built and escaped by self::link_attributes(). ?>>
 				<?php } ?>
 
 				<?php
@@ -1460,7 +1504,7 @@ class Fns {
 			<span class="tpg-widget-heading-line line-right"></span>
 
 			<?php if ( isset( $data['enable_external_link'] ) && ( in_array( $data['enable_external_link'], [ 'show', 'on' ] ) ) ) : ?>
-				<a class='external-link' href='<?php echo esc_url( $_is_link ); ?>' <?php echo esc_attr( $target . ' ' . $nofollow ); ?>>
+				<a class='external-link' href='<?php echo esc_url( $_is_link ); ?>'<?php echo $link_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built and escaped by self::link_attributes(). ?>>
 					<?php if ( $data['section_external_text'] ) : ?>
 						<span class="external-lable"><?php echo esc_html( $data['section_external_text'] ); ?></span>
 					<?php endif; ?>
@@ -3504,7 +3548,7 @@ class Fns {
 				absint( $pID ),
 				esc_url( ! empty( $external_link['url'] ) ? $external_link['url'] : get_permalink() ),
 				esc_attr( $link_class ),
-				esc_attr( ! empty( $external_link['target'] ) ? $external_link['target'] : $data['link_target'] )
+				esc_attr( self::validate_link_target( ! empty( $external_link['target'] ) ? $external_link['target'] : $data['link_target'] ) )
 			);
 			$link_end   = $readmore_link_end = '</a>';
 		} elseif ( 'popup' == $data['post_link_type'] ) {
@@ -3519,7 +3563,7 @@ class Fns {
 				absint( $pID ),
 				esc_url( get_permalink() ),
 				esc_attr( $link_class ),
-				esc_attr( $data['link_target'] )
+				esc_attr( self::validate_link_target( $data['link_target'] ) )
 			);
 			$link_end   = $readmore_link_end = '</a>';
 		} elseif ( 'multi_popup' == $data['post_link_type'] ) {
@@ -3529,7 +3573,7 @@ class Fns {
 				absint( $pID ),
 				esc_url( get_permalink() ),
 				esc_attr( $link_class ),
-				esc_attr( $data['link_target'] )
+				esc_attr( self::validate_link_target( $data['link_target'] ) )
 			);
 			$link_end   = $readmore_link_end = '</a>';
 		} else {
@@ -3539,7 +3583,7 @@ class Fns {
 				absint( $pID ),
 				esc_url( get_permalink() ),
 				esc_attr( $link_class ),
-				esc_attr( $data['link_target'] )
+				esc_attr( self::validate_link_target( $data['link_target'] ) )
 			);
 			$readmore_link_end   = '</a>';
 		}
@@ -4007,9 +4051,9 @@ class Fns {
 
 			if ( $type == 'markup' ) {
 				if ( $imgClass !== 'swiper-lazy' ) {
-					return "<img class='rt-img-responsive' src='{$imgSrc}' {$size} alt='{$alt}'>";
+					return "<img class='rt-img-responsive' src='" . esc_url( $imgSrc ) . "' {$size} alt='" . esc_attr( $alt ) . "'>";
 				} else {
-					return "<img class='{$imgClass}' data-src='{$imgSrc}' alt='{$alt}'>";
+					return "<img class='" . esc_attr( $imgClass ) . "' data-src='" . esc_url( $imgSrc ) . "' alt='" . esc_attr( $alt ) . "'>";
 				}
 			} else {
 				return $imgSrc;
