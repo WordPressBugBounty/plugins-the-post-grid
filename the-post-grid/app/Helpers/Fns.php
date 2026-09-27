@@ -421,6 +421,7 @@ class Fns {
 			'excerpt_type'                 => $data['excerpt_type'],
 			'excerpt_limit'                => $data['excerpt_limit'],
 			'excerpt_more_text'            => $data['excerpt_more_text'],
+			'keep_html'                    => $data['keep_html'] ?? '',
 			'title_limit'                  => $data['title_limit'],
 			'title_limit_type'             => $data['title_limit_type'],
 			'title_visibility_style'       => $data['title_visibility_style'],
@@ -2219,6 +2220,12 @@ class Fns {
 
 			return apply_filters( 'tpg_content_full', $content, $post_id, $data );
 		} else {
+			if ( self::tpg_keep_html_enabled( $data ) ) {
+				$html_excerpt = self::tpg_get_html_excerpt( $post, $data );
+
+				return apply_filters( 'tpg_get_the_excerpt', $html_excerpt, $post_id, $data, $html_excerpt );
+			}
+
 			if ( class_exists( 'ET_GB_Block_Layout' ) ) {
 				$defaultExcerpt = $post->post_excerpt ?: wp_trim_words( $post->post_content, 55 );
 			} elseif ( defined( 'WPB_VC_VERSION' ) ) {
@@ -2279,6 +2286,298 @@ class Fns {
 
 			return apply_filters( 'tpg_get_the_excerpt', $excerpt, $post_id, $data, $defaultExcerpt );
 		}
+	}
+
+	/**
+	 * Is the "Keep HTML Tags" switch on for this grid?
+	 *
+	 * Each builder stores a switch differently (`yes`, `on`, `show`, `1`), so all of
+	 * them are normalised here. Anything else keeps the old plain text excerpt, which
+	 * is what every grid saved before this option must go on getting.
+	 *
+	 * @param array $data Layout settings.
+	 *
+	 * @return bool
+	 */
+	public static function tpg_keep_html_enabled( $data = [] ) {
+		$value = isset( $data['keep_html'] ) ? $data['keep_html'] : '';
+
+		if ( is_array( $value ) ) {
+			return false;
+		}
+
+		return in_array( strtolower( (string) $value ), [ 'yes', 'on', 'show', 'true', '1' ], true );
+	}
+
+	/**
+	 * Tags kept inside an excerpt when "Keep HTML Tags" is on.
+	 *
+	 * Deliberately limited to the formatting tags a post intro actually uses. All of
+	 * them survive the `wp_kses()` call the templates run on output.
+	 *
+	 * @return array
+	 */
+	public static function tpg_excerpt_allowed_html() {
+		$common = [
+			'class' => true,
+			'id'    => true,
+			'style' => true,
+		];
+
+		$tags = [
+			'p'          => $common,
+			'br'         => [],
+			'hr'         => [],
+			'span'       => $common,
+			'strong'     => $common,
+			'b'          => $common,
+			'em'         => $common,
+			'i'          => $common,
+			'u'          => $common,
+			's'          => $common,
+			'del'        => $common,
+			'ins'        => $common,
+			'mark'       => $common,
+			'small'      => $common,
+			'sub'        => $common,
+			'sup'        => $common,
+			'code'       => $common,
+			'pre'        => $common,
+			'blockquote' => array_merge( $common, [ 'cite' => true ] ),
+			'ul'         => $common,
+			'ol'         => array_merge( $common, [ 'start' => true, 'type' => true, 'reversed' => true ] ),
+			'li'         => $common,
+			'dl'         => $common,
+			'dt'         => $common,
+			'dd'         => $common,
+			'h1'         => $common,
+			'h2'         => $common,
+			'h3'         => $common,
+			'h4'         => $common,
+			'h5'         => $common,
+			'h6'         => $common,
+			'a'          => array_merge(
+				$common,
+				[
+					'href'   => true,
+					'title'  => true,
+					'target' => true,
+					'rel'    => true,
+				]
+			),
+		];
+
+		return apply_filters( 'rttpg_excerpt_allowed_html', $tags );
+	}
+
+	/**
+	 * Excerpt that keeps its markup.
+	 *
+	 * Used instead of the plain text excerpt when "Keep HTML Tags" is on, so lists,
+	 * line breaks and paragraphs survive the word/character limit.
+	 *
+	 * @param \WP_Post|int $post Post object or ID.
+	 * @param array        $data Layout settings.
+	 *
+	 * @return string
+	 */
+	public static function tpg_get_html_excerpt( $post, $data = [] ) {
+		$type   = isset( $data['excerpt_type'] ) ? $data['excerpt_type'] : 'character';
+		$limit  = ! empty( $data['excerpt_limit'] ) ? absint( $data['excerpt_limit'] ) : 0;
+		$more   = isset( $data['excerpt_more_text'] ) ? $data['excerpt_more_text'] : '';
+		$source = self::tpg_excerpt_html_source( $post, $is_manual );
+
+		if ( '' === trim( wp_strip_all_tags( $source ) ) ) {
+			return '';
+		}
+
+		$source = wp_kses( $source, self::tpg_excerpt_allowed_html() );
+
+		if ( $limit ) {
+			$source = self::tpg_truncate_html( $source, $limit, $type, $more );
+		} elseif ( ! $is_manual ) {
+			// No limit given, so stay with WordPress's own excerpt length instead of printing the whole post.
+			$source = self::tpg_truncate_html( $source, absint( apply_filters( 'excerpt_length', 55 ) ), 'word', $more );
+		}
+
+		return trim( $source );
+	}
+
+	/**
+	 * Post content prepared for an excerpt, with its markup left intact.
+	 *
+	 * @param \WP_Post|int $post      Post object or ID.
+	 * @param bool         $is_manual Set to true when the post carries its own excerpt.
+	 *
+	 * @return string
+	 */
+	public static function tpg_excerpt_html_source( $post, &$is_manual = null ) {
+		$is_manual = false;
+
+		if ( ! $post instanceof \WP_Post ) {
+			$post = get_post( $post );
+		}
+
+		if ( empty( $post ) || post_password_required( $post ) ) {
+			return '';
+		}
+
+		$content   = trim( (string) $post->post_excerpt );
+		$is_manual = '' !== $content;
+
+		if ( '' === $content ) {
+			$content = (string) $post->post_content;
+
+			if ( function_exists( 'has_blocks' ) && function_exists( 'excerpt_remove_blocks' ) && has_blocks( $content ) ) {
+				$content = excerpt_remove_blocks( $content );
+			}
+		}
+
+		$content = strip_shortcodes( $content );
+		$content = preg_replace( '#<!--.*?-->#s', '', $content );
+		$content = str_replace( ']]>', ']]&gt;', $content );
+		$content = wpautop( $content );
+
+		return apply_filters( 'rttpg_excerpt_html_source', $content, $post );
+	}
+
+	/**
+	 * Cut markup to a word or character limit without breaking it.
+	 *
+	 * Only the text counts towards the limit, tags left open by the cut are closed
+	 * again and wrappers the cut emptied are dropped.
+	 *
+	 * @param string $html  Markup to cut.
+	 * @param int    $limit Word or character limit.
+	 * @param string $type  `word` or `character`.
+	 * @param string $more  Expansion indicator, appended only when something was cut.
+	 *
+	 * @return string
+	 */
+	public static function tpg_truncate_html( $html, $limit, $type = 'character', $more = '' ) {
+		$limit = absint( $limit );
+
+		if ( ! $limit || '' === trim( $html ) ) {
+			return $html;
+		}
+
+		$void_tags = [ 'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr' ];
+		$tokens    = preg_split( '/(<[^>]*>)/', $html, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY );
+		$open_tags = [];
+		$output    = '';
+		$counter   = 0;
+		$truncated = false;
+
+		foreach ( (array) $tokens as $token ) {
+			if ( '' === $token ) {
+				continue;
+			}
+
+			if ( '<' === $token[0] ) {
+				if ( preg_match( '#^</\s*([a-z0-9]+)#i', $token, $matches ) ) {
+					$tag  = strtolower( $matches[1] );
+					$keys = array_keys( $open_tags, $tag, true );
+
+					// A closing tag with nothing open is dropped, it would only break the markup.
+					if ( ! empty( $keys ) ) {
+						unset( $open_tags[ end( $keys ) ] );
+						$open_tags = array_values( $open_tags );
+						$output   .= $token;
+					}
+				} elseif ( preg_match( '#^<\s*([a-z0-9]+)#i', $token, $matches ) ) {
+					$tag     = strtolower( $matches[1] );
+					$output .= $token;
+
+					if ( ! in_array( $tag, $void_tags, true ) && ! preg_match( '#/\s*>$#', $token ) ) {
+						$open_tags[] = $tag;
+					}
+				}
+
+				continue;
+			}
+
+			if ( '' === trim( $token ) ) {
+				$output .= $token;
+				continue;
+			}
+
+			if ( 'word' === $type ) {
+				$chunks = preg_split( '/(\s+)/u', $token, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY );
+
+				foreach ( (array) $chunks as $chunk ) {
+					if ( '' === trim( $chunk ) ) {
+						$output .= $chunk;
+						continue;
+					}
+
+					if ( $counter >= $limit ) {
+						$truncated = true;
+						break;
+					}
+
+					++$counter;
+					$output .= $chunk;
+				}
+			} else {
+				$length = mb_strlen( $token );
+
+				if ( $counter + $length <= $limit ) {
+					$counter += $length;
+					$output  .= $token;
+					continue;
+				}
+
+				$piece = self::tpgCharacterLimit( $limit - $counter, $token );
+
+				// Never leave half an entity like `&amp` behind.
+				$output   .= preg_replace( '/&[a-z0-9#]*$/i', '', $piece );
+				$counter   = $limit;
+				$truncated = true;
+			}
+
+			if ( $truncated ) {
+				break;
+			}
+		}
+
+		if ( $truncated ) {
+			// A cut landing right after an opening tag would leave an empty box behind.
+			while ( ! empty( $open_tags ) ) {
+				$pattern = '#<\s*' . preg_quote( end( $open_tags ), '#' ) . '(\s[^>]*)?>\s*$#i';
+
+				if ( ! preg_match( $pattern, $output ) ) {
+					break;
+				}
+
+				$output = preg_replace( $pattern, '', $output );
+				array_pop( $open_tags );
+			}
+
+			$output = preg_replace( '#(<br\s*/?>\s*)+$#i', '', $output );
+		}
+
+		if ( $truncated && $more ) {
+			$tail = '';
+
+			// A cut that fell on a boundary would drop the indicator between two tags, keep it inside the text instead.
+			if ( preg_match( '#(?:</[a-z0-9]+>\s*)+$#i', $output, $matched ) ) {
+				$tail   = $matched[0];
+				$output = substr( $output, 0, - strlen( $tail ) );
+			}
+
+			$output = rtrim( rtrim( $output ), ' .,-_' ) . $more . $tail;
+		}
+
+		while ( ! empty( $open_tags ) ) {
+			$output .= '</' . array_pop( $open_tags ) . '>';
+		}
+
+		// Wrappers the cut left without any content.
+		do {
+			$output = preg_replace( '#<(p|ul|ol|li|dl|dt|dd|blockquote|h[1-6])(\s[^>]*)?>\s*</\1>#i', '', $output, -1, $emptied );
+		} while ( $emptied );
+
+		return $output;
 	}
 
 	public static function get_the_title( $post_id, $data = [] ) {

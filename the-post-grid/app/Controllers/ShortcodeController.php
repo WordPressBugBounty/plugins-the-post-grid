@@ -178,6 +178,7 @@ class ShortcodeController {
 			$arg['excerpt_limit']       = ( isset( $scMeta['excerpt_limit'][0] ) ? absint( $scMeta['excerpt_limit'][0] ) : 0 );
 			$arg['title_limit']         = ( isset( $scMeta['tpg_title_limit'][0] ) ? absint( $scMeta['tpg_title_limit'][0] ) : 0 );
 			$arg['excerpt_more_text']   = ( isset( $scMeta['tgp_excerpt_more_text'][0] ) ? $scMeta['tgp_excerpt_more_text'][0] : null );
+			$arg['keep_html']           = ( ! empty( $scMeta['tgp_keep_html'][0] ) ? $scMeta['tgp_keep_html'][0] : '' );
 			$arg['read_more_text']      = ( ! empty( $scMeta['tgp_read_more_text'][0] ) ? $scMeta['tgp_read_more_text'][0] : esc_html__( 'Read More', 'the-post-grid' ) );
 			$arg['show_all_text']       = ( ! empty( $scMeta['tpg_show_all_text'][0] ) ? $scMeta['tpg_show_all_text'][0] : esc_html__( 'Show all', 'the-post-grid' ) );
 			$arg['tpg_title_position']  = isset( $scMeta['tpg_title_position'][0] ) && ! empty( $scMeta['tpg_title_position'][0] ) ? $scMeta['tpg_title_position'][0] : null;

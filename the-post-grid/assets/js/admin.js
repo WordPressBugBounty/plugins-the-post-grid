@@ -252,6 +252,7 @@
     tpgEnableACF();
     featureImageEffect();
     tpgOrderByEffect();
+    keepHtmlEffect();
     $("#link_to_detail_page_holder").on("change", "input[type='checkbox']", function () {
         detailLinkEffect();
     });
@@ -289,12 +290,26 @@
         tpgEnableACF();
     });
 
+    $("#tgp_excerpt_type_holder").on("change", "input[type='radio']", function () {
+        keepHtmlEffect();
+    });
+
     function preLoaderEffect() {
         var preLoader = $("#tpg_load_script_holder input[name='tpg_load_script']:checked").val();
         if (preLoader) {
             $("#tpg_enable_preloader_holder").show();
         } else {
             $("#tpg_enable_preloader_holder").hide();
+        }
+    }
+
+    function keepHtmlEffect() {
+        /* Keep HTML Tags has nothing to do with full content */
+        var excerptType = $("#tgp_excerpt_type_holder input[name='tgp_excerpt_type']:checked").val();
+        if (excerptType == 'full') {
+            $("#tgp_keep_html_holder").hide();
+        } else {
+            $("#tgp_keep_html_holder").show();
         }
     }
 

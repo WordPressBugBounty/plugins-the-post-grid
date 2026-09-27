@@ -347,6 +347,11 @@ class SettingsTabController {
 				'default' => '...',
 			],
 
+			'keep_html' => [
+				'type'    => 'string',
+				'default' => '',
+			],
+
 			// Post Meta Settings
 
 			'meta_position' => [

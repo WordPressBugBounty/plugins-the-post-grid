@@ -3038,6 +3038,22 @@ class rtTPGElementorHelper {
 			]
 		);
 
+		$ref->add_control(
+			'keep_html',
+			[
+				'label'        => esc_html__( 'Keep HTML Tags', 'the-post-grid' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'the-post-grid' ),
+				'label_off'    => esc_html__( 'No', 'the-post-grid' ),
+				'return_value' => 'yes',
+				'default'      => '',
+				'description'  => esc_html__( 'Keep lists, line breaks and basic formatting in the excerpt.', 'the-post-grid' ),
+				'condition'    => [
+					'excerpt_type' => [ 'character', 'word' ],
+				],
+			]
+		);
+
 		$ref->end_controls_section();
 	}
 

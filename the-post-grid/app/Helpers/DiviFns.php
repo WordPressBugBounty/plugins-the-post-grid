@@ -107,6 +107,7 @@ class DiviFns {
 			'excerpt_type',
 			'excerpt_limit',
 			'excerpt_more_text',
+			'keep_html',
 			'title_limit',
 			'title_limit_type',
 			'title_visibility_style',

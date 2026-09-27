@@ -1482,6 +1482,11 @@ class Options {
 				'label'   => esc_html__( 'Excerpt more text', 'the-post-grid' ),
 				'default' => '...',
 			],
+			'tgp_keep_html'         => [
+				'type'        => 'switch',
+				'label'       => esc_html__( 'Keep HTML Tags', 'the-post-grid' ),
+				'description' => esc_html__( 'Keep lists, line breaks and basic formatting in the excerpt.', 'the-post-grid' ),
+			],
 		];
 
 		return $fields;
