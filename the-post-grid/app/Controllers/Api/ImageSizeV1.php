@@ -4,6 +4,11 @@ namespace RT\ThePostGrid\Controllers\Api;
 
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class ImageSizeV1 {
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_image_size_route' ) );

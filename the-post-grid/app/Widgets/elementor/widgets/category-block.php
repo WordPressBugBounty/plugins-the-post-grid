@@ -802,7 +802,7 @@ class TPGCategoryBlock extends Custom_Widget_Base {
 					$category_date['img_visibility']     = $data['img_visibility'];
 					$category_date['count_position']     = $data['count_position'];
 					$category_date['show_bracket']       = $data['show_bracket'];
-					$category_date['cat_tag']            = $data['cat_tag'];
+					$category_date['cat_tag']            = Fns::print_validated_html_tag( $data['cat_tag'] ?? 'h3' );
 					$category_date['count_visibility']   = $data['count_visibility'];
 					$category_date['grid_column']        = $data['grid_column'] ?? '0';
 					$category_date['grid_column_tablet'] = $data['grid_column_tablet'] ?? '0';

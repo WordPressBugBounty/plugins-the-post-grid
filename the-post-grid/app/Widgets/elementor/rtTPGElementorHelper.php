@@ -236,7 +236,7 @@ class rtTPGElementorHelper {
 						'post_type'           => $object->object_type,
 						'multiple_post_type!' => 'yes',
 					],
-					'description' => "For custom order: <a target='_blank' href='" . $_url . "'>The Post Grid > Taxonomy Order</a>",
+					'description' => "For custom order: <a target='_blank' href='" . esc_url( $_url ) . "'>The Post Grid > Taxonomy Order</a>",
 				]
 			);
 
@@ -251,7 +251,7 @@ class rtTPGElementorHelper {
 					'condition'   => [
 						'multiple_post_type' => 'yes',
 					],
-					'description' => "For custom order: <a target='_blank' href='" . $_url . "'>The Post Grid > Taxonomy Order</a>",
+					'description' => "For custom order: <a target='_blank' href='" . esc_url( $_url ) . "'>The Post Grid > Taxonomy Order</a>",
 				]
 			);
 		}
@@ -4526,9 +4526,11 @@ class rtTPGElementorHelper {
 			[
 				'label'     => esc_html__( 'Image Width', 'the-post-grid' ),
 				'type'      => Controls_Manager::SELECT,
-				'default'   => 'inherit',
+				// Empty default prints no CSS, so the layout stylesheet sizes the image.
+				'default'   => '',
 				'options'   => [
-					'inherit' => esc_html__( 'Default', 'the-post-grid' ),
+					''        => esc_html__( 'Default', 'the-post-grid' ),
+					'inherit' => esc_html__( 'Inherit', 'the-post-grid' ),
 					'100%'    => esc_html__( '100%', 'the-post-grid' ),
 					'auto'    => esc_html__( 'Auto', 'the-post-grid' ),
 				],

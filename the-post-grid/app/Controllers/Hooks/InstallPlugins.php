@@ -83,7 +83,7 @@ class InstallPlugins {
 
 		// Handle plugin activation via AJAX
 		add_action( 'wp_ajax_rttpg_activate_plugin', function() {
-			if ( ! current_user_can( 'install_plugins' ) || ! check_ajax_referer( rtTPG()->nonceText(), rtTPG()->nonceId(), false ) ) {
+			if ( ! current_user_can( 'activate_plugins' ) || ! check_ajax_referer( rtTPG()->nonceText(), rtTPG()->nonceId(), false ) ) {
 				wp_send_json_error( [ 'message' => esc_html__( 'Permission denied', 'the-post-grid' ) ] );
 			}
 
@@ -94,6 +94,11 @@ class InstallPlugins {
 			$plugin = plugin_basename( sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) );
 
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+			// Only activate a plugin that is actually installed.
+			if ( ! array_key_exists( $plugin, get_plugins() ) ) {
+				wp_send_json_error( [ 'message' => esc_html__( 'Invalid plugin', 'the-post-grid' ) ] );
+			}
 
 			$result = activate_plugin( $plugin );
 

@@ -126,7 +126,7 @@ class NewsTicker extends Custom_Widget_Base {
 
 	public function swiper_slider( $query, $data ) {
 
-		$speed = $data['speed'] ?? 300;
+		$speed = absint( $data['speed'] ?? 300 );
 
 		if ( $data['direction'] == 'type' ) {
 			$speed = 0;
@@ -140,7 +140,7 @@ class NewsTicker extends Custom_Widget_Base {
 			'allowTouchMove'    => false,
 			'pauseOnMouseEnter' => (bool) $data['pause_on_hover'],
 			'autoplay'          => [
-				'delay'                => $data['delay'] ?? 2000,
+				'delay'                => absint( $data['delay'] ?? 2000 ),
 				'disableOnInteraction' => true,
 			],
 			'navigation'        => [
@@ -161,7 +161,7 @@ class NewsTicker extends Custom_Widget_Base {
 			$direction = ' data-swiper-parallax="-120"';
 		}
 		?>
-		<div class="swiper tpg-news-ticker news-ticker-slider" data-swiper='<?php echo wp_json_encode( $swiperConfig ); ?>'>
+		<div class="swiper tpg-news-ticker news-ticker-slider" data-swiper='<?php echo esc_attr( wp_json_encode( $swiperConfig ) ); ?>'>
 
 			<div class="swiper-wrapper">
 				<?php
@@ -534,7 +534,7 @@ class NewsTicker extends Custom_Widget_Base {
 					'condition'   => [
 						'post_type' => $object->object_type,
 					],
-					'description' => "For custom order: <a target='_blank' href='" . $_url . "'>The Post Grid > Taxonomy Order</a>",
+					'description' => "For custom order: <a target='_blank' href='" . esc_url( $_url ) . "'>The Post Grid > Taxonomy Order</a>",
 				]
 			);
 		}

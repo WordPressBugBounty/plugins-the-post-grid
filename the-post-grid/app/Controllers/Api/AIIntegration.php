@@ -2,6 +2,11 @@
 
 namespace RT\ThePostGrid\Controllers\Api;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class AIIntegration {
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, 'register_post_route' ] );
@@ -55,6 +60,19 @@ class AIIntegration {
 	public function ai_response( $data, $aiType ) {
 		$settings = get_option( rtTPG()->options['settings'] );
 
+		// The admin's API key may only be used while that AI provider is switched on.
+		if ( empty( $settings[ $aiType . '_status' ] ) || empty( $settings[ $aiType . '_secret_key' ] ) ) {
+			return new \WP_Error( 'rttpg_ai_disabled', esc_html__( 'This AI provider is not enabled.', 'the-post-grid' ), [ 'status' => 403 ] );
+		}
+
+		// Limit each user to a reasonable number of paid AI requests.
+		$rate_key   = 'rttpg_ai_rate_' . get_current_user_id();
+		$rate_count = (int) get_transient( $rate_key );
+		if ( $rate_count >= 20 ) {
+			return new \WP_Error( 'rttpg_ai_rate_limited', esc_html__( 'Too many AI requests. Please try again in a few minutes.', 'the-post-grid' ), [ 'status' => 429 ] );
+		}
+		set_transient( $rate_key, $rate_count + 1, 10 * MINUTE_IN_SECONDS );
+
 		$isChatGPT = ( 'chatgpt' === $aiType );
 
 		$api_key       = $settings[ $aiType . '_secret_key' ] ?? '';
@@ -66,7 +84,7 @@ class AIIntegration {
 		$language      = sanitize_text_field( $data['language'] ?? '' );
 		$headingNumber = sanitize_text_field( $data['headingNumber'] ?? '' );
 		$headingTag    = sanitize_text_field( $data['headingTag'] ?? '' );
-		$request_txt   = sanitize_text_field( $data['request_txt'] ?? '' );
+		$request_txt   = mb_substr( sanitize_text_field( $data['request_txt'] ?? '' ), 0, 2000 );
 
 		$send_data = [
 			'status'  => 'ok',
@@ -130,7 +148,7 @@ class AIIntegration {
 				: $data['candidates'][0]['content']['parts'][0]['text'] ?? '';
 
 			$content = preg_replace( '/^```html\s*|```$/m', '', $content );
-			$send_data['content'] = ( 'html' !== $writingStyle ) ? nl2br( $content ) : $content;
+			$send_data['content'] = wp_kses_post( ( 'html' !== $writingStyle ) ? nl2br( $content ) : $content );
 		}
 
 		return rest_ensure_response( $send_data );

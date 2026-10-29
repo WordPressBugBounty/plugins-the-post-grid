@@ -4,6 +4,11 @@ namespace RT\ThePostGrid\Abstracts;
 
 use \ET_Builder_Module;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 abstract class AbstractDivi extends ET_Builder_Module {
 
 	public $vb_support = 'on';

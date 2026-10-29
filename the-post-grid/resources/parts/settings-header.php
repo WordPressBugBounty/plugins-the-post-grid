@@ -1,4 +1,9 @@
 <?php
+
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 function rt_settings_url( $page = 'rttpg_settings' ) {
 	return add_query_arg(
 		[

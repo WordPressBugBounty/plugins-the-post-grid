@@ -4,6 +4,11 @@ namespace RT\ThePostGrid\Controllers\Api;
 
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class ACFV1 {
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, 'register_acf_data_route' ] );

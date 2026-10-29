@@ -226,8 +226,8 @@ class TPGListLayout extends Custom_Widget_Base {
              id="<?php echo esc_attr( $layoutID ); ?>"
              data-layout="<?php echo esc_attr( $data[ $_prefix . '_layout' ] ); ?>"
              data-grid-style="<?php echo esc_attr( $data[ $_prefix . '_layout_style' ] ); ?>"
-             data-el-settings='<?php Fns::is_filter_enable( $data ) ? Fns::print_html( htmlspecialchars( wp_json_encode( $post_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) ), true ) : ''; ?>'
-             data-el-query='<?php Fns::is_filter_enable( $data ) ? Fns::print_html( htmlspecialchars( wp_json_encode( $query_args ) ), true ) : ''; ?>'
+             data-el-settings='<?php echo Fns::is_filter_enable( $data ) ? esc_attr( wp_json_encode( $post_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) ) : ''; ?>'
+             data-el-query='<?php echo Fns::is_filter_enable( $data ) ? esc_attr( wp_json_encode( $query_args ) ) : ''; ?>'
              data-el-path='<?php echo Fns::is_filter_enable( $data ) ? esc_attr( $template_path ) : ''; ?>'
         >
 			<?php

@@ -4,6 +4,11 @@ namespace RT\ThePostGrid\Controllers\Api;
 
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 /**
  * RestApi Class
  */
@@ -18,7 +23,6 @@ class RestApi {
 		new GetTickerPostsV1();
 		new ACFV1();
 		new FrontEndFilterV1();
-		new ElImport();
 		new GetCategories();
 		new GetBuilderData();
 		new GetTermObject();

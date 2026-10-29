@@ -10,6 +10,11 @@ use RT\ThePostGrid\Controllers\Blocks\RttpgRow;
 use RT\ThePostGrid\Helpers\Fns;
 use RT\ThePostGrid\Helpers\ImportLayouts;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class BlocksController {
 
 	/**
@@ -365,7 +370,7 @@ class BlocksController {
 
 		try {
 			if ( ! current_user_can( 'edit_others_posts' ) ) {
-				throw new Exception( __( 'User permission error', 'the-post-grid' ) );
+				throw new \Exception( __( 'User permission error', 'the-post-grid' ) );
 			}
 			check_ajax_referer( 'rttpg_nonce', 'nonce' );
 			global $wp_filesystem;
@@ -376,7 +381,7 @@ class BlocksController {
 			$post_id  = ! empty( $_POST['post_id'] ) ? sanitize_text_field( wp_unslash( $_POST['post_id'] ) ) : '';
 			$blockCss = ! empty( $_POST['block_css'] ) ? wp_strip_all_tags( wp_unslash( $_POST['block_css'] ) ) : '';
 
-			if ( $post_id == 'rttpg-widget' && isset( $_POST['has_block'] ) ) {
+			if ( $post_id == 'rttpg-widget' && isset( $_POST['has_block'] ) && current_user_can( 'edit_theme_options' ) ) {
 				update_option( $post_id, $blockCss );
 				wp_send_json_success( [ 'message' => __( 'Widget CSS Saved', 'the-post-grid' ) ] );
 			}
@@ -414,7 +419,7 @@ class BlocksController {
 				delete_post_meta( $post_id, '_rttpg_block_css' );
 				wp_send_json_success( [ 'message' => __( 'Data Delete Done', 'the-post-grid' ) ] );
 			}
-		} catch ( Exception $e ) {
+		} catch ( \Exception $e ) {
 			wp_send_json_error( [ 'message' => $e->getMessage() ] );
 		}
 	}
@@ -497,7 +502,8 @@ class BlocksController {
 		$post    = wp_unslash( $_POST ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- each value is sanitized below.
 		$post_id = isset( $post['post_id'] ) ? absint( $post['post_id'] ) : 0;
 
-		if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {
+		// Same capability as save_block_css(): writing CSS files is not for contributors.
+		if ( ! $post_id || ! current_user_can( 'edit_others_posts' ) || ! current_user_can( 'edit_post', $post_id ) ) {
 			wp_send_json_error( [ 'message' => __( 'User permission error', 'the-post-grid' ) ] );
 		}
 

@@ -31,7 +31,7 @@ if ( in_array( 'post_date', $items ) && $date ) {
 		$metaHtml .= "<i class='" . Fns::change_icon( 'far fa-calendar-alt', 'calendar' ) . "'></i>";
 	}
 
-	$metaHtml .= "{$date}</span>";
+	$metaHtml .= esc_html( $date ) . "</span>";
 }
 
 if ( in_array( 'author', $items ) ) {
@@ -71,27 +71,27 @@ $html .= '<div class="rt-holder">';
 $html .= '<div class="rt-row">';
 
 if ( $imgSrc ) {
-	$html .= "<div class='{$image_area}'>";
+	$html .= "<div class='" . esc_attr( $image_area ) . "'>";
 	$html .= '<div class="rt-img-holder">';
-	$html .= "<a data-id='{$pID}' class='{$anchorClass}' href='{$pLink}'{$link_target}>{$imgSrc}</a>";
+	$html .= "<a data-id='" . absint( $pID ) . "' class='" . esc_attr( $anchorClass ) . "' href='" . esc_url( $pLink ) . "'{$link_target}>{$imgSrc}</a>";
 	$html .= '</div>';
 	$html .= '</div>';
 } else {
 	$content_area = 'rt-col-xs-12';
 }
 
-$html .= "<div class='{$content_area}'>";
+$html .= "<div class='" . esc_attr( $content_area ) . "'>";
 
 if ( in_array( 'title', $items ) ) {
 	if ( ! empty( $metaHtml ) && $metaPosition == 'above_title' ) {
-		$htmlDetail .= "<div class='post-meta-user {$metaSeparator}'>$metaHtml</div>";
+		$htmlDetail .= "<div class='post-meta-user " . esc_attr( $metaSeparator ) . "'>$metaHtml</div>";
 	}
 
-	$htmlDetail .= sprintf( '<%1$s class="entry-title"><a data-id="%2$s" class="%3$s" href="%4$s"%5$s>%6$s</a></%1$s>', $title_tag, $pID, $anchorClass, $pLink, $link_target, $title );
+	$htmlDetail .= sprintf( '<%1$s class="entry-title"><a data-id="%2$s" class="%3$s" href="%4$s"%5$s>%6$s</a></%1$s>', tag_escape( $title_tag ), absint( $pID ), esc_attr( $anchorClass ), esc_url( $pLink ), $link_target, $title );
 }
 
 if ( ! empty( $metaHtml ) && ( empty( $metaPosition ) || $metaPosition == 'above_excerpt' ) ) {
-	$htmlDetail .= "<div class='post-meta-user {$metaSeparator}'>$metaHtml</div>";
+	$htmlDetail .= "<div class='post-meta-user " . esc_attr( $metaSeparator ) . "'>$metaHtml</div>";
 }
 
 if ( in_array( 'excerpt', $items ) ) {
@@ -99,11 +99,11 @@ if ( in_array( 'excerpt', $items ) ) {
 }
 
 if ( ! empty( $metaHtml ) && $metaPosition == 'below_excerpt' ) {
-	$htmlDetail .= "<div class='post-meta-user {$metaSeparator}'>$metaHtml</div>";
+	$htmlDetail .= "<div class='post-meta-user " . esc_attr( $metaSeparator ) . "'>$metaHtml</div>";
 }
 
 if ( in_array( 'read_more', $items ) ) {
-	$htmlDetail .= "<span class='read-more {$btn_alignment_class}'><a data-id='{$pID}' class='{$anchorClass}' href='{$pLink}'{$link_target}>{$read_more_text}</a></span>";
+	$htmlDetail .= "<span class='read-more " . esc_attr( $btn_alignment_class ) . "'><a data-id='" . absint( $pID ) . "' class='" . esc_attr( $anchorClass ) . "' href='" . esc_url( $pLink ) . "'{$link_target}>" . esc_html( $read_more_text ) . "</a></span>";
 }
 
 if ( ! empty( $htmlDetail ) ) {

@@ -268,8 +268,8 @@ class TPGSliderLayout extends Custom_Widget_Base {
 
 			// Slider Options
 			$slider_data = [
-				'speed'           => $data['speed'],
-				'autoPlayTimeOut' => $data['autoplaySpeed'],
+				'speed'           => absint( $data['speed'] ?? 0 ),
+				'autoPlayTimeOut' => absint( $data['autoplaySpeed'] ?? 0 ),
 				'autoPlay'        => $data['autoplay'] == 'yes' ? true : false,
 				'stopOnHover'     => $data['stopOnHover'] == 'yes' ? true : false,
 				'nav'             => $data['arrows'] == 'yes' ? true : false,
@@ -291,7 +291,7 @@ class TPGSliderLayout extends Custom_Widget_Base {
 
             <div class="slider-main-wrapper <?php echo esc_attr( $_layout ); ?>">
                 <div class="rt-swiper-holder swiper"
-                     data-rtowl-options='<?php echo wp_json_encode( $slider_data ); ?>'
+                     data-rtowl-options='<?php echo esc_attr( wp_json_encode( $slider_data ) ); ?>'
                      dir="<?php echo esc_attr( $data['slider_direction'] ); ?>"
                 >
                     <div class="swiper-wrapper <?php echo esc_attr( implode( ' ', $wrapper_class ) ); ?>">

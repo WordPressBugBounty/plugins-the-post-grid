@@ -10,6 +10,11 @@ namespace RT\ThePostGrid\Divi\Utils;
 
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 /**
  * Generate required CSS for Divi Editor
  */

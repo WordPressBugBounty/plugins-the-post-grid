@@ -5,6 +5,11 @@ namespace RT\ThePostGrid\Controllers\Api;
 use RT\ThePostGrid\Helpers\Fns;
 use WP_Query;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class GetTickerPostsV1 {
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, 'register_post_route' ] );
@@ -170,7 +175,7 @@ class GetTickerPostsV1 {
 					'post_link'       => get_the_permalink(),
 					'post_type'       => $data['post_type'],
 					'post_count'      => esc_html( $get_view_count ),
-					'title'           => Fns::get_the_title( $id, $data ), // wp_kses( $post->post_title, Fns::allowedHtml() ),
+					'title'           => wp_kses_post( Fns::get_the_title( $id, $data ) ),
 					'tpg_post_count'  => $pCount,
 					'tpg_total_posts' => $post_count,
 				];

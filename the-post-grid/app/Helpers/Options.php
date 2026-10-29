@@ -310,7 +310,7 @@ class Options {
 			],
 
 			'chatgpt_secret_key'    => [
-				'type'        => 'text',
+				'type'        => 'password',
 				'name'        => 'chatgpt_secret_key',
 				'label'       => esc_html__( 'OpenAI API Secret Key', 'the-post-grid' ),
 				'id'          => 'template_author',
@@ -368,7 +368,7 @@ class Options {
 			],
 
 			'gemini_secret_key'    => [
-				'type'        => 'text',
+				'type'        => 'password',
 				'name'        => 'gemini_secret_key',
 				'label'       => esc_html__( 'Gemini Secret Key', 'the-post-grid' ),
 				'id'          => 'template_author',
@@ -1459,7 +1459,56 @@ class Options {
 			],
 		];
 
-		return apply_filters( 'rt_tpg_sc_image_settings', $fields );
+		$fields = apply_filters( 'rt_tpg_sc_image_settings', $fields );
+
+		// Appended after the filter so the video block stays at the end of the
+		// panel, below the fields pro adds.
+		return array_merge(
+			$fields,
+			[
+				// Video Settings. Key names match the Elementor, Gutenberg and Divi
+				// controls; Fns::get_sc_video_thumbnail() maps the stored values.
+				'video_show_thumb'   => [
+					'type'        => 'switch',
+					'label'       => esc_html__( 'Video: Show Thumbnail', 'the-post-grid' ),
+					'holderClass' => 'rt-feature-image-option tpg-hidden pro-field',
+					'default'     => true,
+					'description' => esc_html__( 'Turn this off to embed the player straight away, with no poster image and no play button.', 'the-post-grid' ),
+				],
+				'video_play_mode'    => [
+					'type'        => 'select',
+					'label'       => esc_html__( 'Video: Play Mode', 'the-post-grid' ),
+					'class'       => 'rt-select2',
+					'holderClass' => 'rt-feature-image-option tpg-hidden pro-field',
+					'default'     => 'popup',
+					'options'     => [
+						'popup'  => esc_html__( 'Open in popup', 'the-post-grid' ),
+						'inline' => esc_html__( 'Play in place', 'the-post-grid' ),
+					],
+					'description' => esc_html__( 'What happens when the play button is clicked.', 'the-post-grid' ),
+				],
+				'video_hover_play'   => [
+					'type'        => 'switch',
+					'label'       => esc_html__( 'Video: Play on Hover', 'the-post-grid' ),
+					'holderClass' => 'rt-feature-image-option tpg-hidden pro-field',
+					'default'     => false,
+					'description' => esc_html__( 'Preview the video muted while the card is hovered.', 'the-post-grid' ),
+				],
+				'video_hover_poster' => [
+					'type'        => 'image',
+					'label'       => esc_html__( 'Video: Fallback Image', 'the-post-grid' ),
+					'holderClass' => 'rt-feature-image-option tpg-hidden pro-field',
+					'description' => esc_html__( 'Last resort for the card image. The featured image is used first, then the thumbnail YouTube or Vimeo provides, then this.', 'the-post-grid' ),
+				],
+				'video_controls'     => [
+					'type'        => 'switch',
+					'label'       => esc_html__( 'Video: Show Controls', 'the-post-grid' ),
+					'holderClass' => 'rt-feature-image-option tpg-hidden pro-field',
+					'default'     => true,
+					'description' => esc_html__( 'Player controls. The hover preview never shows them.', 'the-post-grid' ),
+				],
+			]
+		);
 	}
 
 	public static function rtTPGSCExcerptSettings() {

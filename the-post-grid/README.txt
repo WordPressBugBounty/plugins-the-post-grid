@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 7.9.7
+Stable tag: 7.9.8
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -253,6 +253,20 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.8 (Oct 29, 2026) =
+* Added: Shortcode video thumbnails with play mode, fallback image and player control settings.
+* Security: Escaped filters, pagination, templates, widget titles and Elementor data attributes by context.
+* Security: Isotope URL filter now accepts only the grid's own filters, never post content markup.
+* Security: Password protected content and private post types no longer leak to contributors or visitors.
+* Security: Removed unused Elementor import route and limited AI writer use to enabled providers.
+* Security: Heading tags, excerpt more text and share tooltips now accept only safe values.
+* Security: Added permission checks, uploads-only image resizing and direct file access protection.
+* Security: Author filters now list only users with published posts instead of every user.
+* Fixed: Author filter now filters correctly, keeps the selection and shows post counts.
+* Fixed: Show all pagination, isotope search with special characters and rating order errors.
+* Fixed: Shortcode preview now excludes all listed post IDs and uses the correct padding.
+* Fixed: Elementor image width default no longer forces inherit, so thumbnails fill their box.
 
 = 7.9.7 (Sep 27, 2026) =
 * Added: Keep HTML Tags option keeps lists, line breaks and formatting inside the excerpt.

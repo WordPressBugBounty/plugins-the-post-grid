@@ -115,25 +115,26 @@ class ReSizer {
 				);
 			}
 
-			// Check if $img_url is local.
-			if ( false === strpos( $url, $upload_url ) ) {
-				return new WP_Error(
-					'broke',
-					sprintf(
-						/* Translators: %s URL */
-						esc_html__( 'Image must be local: %s', 'the-post-grid' ),
-						$url
-					)
-				);
+			// Check if $img_url is local: it must start with the uploads URL.
+			if ( 0 !== strpos( $url, $upload_url ) ) {
+				return new WP_Error( 'broke', esc_html__( 'Image must be local.', 'the-post-grid' ) );
 			}
 
 			// Define path of image.
-			$rel_path = str_replace( $upload_url, '', $url );
+			$rel_path = substr( $url, strlen( $upload_url ) );
 			$img_path = $upload_dir . $rel_path;
+
+			// The resolved file must stay inside the uploads folder (no "../").
+			$real_upload_dir = realpath( $upload_dir );
+			$real_img_path   = realpath( $img_path );
+			if ( ! $real_upload_dir || ! $real_img_path || 0 !== strpos( $real_img_path, trailingslashit( $real_upload_dir ) ) ) {
+				return new WP_Error( 'broke', esc_html__( 'Image must be inside the uploads folder.', 'the-post-grid' ) );
+			}
+			$img_path = $real_img_path;
 
 			// Check if img path exists, and is an image indeed.
 			if ( ! file_exists( $img_path ) or ! getimagesize( $img_path ) ) {
-				return new WP_Error( 'broke', 'Image file does not exist (or is not an image): ' . $img_path );
+				return new WP_Error( 'broke', esc_html__( 'Image file does not exist (or is not an image).', 'the-post-grid' ) );
 				// throw new RtTpgException( 'Image file does not exist (or is not an image): ' . $img_path );
 			}
 
@@ -160,7 +161,7 @@ class ReSizer {
 
 				if ( ! $dims || ( true == $crop && false == $upscale && ( $dst_w < $width || $dst_h < $height ) ) ) {
 					// Can't resize, so return false saying that the action to do could not be processed as planned.
-					return new WP_Error( 'broke', 'Image file does not exist (or is not an image): ' . $img_path );
+					return new WP_Error( 'broke', esc_html__( 'Image file does not exist (or is not an image).', 'the-post-grid' ) );
 					// throw new RtTpgException( 'Unable to resize image because image_resize_dimensions() failed' );
 				} // Else check if cache exists.
 				elseif ( file_exists( $destfilename ) && getimagesize( $destfilename ) ) {
@@ -171,7 +172,7 @@ class ReSizer {
 					$editor = wp_get_image_editor( $img_path );
 
 					if ( is_wp_error( $editor ) || is_wp_error( $editor->resize( $width, $height, $crop ) ) ) {
-						return new WP_Error( 'broke', 'Image file does not exist (or is not an image): ' . $img_path );
+						return new WP_Error( 'broke', esc_html__( 'Image file does not exist (or is not an image).', 'the-post-grid' ) );
 						// throw new RtTpgException( 'Unable to get WP_Image_Editor: ' .
 						// $editor->get_error_message() . ' (is GD or ImageMagick installed?)' );
 					}
@@ -182,7 +183,7 @@ class ReSizer {
 						$resized_rel_path = str_replace( $upload_dir, '', $resized_file['path'] );
 						$img_url          = $upload_url . $resized_rel_path;
 					} else {
-						return new WP_Error( 'broke', 'Image file does not exist (or is not an image): ' . $img_path );
+						return new WP_Error( 'broke', esc_html__( 'Image file does not exist (or is not an image).', 'the-post-grid' ) );
 						// throw new RtTpgException( 'Unable to save resized image file: ' . $editor->get_error_message() );
 					}
 				}

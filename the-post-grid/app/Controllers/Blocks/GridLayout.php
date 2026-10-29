@@ -7,6 +7,11 @@ use RT\ThePostGrid\Controllers\Blocks\BlockController\StyleTabController;
 use RT\ThePostGrid\Controllers\Blocks\BlockController\ContentTabController;
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 /**
  * GridLayout Class
  */

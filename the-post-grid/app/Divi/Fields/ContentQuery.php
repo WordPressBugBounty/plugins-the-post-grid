@@ -157,7 +157,7 @@ class ContentQuery {
 				'options'     => $taxonomy_lists,
 				'show_if'     => [ 'post_type' => $object->object_type, ],
 				'show_if_not' => [ 'multiple_post_type' => 'on' ],
-				'description' => "For custom order: <a target='_blank' href='" . $_url . "'>The Post Grid > Taxonomy Order</a>. NB: The terms are currently displayed in the order of their term_id",
+				'description' => "For custom order: <a target='_blank' href='" . esc_url( $_url ) . "'>The Post Grid > Taxonomy Order</a>. NB: The terms are currently displayed in the order of their term_id",
 				'tab_slug'    => 'general',
 				'toggle_slug' => 'tpg_query',
 				'columns'     => 2,
@@ -171,7 +171,7 @@ class ContentQuery {
 					'show_if'     => [
 						'multiple_post_type' => 'on',
 					],
-					'description' => "For custom order: <a target='_blank' href='" . $_url . "'>The Post Grid > Taxonomy Order</a>",
+					'description' => "For custom order: <a target='_blank' href='" . esc_url( $_url ) . "'>The Post Grid > Taxonomy Order</a>",
 					'tab_slug'    => 'general',
 					'toggle_slug' => 'tpg_query',
 					'columns'     => 2,

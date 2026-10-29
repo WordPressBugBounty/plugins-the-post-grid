@@ -36,12 +36,12 @@
                     buttonFilter;
 
                 if (isIsotop.length) {
-                    var IsoURL = IsoButton.attr('data-url'),
+                    var IsoURL = isIsoUrlGrid(isIsotop),
                         IsoCount = IsoButton.attr('data-count');
 
                     if (!buttonFilter) {
                         if (IsoButton.length) {
-                            buttonFilter = IsoButton.find('button.selected').data('filter');
+                            buttonFilter = IsoButton.find('button.selected').attr('data-filter');
                         } else if (IsoDropdownFilter.length) {
                             buttonFilter = IsoDropdownFilter.val();
                         }
@@ -57,7 +57,7 @@
                             filter: function () {
                                 var $this = $(this);
                                 var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
-                                var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
+                                var buttonResult = buttonFilter ? isoItemMatches($this, buttonFilter) : true;
                                 return searchResult && buttonResult;
                             }
                         });
@@ -77,7 +77,7 @@
 
                     // use value of search field to filter
                     var $quicksearch = container.find('.iso-search-input').keyup(debounce(function () {
-                        qsRegex = new RegExp($quicksearch.val(), 'gi');
+                        qsRegex = new RegExp(escapeRegExp($quicksearch.val()), 'gi');
                         IsotopeWrap.isotope();
                     }));
 
@@ -93,12 +93,15 @@
                         }
                     });
                     if (IsoURL) {
-                        $(document).ready(function(){
-                            windowHashChange(IsotopeWrap, IsoButton);
-                        });
-                        $(window).on("hashchange", function () {
-                            windowHashChange(IsotopeWrap, IsoButton);
-                        });
+                        var applyHashFilter = function () {
+                            buttonFilter = windowHashChange(IsoButton);
+                            // Before init, the imagesLoaded callback applies buttonFilter itself.
+                            if (IsotopeWrap.data('isotope')) {
+                                IsotopeWrap.isotope();
+                            }
+                        };
+                        $(document).ready(applyHashFilter);
+                        $(window).on("hashchange", applyHashFilter);
                     }
                     if (IsoCount) {
                         isoFilterCounter(container, IsotopeWrap);
@@ -132,24 +135,64 @@
         }, 400)
     }
 
-    function windowHashChange(isotope, IsoButton) {
-        var $hashFilter = decodeHash() || '';
-        if (!$hashFilter) {
-            $hashFilter = IsoButton.find('button.selected').attr('data-filter') || '';
-            $hashFilter = $hashFilter ? $hashFilter : '*';
+    function windowHashChange(IsoButton) {
+        var $buttons = IsoButton.find('button');
+        var $hashFilter = decodeHash();
+
+        // Only accept a filter that one of this grid's own buttons provides.
+        if (!isValidIsoFilter($hashFilter) || !$buttons.filter(function () {
+            return $(this).attr('data-filter') === $hashFilter;
+        }).length) {
+            $hashFilter = $buttons.filter('.selected').attr('data-filter') || '';
+            $hashFilter = isValidIsoFilter($hashFilter) ? $hashFilter : '*';
         }
-        $hashFilter = $hashFilter || '*';
-        isotope.isotope({
-            filter: $hashFilter
-        });
-        IsoButton.find("button").removeClass("selected");
-        IsoButton.find('button[data-filter="' + $hashFilter + '"]').addClass("selected");
+        // The caller stores the returned filter; the grid's own filter function
+        // then matches items by class, so no string reaches isotope or jQuery.
+        $buttons.removeClass("selected");
+        $buttons.filter(function () {
+            return $(this).attr('data-filter') === $hashFilter;
+        }).addClass("selected");
+
+        return $hashFilter;
+    }
+
+    function isoItemMatches($item, filter) {
+        if (filter === '*') {
+            return true;
+        }
+        if (!isValidIsoFilter(filter)) {
+            return false;
+        }
+        return $item.hasClass(filter.slice(1));
+    }
+
+    function escapeRegExp(value) {
+        return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
     function decodeHash() {
         var $matches = location.hash.match(/filter=([^&]+)/i);
         var $hashFilter = $matches && $matches[1];
-        return $hashFilter && decodeURIComponent($hashFilter);
+        if (!$hashFilter) {
+            return '';
+        }
+        try {
+            return decodeURIComponent($hashFilter);
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function isIsoUrlGrid($isotope) {
+        // The "filter in URL" option is only trusted from the server-printed
+        // list, never from a data-url attribute that post content can carry.
+        var id = $isotope.attr('id') || '';
+        var allowed = window.rttpgIsoUrlGrids;
+        return !!id && Array.isArray(allowed) && allowed.indexOf(id) !== -1 && document.getElementById(id) === $isotope[0];
+    }
+
+    function isValidIsoFilter(filter) {
+        return typeof filter === 'string' && /^(\*|\.[\w-]+)$/.test(filter);
     }
 
     function isoFilterCounter(container, isotope) {
@@ -157,7 +200,7 @@
         container.find('.rt-tpg-isotope-buttons button').each(function () {
             var self = $(this),
                 filter = self.attr("data-filter"),
-                itemTotal = isotope.find(filter).length;
+                itemTotal = isValidIsoFilter(filter) ? isotope.find(filter).length : 0;
             if (filter != "*") {
                 self.find('span').remove();
                 self.append("<span> (" + itemTotal + ") </span>");

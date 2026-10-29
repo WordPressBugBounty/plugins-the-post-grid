@@ -5,6 +5,11 @@ namespace RT\ThePostGrid\Controllers\Api;
 use RT\ThePostGrid\Helpers\Fns;
 use WP_Query;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class GetPostsV1 {
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, 'register_post_route' ] );
@@ -378,7 +383,7 @@ class GetPostsV1 {
 					'post_type'        => $data['post_type'],
 					'prefix'           => $prefix,
 					'post_count'       => esc_html( $get_view_count ),
-					'title'            => Fns::get_the_title( $id, $data ), // wp_kses( $post->post_title, Fns::allowedHtml() ),
+					'title'            => wp_kses_post( Fns::get_the_title( $id, $data ) ),
 					'taxonomy_lists'   => $filtered_taxonomy_lists,
 					'post_class'       => join( ' ', get_post_class( null, $id ) ),
 					'layout_style'     => $data['layout_style'],

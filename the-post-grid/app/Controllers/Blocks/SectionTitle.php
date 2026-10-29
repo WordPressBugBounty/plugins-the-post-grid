@@ -5,6 +5,11 @@ namespace RT\ThePostGrid\Controllers\Blocks;
 use RT\ThePostGrid\Controllers\Blocks\BlockController\SectionTitleSettingsStyle;
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class SectionTitle extends BlockBase {
 
 	private $block_type;

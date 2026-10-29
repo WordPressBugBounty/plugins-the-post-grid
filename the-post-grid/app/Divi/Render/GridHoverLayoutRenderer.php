@@ -6,6 +6,11 @@ use RT\ThePostGrid\Helpers\DiviFns;
 use RT\ThePostGrid\Helpers\Fns;
 use WP_Query;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class GridHoverLayoutRenderer {
 
 	protected $settings;

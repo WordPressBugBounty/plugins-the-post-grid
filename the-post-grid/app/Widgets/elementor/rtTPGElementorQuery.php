@@ -431,7 +431,7 @@ class rtTPGElementorQuery {
 			}
 
 			if ( is_search() ) {
-				$search    = get_query_var( 's' );
+				$search    = sanitize_text_field( get_query_var( 's' ) );
 				$args['s'] = $search;
 			}
 		}

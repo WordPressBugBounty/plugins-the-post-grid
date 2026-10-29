@@ -8,6 +8,11 @@ use RT\ThePostGrid\Divi\Utils\DiviFrontEndCss;
 use RT\ThePostGrid\Divi\Render\GridHoverLayoutRenderer;
 use RT\ThePostGrid\Helpers\DiviFns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class GridHoverLayout extends AbstractDivi {
 
 	public $slug = 'tpg_grid_hover_layout';

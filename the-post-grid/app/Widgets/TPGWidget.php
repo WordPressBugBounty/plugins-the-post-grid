@@ -40,7 +40,7 @@ class TPGWidget extends WP_Widget {
 		echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', ( isset( $instance['title'] ) ? $instance['title'] : 'The Post Grid' ) ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $args['before_title'] . esc_html( apply_filters( 'widget_title', ( isset( $instance['title'] ) ? $instance['title'] : 'The Post Grid' ) ) ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		if ( ! empty( $id ) ) {

@@ -4,6 +4,11 @@ namespace RT\ThePostGrid\Controllers\Blocks;
 
 use RT\ThePostGrid\Helpers\Fns;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 abstract class BlockBase {
 	public $last_post_id;
 

@@ -100,11 +100,11 @@ class Field {
 			case 'info':
 				$color = $color ?: '#2196f2';
 
-				return '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="' . $size . '" height="' . $size . '" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="Layer 2"><circle cx="12" cy="12" r="10" fill="' . $color . '" opacity="1" data-original="' . $color . '" class=""></circle><g fill="#fff"><circle cx="12" cy="7.38" r="1.25" fill="#ffffff" opacity="1" data-original="#ffffff"></circle><path d="M12 17.88a1 1 0 0 1-1-1v-5a1 1 0 0 1 0-2h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#ffffff" opacity="1" data-original="#ffffff"></path><path d="M13 17.88h-2a1 1 0 0 1 0-2h2a1 1 0 1 1 0 2z" fill="#ffffff" opacity="1" data-original="#ffffff"></path></g></g></g></svg>';
+				return '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="' . esc_attr( $size ) . '" height="' . esc_attr( $size ) . '" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="Layer 2"><circle cx="12" cy="12" r="10" fill="' . esc_attr( $color ) . '" opacity="1" data-original="' . esc_attr( $color ) . '" class=""></circle><g fill="#fff"><circle cx="12" cy="7.38" r="1.25" fill="#ffffff" opacity="1" data-original="#ffffff"></circle><path d="M12 17.88a1 1 0 0 1-1-1v-5a1 1 0 0 1 0-2h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#ffffff" opacity="1" data-original="#ffffff"></path><path d="M13 17.88h-2a1 1 0 0 1 0-2h2a1 1 0 1 1 0 2z" fill="#ffffff" opacity="1" data-original="#ffffff"></path></g></g></g></svg>';
 			case 'notice':
 				$color = $color ?: '#000000';
 
-				return '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="' . $size . '" height="' . $size . '" x="0" y="0" viewBox="0 0 485.811 485.811" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="m476.099 353.968-170.2-294.8c-27.8-48.7-98.1-48.7-125.8 0l-170.3 294.8c-27.8 48.7 6.8 109.2 62.9 109.2h339.9c56.1 0 91.3-61.1 63.5-109.2zm-233.2 43.8c-14.8 0-27.1-12.3-27.1-27.1s12.3-27.1 27.1-27.1 27.1 12.3 26.5 27.8c.7 14.1-12.3 26.4-26.5 26.4zm24.7-175.2c-1.2 21-2.5 41.9-3.7 62.9-.6 6.8-.6 13-.6 19.7-.6 11.1-9.3 19.7-20.4 19.7s-19.7-8-20.4-19.1c-1.8-32.7-3.7-64.8-5.5-97.5-.6-8.6-1.2-17.3-1.9-25.9 0-14.2 8-25.9 21-29.6 13-3.1 25.9 3.1 31.5 15.4 1.9 4.3 2.5 8.6 2.5 13.6-.6 13.7-1.9 27.3-2.5 40.8z" fill="' . $color . '" opacity="1" data-original="' . $color . '" class=""></path></g></svg>';
+				return '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="' . esc_attr( $size ) . '" height="' . esc_attr( $size ) . '" x="0" y="0" viewBox="0 0 485.811 485.811" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="m476.099 353.968-170.2-294.8c-27.8-48.7-98.1-48.7-125.8 0l-170.3 294.8c-27.8 48.7 6.8 109.2 62.9 109.2h339.9c56.1 0 91.3-61.1 63.5-109.2zm-233.2 43.8c-14.8 0-27.1-12.3-27.1-27.1s12.3-27.1 27.1-27.1 27.1 12.3 26.5 27.8c.7 14.1-12.3 26.4-26.5 26.4zm24.7-175.2c-1.2 21-2.5 41.9-3.7 62.9-.6 6.8-.6 13-.6 19.7-.6 11.1-9.3 19.7-20.4 19.7s-19.7-8-20.4-19.1c-1.8-32.7-3.7-64.8-5.5-97.5-.6-8.6-1.2-17.3-1.9-25.9 0-14.2 8-25.9 21-29.6 13-3.1 25.9 3.1 31.5 15.4 1.9 4.3 2.5 8.6 2.5 13.6-.6 13.7-1.9 27.3-2.5 40.8z" fill="' . esc_attr( $color ) . '" opacity="1" data-original="' . esc_attr( $color ) . '" class=""></path></g></svg>';
 		}
 	}
 
@@ -148,6 +148,10 @@ class Field {
 		switch ( $this->type ) {
 			case 'text':
 				$html .= $this->text();
+				break;
+
+			case 'password':
+				$html .= $this->text( 'password' );
 				break;
 
 			case 'url':
@@ -218,12 +222,12 @@ class Field {
 	}
 
 
-	private function text() {
+	private function text( $input_type = 'text' ) {
 		$holderClass = explode( ' ', $this->holderClass );
 
 		$h = null;
 		$h .= '<input
-				type="text"
+				type="' . ( 'password' === $input_type ? 'password" autocomplete="new-password' : 'text' ) . '"
 				class="' . esc_attr( $this->class ) . '"
 				id="' . esc_attr( $this->id ) . '"
 				value="' . esc_attr( $this->value ) . '"
@@ -736,7 +740,7 @@ class Field {
 				$link     = isset( $value['layout_link'] ) && $value['layout_link'] ? $value['layout_link'] : '';
 				$linkHtml = empty( $link ) ? esc_html( $title ) : '<a href="' . esc_url( $link ) . '" target="_blank">' . esc_html( $title ) . '</a>';
 				$layout   = isset( $value['layout'] ) ? $value['layout'] : '';
-				$taghtml  = isset( $value['tag'] ) ? '<div class="rt-tpg-layout-tag"><span>' . $value['tag'] . '</span></div>' : '';
+				$taghtml  = isset( $value['tag'] ) ? '<div class="rt-tpg-layout-tag"><span>' . esc_html( $value['tag'] ) . '</span></div>' : '';
 				$h        .= sprintf(
 					'<div class="rt-tpg-radio-layout %7$s"><label data-type="%7$s" class="radio-image %7$s"  for="%2$s">
 						<input type="radio" id="%2$s" %3$s name="%4$s" value="%2$s">

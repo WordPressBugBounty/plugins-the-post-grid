@@ -6,6 +6,11 @@ use RT\ThePostGrid\Helpers\Fns;
 use RT\ThePostGridPro\Helpers\Functions;
 use WP_Query;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class GetBuilderData {
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, 'register_post_route' ] );
@@ -45,17 +50,17 @@ class GetBuilderData {
 				case 'thumbnail':
 					return rest_ensure_response( get_the_post_thumbnail( $post_args, $data['image_size'] ) );
 				case 'content':
-					return rest_ensure_response( $post_args->post_content );
+					return rest_ensure_response( post_password_required( $post_args ) ? '' : $post_args->post_content );
 				case 'meta':
 					$post_meta = Fns::get_post_meta_html( $last_post_id, $data, false );
 
 					return rest_ensure_response( $post_meta );
 				case 'share':
-					$share_html = Functions::rtShare( $last_post_id );
+					$share_html = class_exists( Functions::class ) ? Functions::rtShare( $last_post_id ) : '';
 
 					return rest_ensure_response( $share_html );
 				case 'comment':
-					$comment_form = Functions::get_dummy_comment_box();
+					$comment_form = class_exists( Functions::class ) ? Functions::get_dummy_comment_box() : '';
 
 					return rest_ensure_response( $comment_form );
 			}

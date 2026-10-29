@@ -40,6 +40,10 @@ class Review {
 	 */
 
 	public function render_review_notice() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		$spare_me     = get_option( 'rttpg_spare_me', '0' );
 		$install_date = (int) get_option( 'rttpg_plugin_activation_time' );
 		$remind_time  = (int) get_option( 'rttpg_remind_me' );
@@ -170,6 +174,11 @@ class Review {
 	 * @return void
 	 */
 	public static function update_notice_status() {
+		// Only administrators may change the site-wide review notice state.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		// Verify nonce
 		$nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) : '';
 

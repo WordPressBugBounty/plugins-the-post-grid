@@ -44,7 +44,7 @@ class MetaController {
 	public function manage_rttpg_columns( $column ) {
 		switch ( $column ) {
 			case 'shortcode':
-				echo '<input type="text" onfocus="this.select();" readonly="readonly" value="[the-post-grid id=&quot;' . get_the_ID() . '&quot; title=&quot;' . get_the_title() . '&quot;]" class="large-text code rt-code-sc">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<input type="text" onfocus="this.select();" readonly="readonly" value="[the-post-grid id=&quot;' . absint( get_the_ID() ) . '&quot; title=&quot;' . esc_attr( get_the_title() ) . '&quot;]" class="large-text code rt-code-sc">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				break;
 			default:
 				break;
@@ -317,7 +317,7 @@ class MetaController {
 		$html .= sprintf( '<div id="sc-style" class="rt-tab-content"%s>', 'sc-style' === $last_tab ? ' style="display:block"' : '' );
 		$html .= Fns::view( 'settings.style', $post, true );
 		$html .= '</div>';
-		$html .= sprintf( '<input type="hidden" id="_tpg_last_active_tab" name="_tpg_last_active_tab"  value="%s"/>', $last_tab );
+		$html .= sprintf( '<input type="hidden" id="_tpg_last_active_tab" name="_tpg_last_active_tab"  value="%s"/>', esc_attr( $last_tab ) );
 		$html .= '</div>';
 
 		Fns::print_html( $html, true );

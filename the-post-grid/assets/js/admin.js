@@ -92,8 +92,22 @@
             $(".field-holder.rt-feature-image-option").hide();
         } else {
             $(".field-holder.rt-feature-image-option").show();
+            videoSettingsEffect();
         }
     }
+
+    function videoSettingsEffect() {
+        /* Same conditions as the Elementor video controls */
+        var showThumb = $("#video_show_thumb").is(':checked'),
+            inline = $("#video_play_mode").val() === 'inline';
+        $("#video_play_mode_holder, #video_hover_poster_holder").toggle(showThumb);
+        /* The hover preview covers the play button, so the popup could never open */
+        $("#video_hover_play_holder").toggle(showThumb && inline);
+    }
+
+    $("#video_show_thumb, #video_play_mode").on('change', function () {
+        videoSettingsEffect();
+    });
 
     $("#rt-tpg-feature-image").on('change', function () {
         featureImageEffect();

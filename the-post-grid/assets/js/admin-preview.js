@@ -16,11 +16,10 @@
         mouseenter: function () {
             var $this = $(this);
             var $title = $this.attr('title');
-            $tooltip = '<div class="rt-tooltip" id="rt-tooltip">' +
-                '<div class="rt-tooltip-content">' + $title + '</div>' +
-                '<div class="rt-tooltip-bottom"></div>' +
-                '</div>';
-            $('body').append($tooltip);
+            // Build nodes and set the title as text: it can come from post content.
+            var $tooltipEl = $('<div class="rt-tooltip" id="rt-tooltip"><div class="rt-tooltip-content"></div><div class="rt-tooltip-bottom"></div></div>');
+            $tooltipEl.find('.rt-tooltip-content').text($title || '');
+            $('body').append($tooltipEl);
             var $tooltip = $('body > .rt-tooltip');
             var tHeight = $tooltip.outerHeight();
             var tBottomHeight = $tooltip.find('.rt-tooltip-bottom').outerHeight();
@@ -491,7 +490,7 @@
                         IsoCount = IsoButton.attr('data-count');
                     if (!buttonFilter) {
                         if (IsoButton.length) {
-                            buttonFilter = IsoButton.find('button.selected').data('filter');
+                            buttonFilter = IsoButton.find('button.selected').attr('data-filter');
                         } else if (IsoDropdownFilter.length) {
                             buttonFilter = IsoDropdownFilter.val();
                         }
@@ -504,7 +503,7 @@
                             filter: function () {
                                 var $this = $(this);
                                 var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
-                                var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
+                                var buttonResult = buttonFilter ? isoItemMatches($this, buttonFilter) : true;
                                 return searchResult && buttonResult;
                             }
                         });
@@ -515,7 +514,7 @@
                     });
                     // use value of search field to filter
                     var $quicksearch = container.find('.iso-search-input').keyup(debounce(function () {
-                        qsRegex = new RegExp($quicksearch.val(), 'gi');
+                        qsRegex = new RegExp(escapeRegExp($quicksearch.val()), 'gi');
                         IsotopeWrap.isotope();
                     }));
 
@@ -531,10 +530,15 @@
                         }
                     });
                     if (IsoURL) {
-                        windowHashChange(IsotopeWrap, IsoButton);
-                        $(window).on("hashchange", function () {
-                            windowHashChange(IsotopeWrap, IsoButton);
-                        });
+                        var applyHashFilter = function () {
+                            buttonFilter = windowHashChange(IsoButton);
+                            // Before init, the imagesLoaded callback applies buttonFilter itself.
+                            if (IsotopeWrap.data('isotope')) {
+                                IsotopeWrap.isotope();
+                            }
+                        };
+                        applyHashFilter();
+                        $(window).on("hashchange", applyHashFilter);
                     }
                     if (IsoCount) {
                         isoFilterCounter(container, IsotopeWrap);
@@ -758,18 +762,25 @@
         $(".rt-row.layout4 .layout4item .layoutInner .rt-img-holder img,.rt-row.layout4 .layout4item .layoutInner.layoutInner-content").height($maxH + "px");
     }
 
-    function windowHashChange(isotope, IsoButton) {
-        var $hashFilter = decodeHash() || '';
-        if (!$hashFilter) {
-            $hashFilter = IsoButton.find('button.selected').attr('data-filter') || '';
-            $hashFilter = $hashFilter ? $hashFilter : '*';
+    function windowHashChange(IsoButton) {
+        var $buttons = IsoButton.find('button');
+        var $hashFilter = decodeHash();
+
+        // Only accept a filter that one of this grid's own buttons provides.
+        if (!isValidIsoFilter($hashFilter) || !$buttons.filter(function () {
+            return $(this).attr('data-filter') === $hashFilter;
+        }).length) {
+            $hashFilter = $buttons.filter('.selected').attr('data-filter') || '';
+            $hashFilter = isValidIsoFilter($hashFilter) ? $hashFilter : '*';
         }
-        $hashFilter = $hashFilter || '*';
-        isotope.isotope({
-            filter: $hashFilter
-        });
-        IsoButton.find("button").removeClass("selected");
-        IsoButton.find('button[data-filter="' + $hashFilter + '"]').addClass("selected");
+        // The caller stores the returned filter; the grid's own filter function
+        // then matches items by class, so no string reaches isotope or jQuery.
+        $buttons.removeClass("selected");
+        $buttons.filter(function () {
+            return $(this).attr('data-filter') === $hashFilter;
+        }).addClass("selected");
+
+        return $hashFilter;
     }
 
     function isoFilterCounter(container, isotope) {
@@ -777,7 +788,7 @@
         container.find('.rt-tpg-isotope-buttons button').each(function () {
             var self = $(this),
                 filter = self.attr("data-filter"),
-                itemTotal = isotope.find(filter).length;
+                itemTotal = isValidIsoFilter(filter) ? isotope.find(filter).length : 0;
             if (filter != "*") {
                 self.find('span').remove();
                 self.append("<span> (" + itemTotal + ") </span>");
@@ -791,7 +802,32 @@
     function decodeHash() {
         var $matches = location.hash.match(/filter=([^&]+)/i);
         var $hashFilter = $matches && $matches[1];
-        return $hashFilter && decodeURIComponent($hashFilter);
+        if (!$hashFilter) {
+            return '';
+        }
+        try {
+            return decodeURIComponent($hashFilter);
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function isValidIsoFilter(filter) {
+        return typeof filter === 'string' && /^(\*|\.[\w-]+)$/.test(filter);
+    }
+
+    function isoItemMatches($item, filter) {
+        if (filter === '*') {
+            return true;
+        }
+        if (!isValidIsoFilter(filter)) {
+            return false;
+        }
+        return $item.hasClass(filter.slice(1));
+    }
+
+    function escapeRegExp(value) {
+        return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
     function tpgAjaxCall(element, action, arg, handle) {

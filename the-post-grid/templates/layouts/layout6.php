@@ -31,7 +31,7 @@ if ( in_array( 'post_date', $items ) && $date ) {
 		$metaHtml .= "<i class='" . Fns::change_icon( 'far fa-calendar-alt', 'calendar' ) . "'></i>";
 	}
 
-	$metaHtml .= "{$date}</span>";
+	$metaHtml .= esc_html( $date ) . "</span>";
 }
 
 if ( in_array( 'author', $items ) ) {
@@ -71,16 +71,16 @@ $html .= '<div class="rt-holder">';
 $html .= '<div class="overlay">';
 
 if ( ! empty( $metaHtml ) && $metaPosition == 'above_title' ) {
-	$html .= "<div class='post-meta-user {$metaSeparator}'>$metaHtml</div>";
+	$html .= "<div class='post-meta-user " . esc_attr( $metaSeparator ) . "'>$metaHtml</div>";
 }
 
 if ( in_array( 'title', $items ) ) {
-	$html .= sprintf( '<%1$s class="entry-title"><a data-id="%2$s" class="%3$s" href="%4$s"%5$s>%6$s</a></%1$s>', $title_tag, $pID, $anchorClass, $pLink, $link_target, $title );
+	$html .= sprintf( '<%1$s class="entry-title"><a data-id="%2$s" class="%3$s" href="%4$s"%5$s>%6$s</a></%1$s>', tag_escape( $title_tag ), absint( $pID ), esc_attr( $anchorClass ), esc_url( $pLink ), $link_target, $title );
 	$html .= "<div class='line'></div>";
 }
 
 if ( ! empty( $metaHtml ) && ( empty( $metaPosition ) || $metaPosition == 'above_excerpt' ) ) {
-	$html .= "<div class='post-meta-user {$metaSeparator}'>$metaHtml</div>";
+	$html .= "<div class='post-meta-user " . esc_attr( $metaSeparator ) . "'>$metaHtml</div>";
 }
 
 if ( in_array( 'excerpt', $items ) ) {
@@ -88,23 +88,23 @@ if ( in_array( 'excerpt', $items ) ) {
 }
 
 if ( ! empty( $metaHtml ) && $metaPosition == 'below_excerpt' ) {
-	$html .= "<div class='post-meta-user {$metaSeparator}'>$metaHtml</div>";
+	$html .= "<div class='post-meta-user " . esc_attr( $metaSeparator ) . "'>$metaHtml</div>";
 }
 
 $postMetaBottom = null;
 
 if ( in_array( 'read_more', $items ) ) {
-	$postMetaBottom .= "<span class='read-more'><a data-id='{$pID}' class='{$anchorClass}' href='{$pLink}'{$link_target}>{$read_more_text}</a></span>";
+	$postMetaBottom .= "<span class='read-more'><a data-id='" . absint( $pID ) . "' class='" . esc_attr( $anchorClass ) . "' href='" . esc_url( $pLink ) . "'{$link_target}>" . esc_html( $read_more_text ) . "</a></span>";
 }
 
 if ( ! empty( $postMetaBottom ) ) {
-	$html .= "<div class='post-meta {$btn_alignment_class}'>$postMetaBottom</div>";
+	$html .= "<div class='post-meta " . esc_attr( $btn_alignment_class ) . "'>$postMetaBottom</div>";
 }
 
 $html .= '</div>';
 
 if ( $imgSrc ) {
-	$html .= "<a data-id='{$pID}' class='{$anchorClass}' href='{$pLink}'{$link_target}>{$imgSrc}</a>";
+	$html .= "<a data-id='" . absint( $pID ) . "' class='" . esc_attr( $anchorClass ) . "' href='" . esc_url( $pLink ) . "'{$link_target}>{$imgSrc}</a>";
 }
 
 $html .= '</div>';

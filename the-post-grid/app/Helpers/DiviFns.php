@@ -2,6 +2,11 @@
 
 namespace RT\ThePostGrid\Helpers;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 class DiviFns {
 
 	public static function get_listing_taxonomy( $parent = 'all', $taxonomy = '' ) {
