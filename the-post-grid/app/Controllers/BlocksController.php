@@ -476,14 +476,18 @@ class BlocksController {
 			wp_send_json_error( [ 'message' => __( 'Data not found!!', 'the-post-grid' ) ] );
 		}
 
-		if ( ! current_user_can( 'read_post', $post_id ) ) {
-			wp_send_json_error( [ 'message' => __( 'User permission error', 'the-post-grid' ) ] );
-		}
-
 		$post = get_post( $post_id );
 
 		if ( ! $post ) {
 			wp_send_json_error( [ 'message' => __( 'Data not found!!', 'the-post-grid' ) ] );
+		}
+
+		// Editors of the post get its content; anyone else may only load reusable blocks (wp_block) they can read.
+		$can_access = current_user_can( 'edit_post', $post_id )
+			|| ( 'wp_block' === $post->post_type && current_user_can( 'read_post', $post_id ) && ! post_password_required( $post ) );
+
+		if ( ! $can_access ) {
+			wp_send_json_error( [ 'message' => __( 'User permission error', 'the-post-grid' ) ] );
 		}
 
 		wp_send_json_success( $post->post_content );

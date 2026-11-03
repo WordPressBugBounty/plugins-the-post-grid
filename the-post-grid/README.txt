@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 7.9.8
+Stable tag: 7.9.9
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -253,6 +253,9 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.9 (Nov 3, 2026) =
+* Security: Contributors can no longer read password protected posts via block CSS loader. Thanks to Aaron - WellKnown.
 
 = 7.9.8 (Oct 29, 2026) =
 * Added: Shortcode video thumbnails with play mode, fallback image and player control settings.
