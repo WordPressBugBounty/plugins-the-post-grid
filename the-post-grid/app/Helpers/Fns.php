@@ -2220,9 +2220,7 @@ class Fns {
 		}
 
 		if ( $type == 'full' ) {
-			$content = $post->post_content;
-			$content = do_shortcode( $content );
-			$content = wpautop( $content );
+			$content = self::tpg_get_filtered_content( $post );
 
 			return apply_filters( 'tpg_content_full', $content, $post_id, $data );
 		} else {
@@ -2233,9 +2231,9 @@ class Fns {
 			}
 
 			if ( class_exists( 'ET_GB_Block_Layout' ) ) {
-				$defaultExcerpt = $post->post_excerpt ?: wp_trim_words( $post->post_content, 55 );
+				$defaultExcerpt = $post->post_excerpt ?: wp_trim_words( self::tpg_get_filtered_content( $post ), 55 );
 			} elseif ( defined( 'WPB_VC_VERSION' ) ) {
-				$the_content    = $post->post_excerpt ?: wp_trim_words( $post->post_content, 55 );
+				$the_content    = $post->post_excerpt ?: wp_trim_words( self::tpg_get_filtered_content( $post ), 55 );
 				$shortcode_tags = [ 'VC_COLUMN_INNTER' ];
 				$values         = array_values( $shortcode_tags );
 				$exclude_codes  = implode( '|', $values );
@@ -2410,6 +2408,51 @@ class Fns {
 	}
 
 	/**
+	 * Post content run through `the_content`, the filter content-restriction and
+	 * membership plugins use to hide what the current viewer may not read.
+	 *
+	 * Never hand out raw post_content to a viewer; use this instead.
+	 *
+	 * @param \WP_Post|int $post    Post object or ID.
+	 * @param string|null  $content Content to filter. Defaults to the post's own content.
+	 *
+	 * @return string
+	 */
+	public static function tpg_get_filtered_content( $post, $content = null ) {
+		static $rendering = [];
+
+		$post = get_post( $post );
+
+		if ( empty( $post ) || post_password_required( $post ) ) {
+			return '';
+		}
+
+		// A grid placed inside this same post asked for its content again.
+		if ( isset( $rendering[ $post->ID ] ) ) {
+			return '';
+		}
+
+		$rendering[ $post->ID ] = true;
+
+		// Restriction plugins read the global post, so point it at the post being filtered.
+		$previous_post   = $GLOBALS['post'] ?? null;
+		$GLOBALS['post'] = $post; //phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		setup_postdata( $post );
+
+		$content = apply_filters( 'the_content', null === $content ? $post->post_content : $content );
+		$content = str_replace( ']]>', ']]&gt;', (string) $content );
+
+		$GLOBALS['post'] = $previous_post; //phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		if ( $previous_post instanceof \WP_Post ) {
+			setup_postdata( $previous_post );
+		}
+
+		unset( $rendering[ $post->ID ] );
+
+		return $content;
+	}
+
+	/**
 	 * Post content prepared for an excerpt, with its markup left intact.
 	 *
 	 * @param \WP_Post|int $post      Post object or ID.
@@ -2436,6 +2479,14 @@ class Fns {
 
 			if ( function_exists( 'has_blocks' ) && function_exists( 'excerpt_remove_blocks' ) && has_blocks( $content ) ) {
 				$content = excerpt_remove_blocks( $content );
+			}
+
+			$content = strip_shortcodes( $content );
+
+			// Same order as WordPress's own excerpt, so restricted content stays hidden.
+			// Nothing left (e.g. a Divi layout) means no excerpt, not just what other plugins append.
+			if ( '' !== trim( $content ) ) {
+				$content = self::tpg_get_filtered_content( $post, $content );
 			}
 		}
 

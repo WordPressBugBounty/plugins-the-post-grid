@@ -369,7 +369,6 @@ class GetPostsV1 {
 					'author_name'      => esc_html( get_the_author_meta( 'display_name', $author_id ) ),
 					'avatar_url'       => esc_url( $author_avatar_url ),
 					'comment_count'    => esc_html( get_comments_number( $id ) ),
-					'content'          => get_the_content(),
 					'category'         => ! empty( $category_terms ) ? $category_terms : [],
 					'category_bg'      => ! empty( $_cat_bg_meta ) ? $_cat_bg_meta : [],
 					'tags'             => ! empty( $tags_terms ) ? $tags_terms : '',

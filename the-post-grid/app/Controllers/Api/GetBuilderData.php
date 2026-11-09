@@ -50,7 +50,12 @@ class GetBuilderData {
 				case 'thumbnail':
 					return rest_ensure_response( get_the_post_thumbnail( $post_args, $data['image_size'] ) );
 				case 'content':
-					return rest_ensure_response( post_password_required( $post_args ) ? '' : $post_args->post_content );
+					// Raw content only for its editors; everyone else gets what restriction plugins allow them to read.
+					if ( current_user_can( 'edit_post', $last_post_id ) ) {
+						return rest_ensure_response( $post_args->post_content );
+					}
+
+					return rest_ensure_response( Fns::tpg_get_filtered_content( $post_args ) );
 				case 'meta':
 					$post_meta = Fns::get_post_meta_html( $last_post_id, $data, false );
 

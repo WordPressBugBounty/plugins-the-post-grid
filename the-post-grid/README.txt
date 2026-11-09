@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 7.9.9
+Stable tag: 7.9.10
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -253,6 +253,11 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.10 (Nov 9, 2026) =
+* Security: Contributors can no longer read membership restricted content through block editor endpoints.
+* Security: Full content and HTML excerpts now respect membership and content restriction plugins.
+* Improved: Divi and WPBakery excerpts now use rendered content, so module text may appear.
 
 = 7.9.9 (Nov 3, 2026) =
 * Security: Contributors can no longer read password protected posts via block CSS loader. Thanks to Aaron - WellKnown.

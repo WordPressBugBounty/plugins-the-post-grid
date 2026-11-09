@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-03 06:24+0000\n"
+"POT-Creation-Date: 2026-11-09 11:06+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -309,135 +309,135 @@ msgstr ""
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5005
+#: ../app/Helpers/Fns.php:5056
 msgid "Full"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5030, ../app/Widgets/elementor/rtTPGElementorHelper.php:3176, ../app/Widgets/elementor/widgets/category-block.php:516
+#: ../app/Helpers/Fns.php:5081, ../app/Widgets/elementor/rtTPGElementorHelper.php:3176, ../app/Widgets/elementor/widgets/category-block.php:516
 msgid "Custom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5779
+#: ../app/Helpers/Fns.php:5830
 msgid "Single"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5780
+#: ../app/Helpers/Fns.php:5831
 msgid "Post Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5781
+#: ../app/Helpers/Fns.php:5832
 msgid "Author Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5782
+#: ../app/Helpers/Fns.php:5833
 msgid "Search Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5783
+#: ../app/Helpers/Fns.php:5834
 msgid "Date Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5784
+#: ../app/Helpers/Fns.php:5835
 msgid "Category Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5785
+#: ../app/Helpers/Fns.php:5836
 msgid "Tags Archive"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5815
+#: ../app/Helpers/Fns.php:5866
 msgid "Dashboard"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:5816
+#: ../app/Helpers/Fns.php:5867
 msgid "My Post"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6066
+#: ../app/Helpers/Fns.php:6117
 msgid "You are not authorize to submit a post."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6064
+#: ../app/Helpers/Fns.php:6115
 msgid "Post submit fail."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6062
+#: ../app/Helpers/Fns.php:6113
 msgid "Post submit successful"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6204, ../app/Helpers/Fns.php:6264
+#: ../app/Helpers/Fns.php:6255, ../app/Helpers/Fns.php:6315
 msgctxt "Thousand Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6205
+#: ../app/Helpers/Fns.php:6256
 msgctxt "Million Shorthand"
 msgid "M"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6206
+#: ../app/Helpers/Fns.php:6257
 msgctxt "Billion Shorthand"
 msgid "B"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6207
+#: ../app/Helpers/Fns.php:6258
 msgctxt "Trillion Shorthand"
 msgid "T"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6208
+#: ../app/Helpers/Fns.php:6259
 msgctxt "Quadrillion Shorthand"
 msgid "Qa"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6209
+#: ../app/Helpers/Fns.php:6260
 msgctxt "Quintillion Shorthand"
 msgid "Qi"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6265
+#: ../app/Helpers/Fns.php:6316
 msgctxt "Thousands Shorthand"
 msgid "K"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6266
+#: ../app/Helpers/Fns.php:6317
 msgctxt "Lac Shorthand"
 msgid " Lac"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6267
+#: ../app/Helpers/Fns.php:6318
 msgctxt "Lacs Shorthand"
 msgid " Lacs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6268
+#: ../app/Helpers/Fns.php:6319
 msgctxt "Cr Shorthand"
 msgid " Cr"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6269
+#: ../app/Helpers/Fns.php:6320
 msgctxt "Crs Shorthand"
 msgid " Crs"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6341, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:311, ../app/Widgets/elementor/rtTPGElementorHelper.php:452, ../app/Widgets/elementor/rtTPGElementorHelper.php:3668, ../app/Widgets/elementor/widgets/news-ticker.php:594
+#: ../app/Helpers/Fns.php:6392, ../app/Divi/Fields/ContentQuery.php:183, ../app/Widgets/elementor/rtTPGElementorHelper.php:311, ../app/Widgets/elementor/rtTPGElementorHelper.php:452, ../app/Widgets/elementor/rtTPGElementorHelper.php:3668, ../app/Widgets/elementor/widgets/news-ticker.php:594
 msgid "Date"
 msgstr ""
 
 #. translators: %1$s: opening anchor tag, %2$s: closing anchor tag, %3$s: additional message
-#: ../app/Helpers/Fns.php:6366
+#: ../app/Helpers/Fns.php:6417
 msgid "Please upgrade to pro for more options %s"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6489
+#: ../app/Helpers/Fns.php:6540
 msgid "Date & Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6499
+#: ../app/Helpers/Fns.php:6550
 msgid "End Time:"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:6509
+#: ../app/Helpers/Fns.php:6560
 msgid "Location: "
 msgstr ""
 
@@ -2281,7 +2281,7 @@ msgstr ""
 msgid "write everything in %s language"
 msgstr ""
 
-#: ../app/Controllers/Api/GetPostsV1.php:409, ../app/Controllers/Api/GetTickerPostsV1.php:186
+#: ../app/Controllers/Api/GetPostsV1.php:408, ../app/Controllers/Api/GetTickerPostsV1.php:186
 msgid "No posts found"
 msgstr ""
 
