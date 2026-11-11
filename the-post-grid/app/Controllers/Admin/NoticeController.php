@@ -25,7 +25,7 @@ class NoticeController {
 	protected $notice_classes = [
 		Notice\BlackFriday::class,
 		Notice\Review::class,
-		Notice\SummerSale::class,
+		//Notice\SummerSale::class, // Uncomment when needed
 		Notice\LoadResourceType::class,
 		//Notice\EidSpecial::class, // Uncomment when needed
 	];

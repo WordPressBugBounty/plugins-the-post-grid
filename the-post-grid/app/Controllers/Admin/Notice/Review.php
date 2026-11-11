@@ -30,7 +30,6 @@ class Review {
 		}
 		add_action( 'admin_notices', [ $this, 'render_review_notice' ] );
 		add_action( 'admin_init', [ __CLASS__, 'update_notice_status' ] );
-		add_action( 'admin_head', [ __CLASS__, 'admin_scripts' ] );
 	}
 
 	/**
@@ -106,40 +105,52 @@ class Review {
 		$rated         = add_query_arg( [ '_wpnonce' => $nonce, 'rttpg_rated' => '1' ], $current_url );
 		$review_url    = 'https://wordpress.org/support/plugin/the-post-grid/reviews/?filter=5#new-post';
 		$plugin_name   = 'The Post Grid';
-		$download_link = 'https://www.radiustheme.com/downloads/the-post-grid-pro-for-wordpress/';
 		$image_url     = rtTPG()->get_assets_uri( 'images/post-grid-gif.gif' );
+		$star_svg      = '<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>';
+		$allowed_svg   = [
+			'svg'  => [ 'viewbox' => true, 'aria-hidden' => true, 'focusable' => true ],
+			'path' => [ 'd' => true ],
+		];
+		self::admin_scripts();
 		?>
-        <div class="notice rttpg-review-notice rttpg-review-notice--extended">
-            <div class="rttpg-review-notice_content" style="display: flex; gap: 15px;">
-                <a href="<?php echo esc_url( $download_link ); ?>" target="_blank">
-                    <img alt="<?php echo esc_attr( $plugin_name ); ?>"
-                         src="<?php echo esc_url( $image_url ); ?>"
-                         width="50" height="50"
-                         style="transform: translateY(2px)"/>
-                </a>
-                <div>
-                    <p>
-                        <strong><?php echo esc_html( "Thank you for choosing $plugin_name." ); ?></strong>
-						<?php echo esc_html( "If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow." ); ?>
-                    </p>
-                    <div class="rttpg-review-notice_actions">
-                        <a href="<?php echo esc_url( $review_url ); ?>" class="rttpg-review-button rttpg-review-button--cta" target="_blank">
-                            <span>⭐</span><span>Yes, You Deserve It!</span>
-                        </a>
-                        <a href="<?php echo esc_url( $rated ); ?>" class="rttpg-review-button rttpg-review-button--cta rttpg-review-button--outline">
-                            <span>😀</span><span>Already Rated!</span>
-                        </a>
-                        <a href="<?php echo esc_url( $remind_me ); ?>" class="rttpg-review-button rttpg-review-button--cta rttpg-review-button--outline">
-                            <span>🔔</span><span>Remind Me Later</span>
-                        </a>
-                        <a href="<?php echo esc_url( $dont_disturb ); ?>" class="rttpg-review-button rttpg-review-button--cta rttpg-review-button--error rttpg-review-button--outline">
-                            <span>😐</span><span>No Thanks</span>
-                        </a>
-                    </div>
+        <div class="notice rttpg-review-notice" role="region" aria-label="<?php echo esc_attr__( 'Rate The Post Grid', 'the-post-grid' ); ?>">
+            <img class="rttpg-review-notice__logo" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $plugin_name ); ?>" width="56" height="56"/>
+
+            <div class="rttpg-review-notice__body">
+                <div class="rttpg-review-notice__head">
+                    <h3 class="rttpg-review-notice__title">
+						<?php
+						/* translators: %s: plugin name */
+						echo esc_html( sprintf( __( 'Enjoying %s?', 'the-post-grid' ), $plugin_name ) );
+						?>
+                    </h3>
+                    <span class="rttpg-review-notice__stars" aria-hidden="true">
+						<?php echo wp_kses( str_repeat( $star_svg, 5 ), $allowed_svg ); ?>
+					</span>
+                </div>
+
+                <p class="rttpg-review-notice__text">
+					<?php esc_html_e( 'Thanks for building with us! A quick 5-star review on WordPress.org helps other people discover the plugin and keeps us improving it.', 'the-post-grid' ); ?>
+                </p>
+
+                <div class="rttpg-review-notice__actions">
+                    <a href="<?php echo esc_url( $review_url ); ?>" class="rttpg-review-btn rttpg-review-btn--primary" target="_blank" rel="noopener noreferrer">
+						<?php echo wp_kses( $star_svg, $allowed_svg ); ?>
+						<?php esc_html_e( 'Leave a review', 'the-post-grid' ); ?>
+                    </a>
+                    <a href="<?php echo esc_url( $rated ); ?>" class="rttpg-review-btn rttpg-review-btn--secondary">
+						<?php esc_html_e( 'I already did', 'the-post-grid' ); ?>
+                    </a>
+                    <a href="<?php echo esc_url( $remind_me ); ?>" class="rttpg-review-btn rttpg-review-btn--link">
+						<?php esc_html_e( 'Remind me later', 'the-post-grid' ); ?>
+                    </a>
                 </div>
             </div>
-        </div>
 
+            <a href="<?php echo esc_url( $dont_disturb ); ?>" class="rttpg-review-notice__close" title="<?php echo esc_attr__( "Don't show again", 'the-post-grid' ); ?>">
+                <span class="screen-reader-text"><?php esc_html_e( "Dismiss this notice and don't show it again", 'the-post-grid' ); ?></span>
+            </a>
+        </div>
 		<?php
 	}
 
@@ -218,141 +229,187 @@ class Review {
 	public static function admin_scripts() {
 		?>
         <style>
-            .rttpg-review-button--cta {
-                --e-button-context-color: #4C6FFF;
-                --e-button-context-color-dark: #4C6FFF;
-                --e-button-context-tint: rgb(75 47 157/4%);
-                --e-focus-color: rgb(75 47 157/40%);
-            }
-
             .rttpg-review-notice {
+                --rttpg-brand: #4c6fff;
+                --rttpg-brand-dark: #3a5be8;
+                --rttpg-text: #1d2327;
+                --rttpg-muted: #50575e;
+                --rttpg-border: #e2e4e9;
                 position: relative;
-                margin: 5px 20px 5px 2px;
-                border: 1px solid #ccd0d4;
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                margin: 5px 0 15px;
+                padding: 18px 48px 18px 18px;
+                border: 1px solid var(--rttpg-border);
+                border-radius: 10px;
                 background: #fff;
-                box-shadow: none;
-                font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
-                border-inline-start-width: 4px;
+                box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 4px 12px rgba(16, 24, 40, .04);
             }
 
             .rttpg-review-notice.notice {
-                padding: 0;
+                border-left-width: 1px;
             }
 
-            .rttpg-review-notice:before {
-                position: absolute;
-                top: -1px;
-                bottom: -1px;
-                left: -4px;
-                display: block;
-                width: 4px;
-                background: -webkit-linear-gradient(bottom, #4C6FFF 0%, #6939c6 100%);
-                background: linear-gradient(0deg, #4C6FFF 0%, #6939c6 100%);
-                content: "";
+            .rttpg-review-notice__logo {
+                flex: 0 0 auto;
+                width: 56px;
+                height: 56px;
             }
 
-            .rttpg-review-notice_content img {
-                width: 50px;
-                height: 50px;
+            .rttpg-review-notice__body {
+                flex: 1 1 auto;
+                min-width: 0;
             }
 
-            .rttpg-review-notice_content {
-                padding: 10px;
-            }
-
-            .rttpg-review-notice_actions > * + * {
-                margin-inline-start: 8px;
-                -webkit-margin-start: 8px;
-                -moz-margin-start: 8px;
-            }
-
-            .rttpg-review-notice p {
-                margin: 0;
-                padding: 0;
-                line-height: 1.5;
-            }
-
-            p + .rttpg-review-notice_actions {
-                margin-top: 5px;
-            }
-
-            .rttpg-review-notice h3 {
-                margin: 0;
-                font-size: 1.0625rem;
-                line-height: 1.2;
-            }
-
-            .rttpg-review-notice h3 + p {
-                margin-top: 2px;
-            }
-
-            .rttpg-review-button span {
+            .rttpg-review-notice__head {
                 display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 6px 10px;
             }
 
-            .rttpg-review-button {
+            .rttpg-review-notice .rttpg-review-notice__title {
+                margin: 0;
+                padding: 0;
+                color: var(--rttpg-text);
+                font-size: 15px;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            .rttpg-review-notice__stars {
+                display: inline-flex;
+                gap: 2px;
+                color: #f5a623;
+            }
+
+            .rttpg-review-notice__stars svg {
+                width: 14px;
+                height: 14px;
+                fill: currentColor;
+            }
+
+            .rttpg-review-notice .rttpg-review-notice__text {
+                margin: 4px 0 0;
+                padding: 0;
+                color: var(--rttpg-muted);
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .rttpg-review-notice__actions {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                margin-top: 14px;
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn {
                 display: inline-flex;
                 align-items: center;
-                gap: 5px;
-                padding: 4px 10px;
-                border: 0;
-                border-radius: 3px;;
-                background: var(--e-button-context-color);
-                color: #fff;
-                vertical-align: middle;
-                text-align: center;
+                gap: 6px;
+                min-height: 34px;
+                padding: 0 14px;
+                border: 1px solid transparent;
+                border-radius: 6px;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1;
                 text-decoration: none;
                 white-space: nowrap;
-                font-size: 13px
-                font-weight: normal;
+                box-shadow: none;
+                cursor: pointer;
+                transition: background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
             }
 
-            .rttpg-review-button:active {
-                background: var(--e-button-context-color-dark);
+            div.notice.rttpg-review-notice a.rttpg-review-btn:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--rttpg-brand);
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn svg {
+                width: 14px;
+                height: 14px;
+                fill: currentColor;
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn--primary,
+            div.notice.rttpg-review-notice a.rttpg-review-btn--primary:focus {
+                background: var(--rttpg-brand);
                 color: #fff;
-                text-decoration: none;
             }
 
-            .rttpg-review-button:focus {
-                outline: 0;
-                background: var(--e-button-context-color-dark);
-                box-shadow: 0 0 0 2px var(--e-focus-color);
+            div.notice.rttpg-review-notice a.rttpg-review-btn--primary:hover {
+                background: var(--rttpg-brand-dark);
                 color: #fff;
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn--secondary,
+            div.notice.rttpg-review-notice a.rttpg-review-btn--secondary:focus {
+                border-color: #d0d5dd;
+                background: #fff;
+                color: var(--rttpg-text);
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn--secondary:hover {
+                border-color: #b4bac4;
+                background: #f6f7f9;
+                color: var(--rttpg-text);
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn--link,
+            div.notice.rttpg-review-notice a.rttpg-review-btn--link:focus {
+                padding: 0 8px;
+                background: transparent;
+                color: var(--rttpg-muted);
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-btn--link:hover {
+                color: var(--rttpg-brand-dark);
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            div.notice.rttpg-review-notice a.rttpg-review-notice__close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 6px;
+                color: #8c8f94;
                 text-decoration: none;
+                transition: background-color .15s ease, color .15s ease;
             }
 
-            .rttpg-review-button:hover {
-                background: var(--e-button-context-color-dark);
-                color: #fff;
-                text-decoration: none;
+            div.notice.rttpg-review-notice a.rttpg-review-notice__close:before {
+                content: "\f335";
+                font: normal 20px/1 dashicons;
             }
 
-            .rttpg-review-button.focus {
-                outline: 0;
-                box-shadow: 0 0 0 2px var(--e-focus-color);
+            div.notice.rttpg-review-notice a.rttpg-review-notice__close:hover,
+            div.notice.rttpg-review-notice a.rttpg-review-notice__close:focus {
+                background: #f0f0f1;
+                color: var(--rttpg-text);
+                outline: none;
+                box-shadow: none;
             }
 
-            .rttpg-review-button--error {
-                --e-button-context-color: #d72b3f;
-                --e-button-context-color-dark: #ae2131;
-                --e-button-context-tint: rgba(215, 43, 63, 0.04);
-                --e-focus-color: rgba(215, 43, 63, 0.4);
-            }
+            @media (max-width: 600px) {
+                .rttpg-review-notice {
+                    padding: 16px 40px 16px 16px;
+                    gap: 12px;
+                }
 
-            .rttpg-review-button.rttpg-review-button--outline {
-                border: 1px solid;
-                background: 0 0;
-                color: #212121;
-            }
-
-            .rttpg-review-button.rttpg-review-button--outline:focus {
-                background: var(--e-button-context-tint);
-                color: var(--e-button-context-color-dark);
-            }
-
-            .rttpg-review-button.rttpg-review-button--outline:hover {
-                background: var(--e-button-context-tint);
-                color: var(--e-button-context-color-dark);
+                .rttpg-review-notice__logo {
+                    width: 40px;
+                    height: 40px;
+                }
             }
         </style>
 		<?php

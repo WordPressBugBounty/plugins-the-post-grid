@@ -4,7 +4,7 @@ Donate link:
 Tags: post grid, content grid, post display, post slider, post grid elementor addon
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 7.9.10
+Stable tag: 7.9.11
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -253,6 +253,10 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 12. Archive page builder
 
 == Changelog ==
+
+= 7.9.11 (Nov 11, 2026) =
+* Fixed: Black Friday admin banner close button was invisible; dismissing now hides it all season.
+* Improved: Redesigned review and seasonal offer notices with a cleaner, modern layout and translatable text.
 
 = 7.9.10 (Nov 9, 2026) =
 * Security: Contributors can no longer read membership restricted content through block editor endpoints.

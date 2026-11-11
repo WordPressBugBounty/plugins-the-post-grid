@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09 11:06+0000\n"
+"POT-Creation-Date: 2026-11-11 05:48+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -163,11 +163,11 @@ msgstr ""
 msgid "Could not load layouts: %s Please check that your server can reach radiustheme.com, then retry."
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:148, ../app/Controllers/ElementorController.php:298, ../app/Widgets/ElementorWidget.php:28, ../app/Widgets/ElementorWidget.php:43, ../app/Widgets/TPGWidget.php:31, ../app/Controllers/Admin/PostTypeController.php:49, ../app/Controllers/Admin/PostTypeController.php:50, ../app/Controllers/Admin/SetupWizardController.php:255, ../resources/parts/settings-header.php:27
+#: ../app/Controllers/BlocksController.php:148, ../app/Controllers/ElementorController.php:298, ../app/Widgets/ElementorWidget.php:28, ../app/Widgets/ElementorWidget.php:43, ../app/Widgets/TPGWidget.php:31, ../app/Controllers/Admin/PostTypeController.php:49, ../app/Controllers/Admin/PostTypeController.php:50, ../app/Controllers/Admin/SetupWizardController.php:255, ../app/Controllers/Admin/Notice/PromoNotice.php:83, ../resources/parts/settings-header.php:27
 msgid "The Post Grid"
 msgstr ""
 
-#: ../app/Controllers/BlocksController.php:373, ../app/Controllers/BlocksController.php:392, ../app/Controllers/BlocksController.php:490, ../app/Controllers/BlocksController.php:511, ../app/Controllers/Admin/AdminAjaxController.php:55, ../app/Controllers/Admin/Notice/BlackFriday.php:95
+#: ../app/Controllers/BlocksController.php:373, ../app/Controllers/BlocksController.php:392, ../app/Controllers/BlocksController.php:490, ../app/Controllers/BlocksController.php:511, ../app/Controllers/Admin/AdminAjaxController.php:55, ../app/Controllers/Admin/Notice/BlackFriday.php:100
 msgid "User permission error"
 msgstr ""
 
@@ -4956,6 +4956,22 @@ msgstr ""
 msgid "Value Color - Hover"
 msgstr ""
 
+#: ../app/Controllers/Admin/Notice/EidSpecial.php:48
+msgid "Eid Special"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/EidSpecial.php:49, ../app/Controllers/Admin/Notice/SummerSale.php:49
+msgid "Up to 40% off"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/EidSpecial.php:50
+msgid "Celebrate Eid with up to 40% off The Post Grid Pro"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/EidSpecial.php:51
+msgid "Unlock sliders, AJAX pagination, the archive builder and more premium layouts at a special Eid price."
+msgstr ""
+
 #: ../app/Controllers/Admin/Notice/LoadResourceType.php:44
 msgid "Elementor and Gutenberg"
 msgstr ""
@@ -4971,6 +4987,59 @@ msgstr ""
 
 #: ../app/Controllers/Admin/Notice/LoadResourceType.php:70
 msgid "You have selected only Shortcode Generator method. To use Elementor please enable Elementor or default from "
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/PromoNotice.php:67
+msgid "Get the deal"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/PromoNotice.php:69
+msgid "Limited-time offer"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:116
+msgid "Rate The Post Grid"
+msgstr ""
+
+#. translators: %s: plugin name
+#: ../app/Controllers/Admin/Notice/Review.php:124
+msgid "Enjoying %s?"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:133
+msgid "Thanks for building with us! A quick 5-star review on WordPress.org helps other people discover the plugin and keeps us improving it."
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:139
+msgid "Leave a review"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:142
+msgid "I already did"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:145
+msgid "Remind me later"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:150
+msgid "Don't show again"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/Review.php:151
+msgid "Dismiss this notice and don't show it again"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/SummerSale.php:48
+msgid "Summer Sale"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/SummerSale.php:50
+msgid "Save up to 40% on The Post Grid Pro"
+msgstr ""
+
+#: ../app/Controllers/Admin/Notice/SummerSale.php:51
+msgid "Unlock sliders, AJAX pagination, the archive builder and more premium layouts at our best summer price."
 msgstr ""
 
 #: ../app/Widgets/elementor/widgets/category-block.php:57

@@ -6566,19 +6566,30 @@ class Fns {
 	}
 
 	public static function is_black_friday_active() {
-		// Black Friday valid between November 10 – Jan 5
-		$currentYear = gmdate( 'Y' );
-		$now         = time();
-		$start       = strtotime( "{$currentYear}-11-10" ); // Y-m-d - 10 Nov current year
-		$end         = strtotime( ( $currentYear + 1 ) . '-01-06' ); // Y-m-d - 6th Jan next year
+		// Black Friday valid between November 10 – Jan 5.
+		$now   = time();
+		$year  = self::black_friday_season_year();
+		$start = strtotime( "{$year}-11-10" ); // 10 Nov of the season year.
+		$end   = strtotime( ( $year + 1 ) . '-01-06' ); // 6 Jan of the following year.
 
-		$is_active = $now >= $start && $now <= $end;
+		$is_active = $now >= $start && $now < $end;
 
-		// If dismissed manually, consider inactive
-		if ( get_option( 'rttpg_dismiss_bf_notice_' . $currentYear ) == '1' ) {
+		// If dismissed manually, consider inactive.
+		if ( get_option( 'rttpg_dismiss_bf_notice_' . $year ) == '1' ) {
 			$is_active = false;
 		}
 
 		return $is_active;
+	}
+
+	/**
+	 * Year the current Black Friday season started in (January belongs to the previous year's season).
+	 *
+	 * @return int
+	 */
+	public static function black_friday_season_year() {
+		$year = (int) gmdate( 'Y' );
+
+		return 1 === (int) gmdate( 'n' ) ? $year - 1 : $year;
 	}
 }
